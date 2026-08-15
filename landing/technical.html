@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTG Legal Box — Technical Whitepaper</title>
+  <meta name="description" content="How OTG Legal Box keeps client data on the machine: threat model, architecture, PII masking internals, socket-level egress enforcement, data-at-rest posture, testing, supply chain, and a reproducible verification script." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0f; --surface: #12121a; --surface-2: #1a1a26;
+      --border: #2a2a3a; --text: #e8e8f0; --text-muted: #8888a0;
+      --accent: #6e8efb; --accent-glow: #4a6cf7; --gold: #c9a84c;
+      --green: #34d399; --amber: #fbbf24; --red: #f87171;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg); color: var(--text); line-height: 1.65;
+    }
+    code, pre {
+      font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+      font-size: 0.85em;
+    }
+    code { background: var(--surface-2); border: 1px solid var(--border);
+      border-radius: 5px; padding: 0.1em 0.4em; }
+    pre { background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 1.25rem; overflow-x: auto; line-height: 1.5; }
+    pre code { background: none; border: none; padding: 0; }
+    a { color: var(--accent); }
+
+    /* Layout: sidebar TOC + content on wide screens */
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 3rem 1.5rem 6rem; display: flex; gap: 3rem; align-items: flex-start; }
+    .toc { position: sticky; top: 2rem; flex: 0 0 220px; font-size: 0.83rem; display: none; }
+    .toc a { display: block; color: var(--text-muted); text-decoration: none; padding: 0.35rem 0; border-left: 2px solid transparent; padding-left: 0.9rem; transition: color 0.15s, border-color 0.15s; }
+    .toc a:hover { color: var(--text); border-color: var(--border); }
+    @media (min-width: 980px) { .toc { display: block; } }
+
+    .doc { max-width: 780px; flex: 1; min-width: 0; }
+    .doc header { margin-bottom: 3rem; border-bottom: 1px solid var(--border); padding-bottom: 2rem; }
+    .doc header .logo { font-weight: 800; font-size: 1.1rem; margin-bottom: 1.5rem; }
+    .doc header .logo span { color: var(--gold); }
+    .doc h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.75rem; }
+    .doc header p { color: var(--text-muted); }
+    .doc h2 {
+      font-size: 1.35rem; font-weight: 800; margin: 3.25rem 0 1rem;
+      padding-top: 2.25rem; border-top: 1px solid var(--border);
+      scroll-margin-top: 1.5rem;
+    }
+    .doc h3 { font-size: 1.02rem; font-weight: 700; margin: 1.75rem 0 0.6rem; color: var(--text); }
+    .doc p, .doc li { color: var(--text-muted); font-size: 0.95rem; }
+    .doc p { margin-bottom: 1rem; }
+    .doc ul, .doc ol { margin: 0 0 1rem 1.4rem; }
+    .doc li { margin-bottom: 0.4rem; }
+    .doc strong { color: var(--text); }
+    .doc pre { margin-bottom: 1rem; }
+    .doc table { width: 100%; border-collapse: collapse; margin-bottom: 1.25rem; font-size: 0.87rem; }
+    .doc th, .doc td { text-align: left; padding: 0.6rem 0.75rem; border: 1px solid var(--border); color: var(--text-muted); vertical-align: top; }
+    .doc th { color: var(--text); background: var(--surface); font-weight: 600; }
+    .callout {
+      background: var(--surface); border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-glow); border-radius: 10px;
+      padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+    .callout.warn { border-left-color: var(--amber); }
+    .callout.good { border-left-color: var(--green); }
+    .ok { color: var(--green); font-weight: 600; }
+    .no { color: var(--red); font-weight: 600; }
+
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; margin-bottom: 1.25rem; }
+    @media (max-width: 640px) { .grid-2 { grid-template-columns: 1fr; } }
+    .threat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem; }
+    .threat-card h3 { margin-top: 0; }
+    .threat-card.protects { border-top: 3px solid var(--green); }
+    .threat-card.excludes { border-top: 3px solid var(--amber); }
+    .threat-card ul { margin-bottom: 0; }
+
+    .diagram {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 12px;
+      padding: 1.5rem; margin-bottom: 1.25rem; font-family: ui-monospace, Menlo, monospace;
+      font-size: 0.78rem; line-height: 1.55; overflow-x: auto; white-space: pre; color: var(--text-muted);
+    }
+    .diagram .box { color: var(--text); }
+    .diagram .lbl { color: var(--gold); }
+
+    .stat-row { display: flex; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.5rem; }
+    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 1rem 1.25rem; flex: 1; min-width: 140px; }
+    .stat .n { font-size: 1.7rem; font-weight: 800; color: var(--accent); line-height: 1; margin-bottom: 0.3rem; }
+    .stat .l { font-size: 0.78rem; color: var(--text-muted); }
+
+    .fcheck { color: var(--green); font-weight: 700; }
+    .fcross { color: var(--red); font-weight: 700; }
+
+    @media (max-width: 640px) { .doc h1 { font-size: 1.6rem; } .wrap { padding: 2rem 1.25rem 4rem; } }
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <nav class="toc">
+      <a href="#threat-model">1. Threat model</a>
+      <a href="#architecture">2. Architecture</a>
+      <a href="#pii-shield">3. The PII shield</a>
+      <a href="#egress">4. The egress lock</a>
+      <a href="#data-at-rest">5. Data at rest</a>
+      <a href="#testing">6. Testing &amp; CI</a>
+      <a href="#supply-chain">7. Supply chain</a>
+      <a href="#comparison">8. vs. cloud AI</a>
+      <a href="#self-host">9. Self-hosting</a>
+      <a href="#verify">10. Verify it yourself</a>
+      <a href="#limitations">11. Limitations</a>
+      <a href="#faq">12. FAQ</a>
+    </nav>
+
+    <article class="doc">
+      <header>
+        <div class="logo"><a href="/" style="color:inherit;text-decoration:none">OTG <span>Legal Box</span></a> <span style="color:var(--text-muted);font-weight:500;font-size:0.85rem">&nbsp;&larr; back to overview</span></div>
+        <h1>Technical whitepaper</h1>
+        <p>How OTG Legal Box keeps client data on the machine: the threat model, the architecture, the enforcement mechanisms, and how to verify every claim yourself — reviewer-grade detail, no NDA required. Version 1.0.0 · Updated July 2026.</p>
+      </header>
+
+      <div class="stat-row">
+        <div class="stat"><div class="n">0</div><div class="l">outbound connections after setup, enforced at the socket layer</div></div>
+        <div class="stat"><div class="n">13</div><div class="l">PII entity types masked before any AI call</div></div>
+        <div class="stat"><div class="n">51</div><div class="l">automated tests gating every release (47 pass, 4 need the optional large NER model)</div></div>
+        <div class="stat"><div class="n">MIT</div><div class="l">core license — every dependency's license is listed in NOTICE.md</div></div>
+      </div>
+
+      <h2 id="threat-model">1. Threat model</h2>
+      <p>Most "private AI" claims skip this step. We'd rather tell you exactly what we defend against and what we don't, so you can make an informed decision instead of trusting a slogan.</p>
+      <div class="grid-2">
+        <div class="threat-card protects">
+          <h3>What this protects against</h3>
+          <ul>
+            <li>Client data being sent to a cloud AI provider (OpenAI, Anthropic, Google, Microsoft, or any API) — there is no cloud provider in the loop, ever</li>
+            <li>Client data being used to train a third-party model, now or later</li>
+            <li>Personal data (names, NRICs, phone numbers, addresses…) reaching the local language model in the first place, even though the model itself never leaves the building</li>
+            <li>Silent network exfiltration by a bug, a compromised dependency, or a malicious document — the process is physically incapable of opening a non-loopback connection</li>
+            <li>A vendor being subpoenaed, breached, or shut down and taking your case data with it — there is no vendor holding your data</li>
+          </ul>
+        </div>
+        <div class="threat-card excludes">
+          <h3>What this does <em>not</em> protect against</h3>
+          <ul>
+            <li>A user with local admin access reading files directly off disk — use full-disk encryption (§5) and standard endpoint controls</li>
+            <li>Physical theft of an unlocked, unencrypted machine</li>
+            <li>A compromised operating system, keylogger, or screen-recording malware already present on the host</li>
+            <li>Legal AI advice being wrong — the model can hallucinate like any LLM; every output states it needs a qualified lawyer's review</li>
+            <li>Supply-chain compromise of Ollama, the model weights, or a Python dependency before it reaches you — mitigated, not eliminated, by pinned versions and the NOTICE.md audit trail (§7)</li>
+          </ul>
+        </div>
+      </div>
+      <p>In short: the product's job is to stop <em>your own software</em> from leaking client data to the internet, and to stop personal identifiers from reaching the AI model unnecessarily. It is not a replacement for disk encryption, endpoint security, or professional judgment.</p>
+
+      <h2 id="architecture">2. Architecture</h2>
+      <p>Legal Box is a desktop application with three local processes and no remote ones:</p>
+      <div class="diagram">+-------------------------------------------------------------+
+|                                                               |
+|  YOUR COMPUTER ONLY                                          |
+|                                                               |
+|  <span class="lbl">Electron shell</span>  --requests-->  webRequest allowlist        |
+|  (the window)                  cancels anything not          |
+|        |                       127.0.0.1 / file: / data:     |
+|        | localhost:8000                                      |
+|        v                                                     |
+|  <span class="lbl">FastAPI backend</span>  (compiled binary, 127.0.0.1:8000)          |
+|   - PII shield (Presidio + Singapore recognizers)             |
+|   - egress_guard -- patches the socket layer itself           |
+|   - document parsing, case search, audit log                  |
+|        |                                                      |
+|        | localhost:11434 (or :11435 if bundled)                |
+|        v                                                      |
+|  <span class="lbl">Ollama runtime</span>  (bundled, or your own if detected)          |
+|   - runs Gemma 4 on local CPU / GPU                            |
+|                                                                |
+|        NO OTHER OUTBOUND CONNECTION IS POSSIBLE               |
+|                                                               |
++-------------------------------------------------------------+</div>
+      <p>There is no account system, no license server, no telemetry endpoint, and no analytics SDK anywhere in the stack. The only egress that ever occurs is the one-time model download during first-launch setup, which the user explicitly initiates and which stops permanently once the model is on disk.</p>
+
+      <h2 id="pii-shield">3. The PII shield — masking before the model, restoring after</h2>
+      <p>Every piece of text bound for the model passes through a two-layer detector built on <a href="https://github.com/data-privacy-stack/presidio" rel="noopener">Presidio</a> (MIT — the open-source PII framework originally created by Microsoft) plus Singapore-specific recognizers written for this product. Detection runs as a single pass over the <em>original</em> text — every regex and the NER model see the same untouched string — and overlapping matches are resolved by a fixed category priority (structured identifiers like NRIC beat looser matches like a bare name) before any replacement happens. That ordering matters: running detectors sequentially on text that's already partly masked is a common source of missed or double-masked entities, and we specifically designed against it.</p>
+      <table>
+        <tr><th>Layer</th><th>Catches</th></tr>
+        <tr><td>Singapore recognizers (regex + validators, always on)</td><td>NRIC/FIN, passports, UEN company numbers, +65 and local phone formats, postal codes (01–83 validated), block/street addresses, court case numbers, labelled dates of birth, Luhn-verified card numbers, context-gated bank accounts</td></tr>
+        <tr><td>Presidio NER (spaCy model)</td><td>Person names, organisations, emails, phones, credit cards, IBANs</td></tr>
+      </table>
+      <p>Detected values are replaced with indexed placeholders (<code>[PERSON_1]</code>, <code>[NRIC_1]</code>…) <em>before</em> the prompt is assembled. The model only ever sees placeholders — it has no way to know a real name was ever there. After the model responds, the placeholders are swapped back using a reversible token map that lives only in the backend process's memory for the duration of the request.</p>
+      <pre><code>What the lawyer types:
+  "Advise on Tan Ah Kow (NRIC S1234567A), owes Acme Pte Ltd S$45,000, call +65 9123 4567"
+
+What the AI model receives:
+  "Advise on [PERSON_1] (NRIC [NRIC_1]), owes [ORG_1] S$45,000, call [PHONE_1]"
+
+What the lawyer gets back:
+  Real names, restored automatically. The model never had them.</code></pre>
+
+      <h3>A bug we found and fixed — told straight, because that's the point of this page</h3>
+      <p>An earlier version restored placeholders with a naive find-and-replace. Once a document had ten or more entities of the same type, <code>[PERSON_1]</code> would match as a <em>substring</em> of <code>[PERSON_10]</code>, <code>[PERSON_11]</code>, etc., corrupting the restore for every double-digit entity. We rewrote restoration as a single regex pass over whole tokens (<code>\[[A-Z][A-Z_]*_\d+\]</code>), added a regression test that plants twelve NRICs in one fixture and asserts every one restores to exactly its own value, and now count any leftover placeholder-shaped text in the audit log so a mangled restore is detectable, not silent. We're disclosing this because a security page that only lists what's perfect isn't credible — a page that shows what broke and how it's tested against now is.</p>
+
+      <h3>Three things reviewers usually probe</h3>
+      <ul>
+        <li><strong>The search index is masked too.</strong> Uploaded case documents are shielded <em>before</em> chunking and embedding, so the vector database only ever stores placeholder text — even the search index itself never holds a raw NRIC or name. The per-case token map lives in a local SQLite column.</li>
+        <li><strong>Degradation is loud, not silent.</strong> If the NER model fails to load, the app shows a red "PII shield degraded — names not masked" banner and reports it in <code>/api/health</code>. The regex layer (NRIC, phones, emails, UEN…) keeps working regardless — only free-text name/organisation detection depends on the NER model.</li>
+        <li><strong>You can inspect it live, not just read about it.</strong> Settings → Confidentiality has a "paste anything — see exactly what the AI sees" panel. Bring your own test data and check coverage before you trust it with anything real.</li>
+      </ul>
+
+      <h2 id="egress">4. The egress lock — incapable, not just configured</h2>
+      <p>Most "your data stays local" claims are a configuration choice — a setting that could be flipped, a call that could be added in the next release without anyone noticing. Legal Box makes it a structural property of the running process instead.</p>
+      <p>At startup the backend patches its own socket layer: any attempt to open a connection to a non-loopback address raises an error before any network I/O happens. The only sanctioned peer is the local Ollama runtime. The Electron shell has an equivalent allowlist on the UI side. This means a bug, a misbehaving dependency, or a malicious document can't quietly exfiltrate anything — the connection is refused at the socket, not filtered after the fact.</p>
+      <pre><code># backend/egress_guard.py — actual behaviour, not a mock-up
+socket.connect(("8.8.8.8", 53))
+PermissionError: Egress blocked by Legal Box confidentiality guard:
+refusing outbound connection to '8.8.8.8'. All processing is local-only by design.
+
+socket.connect(("127.0.0.1", 11434))     # Ollama — allowed
+socket.connect(("192.168.1.1", 443))     # anything else — blocked, no exceptions</code></pre>
+      <div class="callout warn">
+        <strong>Two real egress sources we found and closed during hardening</strong> — again, disclosed rather than buried: the vector database's telemetry library phones home by default on an opt-out basis (now disabled at construction, before it ever runs), and the local embedding model used to download itself from Hugging Face on first use (it now ships inside the app, with offline mode forced at the environment level so nothing can silently try). <code>GET /api/health</code> reports <code>"egress_locked": true</code> while the guard is active, and CI runs the full endpoint test suite with a hard assertion that no code path ever leaves loopback.
+      </div>
+
+      <h2 id="data-at-rest">5. Data at rest</h2>
+      <ul>
+        <li>All user data lives in one folder (<code>~/Library/Application Support/OTG Legal Box/</code> on macOS; <code>%APPDATA%\OTG Legal Box\</code> on Windows).</li>
+        <li>The search index stores masked text only; original PDFs are retained for provenance and re-indexing.</li>
+        <li>The token maps sit beside the data, so this is <strong>AI-exposure hygiene, not encryption</strong> — we say this plainly rather than overselling it. For loss-or-theft protection, enable FileVault (macOS) or BitLocker (Windows) full-disk encryption — this is a hard requirement in our own deployment checklist, not an optional nicety.</li>
+        <li>The audit log records metadata only: action, timestamp, duration, and PII <em>counts</em> — never document content or the masked values. Every entry carries <code>"network": "local_only"</code>.</li>
+        <li>One-click erasure: Settings → About → "Remove all data…" wipes the entire data folder (type-ERASE confirmation), for clean offboarding or machine handover — verified by a test that plants files and asserts the folder is empty afterward.</li>
+      </ul>
+
+      <h2 id="testing">6. Testing &amp; CI — the test suite is the actual contract</h2>
+      <p>Marketing claims are cheap. Here is what runs on every push, and fails the build if it doesn't hold:</p>
+      <ul>
+        <li><strong>No-leak:</strong> synthetic Singapore legal documents (letters of demand, affidavits, sale-and-purchase agreements, chronology memos) with manifests of every planted PII value — none may ever appear in a prompt captured on its way to the model, across all nine AI-facing endpoints.</li>
+        <li><strong>Round-trip identity:</strong> mask-then-restore must reproduce the original text byte-for-byte, including a regression fixture with fourteen entities of the same type (the exact scenario the bug in §3 broke).</li>
+        <li><strong>Collision guards:</strong> a Singapore postal code must never be misread as a bank account; a bare ISO date must never be masked; a Luhn-invalid number that merely looks like a card must be left alone.</li>
+        <li><strong>Egress enforcement:</strong> connections to public and private non-loopback addresses must raise a <code>PermissionError</code>; loopback connections must pass through untouched.</li>
+        <li><strong>Endpoint round trips:</strong> a fake model that echoes back placeholder tokens verifies every one of the nine LLM-facing endpoints — including the bundle-authorities tool, the one gap our own review found and closed.</li>
+        <li><strong>Benchmark:</strong> a per-entity precision/recall harness against a gold-labelled corpus; recall must not regress on any entity type between releases.</li>
+      </ul>
+      <p>Current status: <span class="ok">47 tests passing</span>, 4 skipped only in sandboxes that can't download the optional large NER model (they run fully in CI). Reproduce it yourself: <code>cd backend &amp;&amp; pytest tests/ -q</code>.</p>
+
+      <h2 id="supply-chain">7. Supply chain</h2>
+      <table>
+        <tr><th>Component</th><th>What runs</th><th>License</th></tr>
+        <tr><td>Language model</td><td>Gemma 4 (e4b / 26b / 31b, sized to your hardware) via Ollama, fully local</td><td>Gemma Terms / MIT</td></tr>
+        <tr><td>PII detection</td><td>Presidio + Singapore recognizers, spaCy NER</td><td>MIT</td></tr>
+        <tr><td>Document parsing</td><td>pdfplumber + MarkItDown (fast, default) or Docling (layout-accurate); optional Tesseract OCR for scanned files</td><td>MIT / Apache 2.0</td></tr>
+        <tr><td>Search</td><td>ChromaDB + sentence-transformers embeddings (bundled, telemetry off)</td><td>Apache 2.0</td></tr>
+        <tr><td>Bundle / redline output</td><td>pypdf + reportlab (bundle PDFs), python-docx (real Word tracked changes)</td><td>BSD / MIT</td></tr>
+        <tr><td>Desktop shell</td><td>Electron, React, Vite, Tailwind</td><td>MIT</td></tr>
+      </table>
+      <p>Every third-party component, its exact license, and how it's used is recorded in the project's <code>NOTICE.md</code> — including which projects were adapted for content (Anthropic's claude-for-legal, Apache 2.0) and which were used only to prepare data during development and never shipped in the product (worldwidelaw/legal-sources, AGPL — the boundary is documented explicitly). There is no AGPL code in the shipped application; an earlier PDF library was replaced specifically to keep that true.</p>
+
+      <h2 id="comparison">8. vs. cloud AI tools</h2>
+      <table>
+        <tr><th></th><th>OTG Legal Box</th><th>ChatGPT / Copilot / a raw API</th></tr>
+        <tr><td>Where inference happens</td><td>On your own hardware</td><td>On the vendor's servers</td></tr>
+        <tr><td>Can the vendor train on your prompts?</td><td><span class="fcross">N/A — there is no vendor in the loop</span></td><td>Depends on the plan and settings; a DPA is a promise, not a technical barrier</td></tr>
+        <tr><td>Personal data masked before the model sees it</td><td><span class="fcheck">✓</span> automatically, every request</td><td>Manual, if at all</td></tr>
+        <tr><td>Works with the internet off</td><td><span class="fcheck">✓</span> after first-launch setup</td><td><span class="fcross">✗</span></td></tr>
+        <tr><td>Enforced network isolation</td><td><span class="fcheck">✓</span> socket-level, not a setting</td><td>N/A — internet access is the product</td></tr>
+        <tr><td>Auditable / source-reviewable</td><td><span class="fcheck">✓</span> — this page, the test suite, and the source itself</td><td>Closed model, closed infrastructure</td></tr>
+        <tr><td>Ongoing per-seat cost</td><td>One-time license or self-hosted free</td><td>Recurring, usage- or seat-based</td></tr>
+      </table>
+      <p>This isn't a claim that local models match frontier cloud models on every task — they don't, yet. It's a statement about where the tradeoff sits for confidential legal work: for firms where "did our data leave the building" is the first question a client asks, the architecture matters more than the last few points of benchmark quality.</p>
+
+      <h2 id="self-host">9. Self-hosting</h2>
+      <p>The core engine — the PII shield, the egress guard, the document tools, the desktop app — is <strong>MIT-licensed</strong> (see <code>LICENSE</code>). We're in the process of publishing the source repository; until it's public, email us and we'll send access directly — no sales call required, and no cost to run it yourself once you have it:</p>
+      <pre><code>git clone &lt;repository URL — provided on request&gt;
+cd legal-box
+./setup.sh        # installs Python + Node dependencies, downloads the NER model
+./start.sh         # runs the app in developer mode
+
+# or build a distributable installer:
+./scripts/build-app.sh</code></pre>
+      <p>Full build and packaging instructions are in <code>BUILD-GUIDE.md</code>; the developer install path is in <code>README.md</code>. If your firm has an engineer who can run a shell script, this is a legitimate, fully-supported way to run Legal Box for free, forever, with no contract required.</p>
+      <div class="callout good">
+        <strong>What you're paying for, if you choose the managed option, is not the software.</strong> It's someone else doing the hardware sourcing, the on-site install, the staff training, the model tuning to your practice areas, and picking up the phone when something breaks — not a fee for access to features the self-hosted version doesn't have. See the homepage for how that's structured.
+      </div>
+
+      <h2 id="verify">10. Verify it yourself — the five-minute script</h2>
+      <ol>
+        <li><strong>Turn Wi-Fi off first.</strong> Then run Chat, Contract Review, Summarize, Chronology. Everything works.</li>
+        <li><strong>Open Settings → Confidentiality.</strong> Paste your own test text; confirm the masked version is what you'd accept a third party seeing (there is no third party — but the point stands).</li>
+        <li><strong>Check the sockets.</strong> <code>lsof -i -P | grep -iE 'legalbox|ollama'</code> — every connection is <code>127.0.0.1</code>. Run Little Snitch or GlassWire for the same conclusion with a GUI.</li>
+        <li><strong>Read the audit log.</strong> Metadata only, PII counts only, <code>local_only</code> on every line.</li>
+        <li><strong>Read the source.</strong> <code>backend/pii_shield.py</code> and <code>backend/egress_guard.py</code> are under 400 lines combined, deliberately kept small enough to actually review — request access (§9) and read them yourself rather than taking this page's word for it.</li>
+      </ol>
+
+      <h2 id="limitations">11. Limitations — stated plainly</h2>
+      <ul>
+        <li>PII detection is very strong on structured identifiers (NRIC, UEN, phones — 100% recall on our benchmark corpus) and good-but-not-perfect on free-text names, especially non-Western names where the underlying NER model has weaker training coverage; the live preview exists precisely so you can check coverage on your own documents, and a human lawyer reviews all output regardless.</li>
+        <li>Data at rest relies on OS full-disk encryption rather than app-level cryptography (see §5) — an honest tradeoff for a desktop appliance, not a gap we're hiding.</li>
+        <li>Server mode (one Mac Mini serving a firm over office Wi-Fi) currently trusts the office network; per-user authentication is on the roadmap, and the recommended pilot configuration is single-machine desktop mode until that ships.</li>
+        <li>AI output quality is bounded by the local model, which trails the largest cloud models on some tasks; every result is labelled a draft for a qualified lawyer's review.</li>
+        <li>Installers are not yet code-signed, so first install requires a one-time Gatekeeper/SmartScreen bypass (documented in <code>INSTALL.md</code>) — signing is in progress.</li>
+      </ul>
+
+      <h2 id="faq">12. FAQ</h2>
+      <h3>Why not just use ChatGPT Enterprise or Azure OpenAI with a DPA?</h3>
+      <p>A Data Processing Agreement is a legal promise about how a vendor will handle data that still leaves your building. Legal Box's answer to "does it leave the building" is architectural, not contractual — there's no vendor to sign an agreement with because there's no vendor in the data path. Both approaches can be legitimate depending on a firm's risk posture; we simply don't ask a client to trust a policy when a socket-level guard is available instead.</p>
+      <h3>Is the local model as good as GPT-4-class models?</h3>
+      <p>Not on every benchmark, no — that gap has been narrowing every quarter and is real to acknowledge. The product lets you pick the largest model your hardware can run, and every output is explicitly a draft for a qualified lawyer's review, not a final answer.</p>
+      <h3>What happens if the AI model itself is malicious or compromised?</h3>
+      <p>Ollama and the model weights are pulled from their official sources at install time and never fetched again without an explicit user action. This is supply-chain trust, not a technical guarantee — it's listed honestly in §1 as something the architecture reduces but doesn't eliminate.</p>
+      <h3>Can I run this on a shared office machine for multiple lawyers?</h3>
+      <p>Yes — Server mode does this today over office Wi-Fi — but per-user authentication isn't built yet (§11), so we currently recommend it only within a firm's existing trusted network, and desktop mode for anything beyond that.</p>
+
+      <p style="margin-top:3rem; border-top:1px solid var(--border); padding-top:1.5rem;">
+        Found something in this page that doesn't hold up, or want to inspect deeper? <a href="mailto:haojun@ontheground.agency?subject=Legal%20Box%20technical%20review">haojun@ontheground.agency</a> — including security disclosures.
+      </p>
+    </article>
+  </div>
+
+</body>
+</html>

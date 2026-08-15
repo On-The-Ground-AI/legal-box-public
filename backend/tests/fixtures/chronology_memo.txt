@@ -1,0 +1,15 @@
+INTERNAL MEMO — DISPUTE CHRONOLOGY
+Matter: Havelock Logistics Pte Ltd (UEN 201598765K) v. Tan Wei Ming
+
+Prepared by: Nurul Ain Binte Hassan, Associate
+
+Key events assembled from discovery documents:
+
+2024-11-03  Supply contract signed. Contract reference SC-2024-1103.
+2025-01-15  First delivery rejected at the warehouse, Block 5 Toh Guan Road East, #01-44, Singapore 608831. Warehouse manager David Chen (mobile 96543210) recorded the rejection.
+2025-02-20  Defendant emailed weiming.tan@logistics.example.com stating the goods were non-conforming.
+2025-04-01  Payment of the disputed invoice (S$120,500) demanded. The Defendant's NRIC as stated on the personal guarantee is S8123456F.
+2025-06-30  Statutory demand served. See DC/S 789/2025.
+2026-01-10  Mediation at the Singapore Mediation Centre failed after two sessions.
+
+Note: the limitation period expires 6 years from breach. The relevant invoice numbers are INV-2025-0042 and INV-2025-0043; order quantity was 20240115 units in aggregate across the disputed period (a coincidence flagged by the client — this is a quantity, not a date or account number).

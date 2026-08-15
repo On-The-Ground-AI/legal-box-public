@@ -1,0 +1,263 @@
+/* Legal Box — Live Demo styles. Palette matches landing/index.html so the
+   demo feels like part of the same site, not a bolted-on tool. */
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #0a0a0f;
+  --surface: #12121a;
+  --surface-2: #1a1a26;
+  --border: #2a2a3a;
+  --text: #e8e8f0;
+  --text-muted: #8888a0;
+  --accent: #6e8efb;
+  --accent-glow: #4a6cf7;
+  --gold: #c9a84c;
+  --gold-muted: #a08530;
+  --good: #4ade80;
+  --bad: #f87171;
+  --warn: #fbbf24;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  min-height: 100vh;
+}
+
+a { color: var(--accent); }
+
+/* ── Top bar ─────────────────────────────────────────────────────────── */
+
+.demo-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  background: rgba(10, 10, 15, 0.9);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  flex-wrap: wrap;
+}
+.demo-topbar .logo { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; }
+.demo-topbar .logo span { color: var(--gold); }
+.demo-topbar .logo .pill {
+  font-size: 0.65rem; font-weight: 700; color: var(--gold-muted);
+  border: 1px solid var(--gold-muted); border-radius: 99px; padding: 0.1rem 0.5rem;
+  margin-left: 0.5rem; vertical-align: middle; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.demo-topbar .right { display: flex; align-items: center; gap: 1rem; font-size: 0.85rem; color: var(--text-muted); }
+.demo-topbar .back-link { color: var(--text-muted); text-decoration: none; font-size: 0.85rem; }
+.demo-topbar .back-link:hover { color: var(--text); }
+#quota-indicator { font-variant-numeric: tabular-nums; }
+#quota-indicator.low { color: var(--warn); }
+#quota-indicator.zero { color: var(--bad); }
+
+/* ── Disclaimer banner ───────────────────────────────────────────────── */
+
+.disclaimer-banner {
+  background: linear-gradient(90deg, rgba(201,168,76,0.12), rgba(201,168,76,0.04));
+  border-bottom: 1px solid var(--border);
+  padding: 0.7rem 1.5rem;
+  font-size: 0.82rem;
+  color: var(--text);
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+.disclaimer-banner strong { color: var(--gold); }
+.disclaimer-banner .icon { flex: none; }
+
+/* ── Tabs ────────────────────────────────────────────────────────────── */
+
+.tabs {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.75rem 1.5rem 0;
+  overflow-x: auto;
+  border-bottom: 1px solid var(--border);
+}
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font: inherit;
+  font-size: 0.86rem;
+  font-weight: 600;
+  padding: 0.65rem 0.9rem;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+  transition: color 0.15s, border-color 0.15s;
+}
+.tab-btn:hover { color: var(--text); }
+.tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+main { max-width: 980px; margin: 0 auto; padding: 1.75rem 1.5rem 5rem; }
+
+.tab-panel { display: none; }
+.tab-panel.active { display: block; }
+
+.tool-intro { margin-bottom: 1.5rem; }
+.tool-intro h1 { font-size: 1.4rem; margin-bottom: 0.35rem; }
+.tool-intro p { color: var(--text-muted); font-size: 0.92rem; max-width: 70ch; }
+
+/* ── Cards / fields ──────────────────────────────────────────────────── */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+.card h3 { font-size: 0.95rem; margin-bottom: 0.75rem; color: var(--text); }
+.field { margin-bottom: 0.9rem; }
+.field label { display: block; font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.3rem; }
+.field-row { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.field-row > .field { flex: 1; min-width: 180px; }
+
+input[type=text], input[type=search], textarea, select {
+  width: 100%;
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  font: inherit;
+  font-size: 0.88rem;
+  resize: vertical;
+}
+input[type=text]:focus, input[type=search]:focus, textarea:focus, select:focus {
+  outline: none; border-color: var(--accent);
+}
+textarea { min-height: 140px; font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace; font-size: 0.82rem; }
+input[type=file] { font-size: 0.8rem; color: var(--text-muted); }
+
+/* ── Buttons ─────────────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text);
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: filter 0.15s, transform 0.05s;
+}
+.btn:hover { filter: brightness(1.15); }
+.btn:active { transform: translateY(1px); }
+.btn:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-primary { background: linear-gradient(135deg, var(--accent-glow), var(--accent)); border-color: transparent; color: #fff; }
+.btn-gold { background: transparent; border-color: var(--gold-muted); color: var(--gold); }
+.btn-sm { padding: 0.35rem 0.7rem; font-size: 0.78rem; }
+
+/* ── Sample document picker ──────────────────────────────────────────── */
+
+.sample-picker { margin-bottom: 0.9rem; }
+.sample-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+.sample-chip {
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  border-radius: 8px;
+  padding: 0.5rem 0.7rem;
+  font-size: 0.78rem;
+  max-width: 260px;
+}
+.sample-chip .name { font-weight: 600; display: block; margin-bottom: 0.2rem; }
+.sample-chip .desc { color: var(--text-muted); font-size: 0.72rem; display: block; margin-bottom: 0.4rem; }
+.sample-chip .actions { display: flex; gap: 0.4rem; }
+
+/* ── Output / results ────────────────────────────────────────────────── */
+
+.output-box {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem;
+  white-space: pre-wrap;
+  font-size: 0.88rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+.output-box.empty { color: var(--text-muted); font-style: italic; }
+.output-actions { display: flex; gap: 0.5rem; margin-top: 0.6rem; }
+
+.pii-summary-line {
+  font-size: 0.78rem;
+  color: var(--gold);
+  border-left: 2px solid var(--gold-muted);
+  padding-left: 0.6rem;
+  margin: 0.6rem 0;
+}
+mark.pii-token {
+  background: rgba(201, 168, 76, 0.25);
+  color: var(--gold);
+  border-radius: 4px;
+  padding: 0 0.15rem;
+  font-family: ui-monospace, monospace;
+  font-size: 0.85em;
+}
+
+.status-line { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.5rem; }
+.status-line.error { color: var(--bad); }
+.spinner {
+  display: inline-block; width: 0.9em; height: 0.9em; border-radius: 50%;
+  border: 2px solid var(--border); border-top-color: var(--accent);
+  animation: spin 0.7s linear infinite; vertical-align: -0.15em;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Chat ────────────────────────────────────────────────────────────── */
+
+#chat-log { display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem; max-height: 50vh; overflow-y: auto; }
+.chat-bubble { max-width: 80%; padding: 0.7rem 0.9rem; border-radius: 10px; font-size: 0.88rem; white-space: pre-wrap; }
+.chat-bubble.user { align-self: flex-end; background: var(--accent-glow); color: #fff; }
+.chat-bubble.model { align-self: flex-start; background: var(--surface-2); border: 1px solid var(--border); }
+.chat-input-row { display: flex; gap: 0.6rem; }
+.chat-input-row textarea { min-height: 52px; flex: 1; }
+
+/* ── Tables ──────────────────────────────────────────────────────────── */
+
+table.demo-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; }
+table.demo-table th, table.demo-table td { text-align: left; padding: 0.5rem 0.6rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+table.demo-table th { color: var(--text-muted); font-weight: 600; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.03em; }
+
+/* ── Bundle item rows ────────────────────────────────────────────────── */
+
+.bundle-item-row { display: grid; grid-template-columns: 1fr 130px auto; gap: 0.5rem; margin-bottom: 0.5rem; align-items: center; }
+.bundle-item-row .remove-btn { background: none; border: none; color: var(--bad); cursor: pointer; font-size: 1rem; }
+
+/* ── Prompt library ──────────────────────────────────────────────────── */
+
+.prompt-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 1rem; margin-bottom: 0.75rem; }
+.prompt-card h4 { font-size: 0.92rem; margin-bottom: 0.2rem; }
+.prompt-card .meta { font-size: 0.7rem; color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.03em; }
+.prompt-card pre { white-space: pre-wrap; font-family: ui-monospace, monospace; font-size: 0.8rem; background: var(--surface-2); padding: 0.7rem; border-radius: 8px; margin-bottom: 0.6rem; border: 1px solid var(--border); }
+.prompt-card .actions { display: flex; gap: 0.5rem; }
+
+.search-result { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0.9rem; margin-bottom: 0.6rem; }
+.search-result .filename { font-weight: 600; font-size: 0.86rem; }
+.search-result .snippet { font-size: 0.82rem; color: var(--text-muted); margin-top: 0.35rem; }
+.search-result label { display: flex; align-items: center; gap: 0.4rem; font-size: 0.78rem; margin-top: 0.5rem; color: var(--text-muted); }
+
+.badge { display: inline-block; font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.03em; border: 1px solid var(--border); border-radius: 99px; padding: 0.1rem 0.5rem; color: var(--text-muted); margin-right: 0.3rem; }
+
+@media (max-width: 640px) {
+  main { padding: 1.25rem 1rem 4rem; }
+  .demo-topbar { padding: 0.85rem 1rem; }
+  .bundle-item-row { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,12 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability (private)
+    url: https://github.com/On-The-Ground-AI/legal-box/security/policy
+    about: >-
+      Do NOT open a public issue for a PII leak, egress escape, or any
+      confidential-data exposure. Report it privately per SECURITY.md.
+  - name: Installation & commercial enquiries
+    url: mailto:haojun@ontheground.agency
+    about: >-
+      Want OTG to install and set up Legal Box at your firm, or discuss a
+      pilot? Email us — the software is free; you pay only for the work.

@@ -1,0 +1,19 @@
+{
+  "description": "Sale & purchase agreement extract with UEN, credit card (Luhn-valid), a/c-gated bank account",
+  "regex_pii": {
+    "NRIC": ["S9012345E"],
+    "UEN": ["202254321H"],
+    "PASSPORT": ["K1234567J"],
+    "CREDIT_CARD": ["4111 1111 1111 1111"],
+    "BANK_ACCT": ["555123456789"],
+    "EMAIL": ["finance@goldenorchid.example.sg"],
+    "PHONE": ["62345678"],
+    "ADDRESS": ["Block 71 Ayer Rajah Crescent"],
+    "POSTAL_CODE": ["139951", "419139"]
+  },
+  "ner_pii": {
+    "PERSON": ["Wong Mei Ling", "Harvinder Singh s/o Ajit Singh", "Teo Chee Hean"],
+    "ORG": ["GOLDEN ORCHID INVESTMENTS PTE LTD"]
+  },
+  "must_survive": ["2 April 2026", "S$2,850,000", "12 weeks", "expiry 08/28"]
+}

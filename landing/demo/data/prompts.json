@@ -1,0 +1,3138 @@
+[
+{
+"id": "V1F-legalaip-0170",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 CITATION DISCIPLINE: SOURCE VERIFICATION",
+"text": "**PROMPT ID:** CITE-002\n\n\"I'm going to check your citations. For each case you cite, provide:\n\n(1) Full case name and citation (e.g., 'Smith v. Jones, 123 F.3d 456 (5th Cir. 2005)')\n(2) One-sentence statement of the holding\n(3) How this case supports your argument\n\nDo not cite cases you're not 100% confident about. If you're not sure about a citation, flag it as [UNCERTAIN: I'm not confident this case supports this proposition].\"",
+"context": "Ensuring citation accuracy",
+"difficulty": "Beginner",
+"follow_up": "Verify citations in Westlaw/Lexis before using\n\n---\n\n## SECTION 16: SPECIALIZED TECHNIQUES\n\nAdvanced prompting for specific legal tasks.\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"ip",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0165",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 COMPARATIVE ANALYSIS: MULTI-JURISDICTION STRATEGY",
+"text": "**PROMPT ID:** COMP-002\n\n\"We can pursue [business objective] in [State A], [State B], or [State C]. Compare the regulatory path in each jurisdiction:\n\nFor each state, analyze:\n- Applicable regulations\n- Key requirements\n- Regulatory hurdles we'd face\n- Timeline for approval\n- Cost\n- Likelihood of approval\n- If approved, enforceability in other states\n- Strategic advantages and disadvantages\n\nRecommend which jurisdiction we should pursue first and why.\"",
+"context": "Multi-state expansion planning",
+"difficulty": "Intermediate",
+"follow_up": "Use with PROMPT 23 (multi-jurisdictional comparison)\n\n---\n\n## SECTION 14: RISK-CALIBRATED PROMPTING\n\nAdjust prompt detail based on matter risk.\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0151",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 FEW-SHOT: ARGUMENT STRUCTURE",
+"text": "**PROMPT ID:** FEWSHOT-003\n\n\"Here are two examples of how I want arguments structured in a brief:\n\nEXAMPLE 1 [Paste example of argument structure you prefer]\n\nEXAMPLE 2 [Paste second example]\n\nNotice the structure: [Describe the pattern\u2014headings, flow, use of citations, etc.]\n\nNow write an argument section on [topic] using this same structure and approach.\"",
+"context": "Brief writing",
+"difficulty": "Intermediate",
+"follow_up": "Use to standardize argument structure\n\n---\n\n## SECTION 8: NEGATIVE PROMPTING\n\nTell AI what NOT to do. This prevents hallucination and guardrails bad behavior.\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0150",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 FEW-SHOT: LEGAL WRITING STYLE",
+"text": "**PROMPT ID:** FEWSHOT-002\n\n\"Here's an example of how I want you to write legal analysis. This is the style and depth I'm looking for:\n\n[Paste example of your preferred legal writing\u2014actual memo or brief excerpt]\n\nNow write analysis of [new issue] using this same style, depth, and structure. Match the level of formality and the amount of detail.\"",
+"context": "Consistent legal writing",
+"difficulty": "Beginner",
+"follow_up": "Use to train AI on your firm's writing standards\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0147",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 JURISDICTION ANCHORING: MULTI-JURISDICTIONAL COMPARISON",
+"text": "**PROMPT ID:** JURIS-002\n\n\"We operate in [State A], [State B], and [State C]. Analyze how [legal issue] is treated differently in each jurisdiction:\n\nFormat as a table with columns: (1) State, (2) Legal Standard, (3) Key Cases/Statutes, (4) Practical Impact for Our Business, (5) Recommended Approach.\n\nCRITICAL: Do not provide a generic answer. Provide jurisdiction-specific analysis. If the law is unsettled in any jurisdiction, flag it.\"",
+"context": "Multi-state operations",
+"difficulty": "Intermediate",
+"follow_up": "Use with PROMPT 10 (table format) for easy comparison\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0136",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 OUTPUT FORMAT: EXECUTIVE SUMMARY + Q&A",
+"text": "**PROMPT ID:** FORMAT-003\n\n\"Provide output in two sections: (1) EXECUTIVE SUMMARY (1 page, plain English, no legal jargon), (2) DETAILED Q&A (organized as Q: [common question] A: [clear answer]). The Executive Summary should be a non-lawyer could understand. The Q&A should prepare the management team for questions they'll receive.\"",
+"context": "Client communication / management briefings",
+"difficulty": "Beginner",
+"follow_up": "Use when explaining complex issues to non-lawyer stakeholders\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0135",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 OUTPUT FORMAT: NUMBERED LEGAL MEMO",
+"text": "**PROMPT ID:** FORMAT-002\n\n\"Draft a legal memorandum with this structure: I. ISSUE (one sentence), II. BRIEF ANSWER (2-3 sentences), III. FACTS (numbered list), IV. ANALYSIS (organized by legal standard: A. Element One, B. Element Two, etc.), V. CONCLUSION (with specific recommendation). Use formal legal memo format. Assume the reader is a busy partner who will read only the Brief Answer and Conclusion unless she needs details.\"",
+"context": "Legal analysis for attorney review",
+"difficulty": "Beginner",
+"follow_up": "Use when you need formal work-product for client files\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0134",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 OUTPUT FORMAT: STRUCTURED TABLE",
+"text": "**PROMPT ID:** FORMAT-001\n\n\"Create a comparison table of [options] with these columns: (1) Option Name, (2) Key Advantages, (3) Key Disadvantages, (4) Implementation Timeline, (5) Estimated Cost, (6) Regulatory Risk. Use a format I can copy directly into Word or Excel. Make the table concise\u2014each cell should be 2-3 sentences maximum.\"",
+"context": "Comparative analysis across options",
+"difficulty": "Beginner",
+"follow_up": "Use when you need output that's immediately usable for client presentations\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0166",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 RISK-CALIBRATED: LOW-RISK MATTER (SIMPLE REQUEST)",
+"text": "**PROMPT ID:** RISK-LOW-001\n\nFor low-risk matters (advisory work, non-litigation, no enforcement risk):\n\n\"Quick question: [Issue]. What's the short answer and any important caveats?\"\n\nThis is appropriate when:\n- Client has no regulatory exposure\n- Litigation is unlikely\n- Cost of error is low\n- You just need general guidance",
+"context": "Routine advisory work",
+"difficulty": "Beginner",
+"follow_up": "If answer is concerning, escalate to detailed analysis\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"litigation",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0167",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 RISK-CALIBRATED: MEDIUM-RISK MATTER (DETAILED REQUEST)",
+"text": "**PROMPT ID:** RISK-MED-001\n\nFor medium-risk matters (litigation possible, regulatory exposure, material impact):\n\nUse PROMPT 1 (ABCDE framework) plus PROMPT 18 (confidence disclosure) plus PROMPT 20 (gap identification).\n\nRequest format:\n\"Analyze [issue] using the ABCDE framework. Include confidence disclosure and gap identification. What additional facts would we need to be more confident?\"",
+"context": "Business-critical matters",
+"difficulty": "Intermediate",
+"follow_up": "Share analysis with co-counsel for review\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"litigation",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0145",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 SELF-CHECKING: ASSUMPTION FLAGGING",
+"text": "**PROMPT ID:** CHECK-004\n\n\"Analyze [issue] but FIRST list every assumption you're making. Format:\n\nASSUMPTIONS I'M MAKING:\n1. [Assumption]\u2014Is this correct? If not, [how it changes the analysis]\n2. [Assumption]\u2014Is this correct? If not, [how it changes the analysis]\n[etc.]\n\nANALYSIS: [Based on above assumptions, here's my analysis]\n\nALTERNATE SCENARIOS: If any assumption is wrong, here's what changes...\"",
+"context": "Complex fact patterns",
+"difficulty": "Beginner",
+"follow_up": "Use when fact pattern is unclear or partial\n\n---\n\n## SECTION 6: JURISDICTION ANCHORING\n\nLegal analysis varies wildly by jurisdiction. Force AI to focus on the right jurisdiction.\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0172",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 SPECIALIZED: PRECEDENT SYNTHESIS",
+"text": "**PROMPT ID:** SPEC-002\n\n\"Synthesize the following cases into a unified framework. What pattern do they establish? [Cite 5-10 related cases]\n\n(1) What common principle ties these cases together?\n(2) In which fact patterns does each case apply?\n(3) How do they build on each other?\n(4) Are there tensions or contradictions?\n(5) How would a court likely apply these principles to [our fact pattern]?\"",
+"context": "Complex case law research",
+"difficulty": "Advanced",
+"follow_up": "Use to develop legal theory\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"ip",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0157",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 TEMPERATURE: BALANCED MODE",
+"text": "**PROMPT ID:** TEMP-003\n\n\"I need balanced analysis. Identify both the strongest arguments we could make AND the strongest counterarguments opposing counsel could make. Don't advocate\u2014just lay out both sides fairly.\n\n[Your question]\n\nPresent both our strongest argument and theirs, with equal weight.\"",
+"context": "Risk assessment, early litigation evaluation",
+"difficulty": "Intermediate",
+"follow_up": "Use when you need to understand weaknesses in your position\n\n---\n\n## SECTION 10: DOCUMENT CHUNKING STRATEGY\n\nLong documents exceed AI context limits. Chunk them strategically.\n\n---",
+"placeholders": [],
+"tags": [
+"engineering",
+"foundations",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V1F-legalaip-0155",
+"volume": "volume-1-foundations",
+"volume_label": "Foundations & Techniques",
+"category": "Legal AI Prompt Engineering Masterclass",
+"title": "\u2014 TEMPERATURE: CONSERVATIVE MODE",
+"text": "**PROMPT ID:** TEMP-001\n\n\"I need a CONSERVATIVE analysis. Assume legal risk is significant and we need to be cautious. Flag every potential problem, not just the obvious ones. When the law is unclear, assume the more restrictive interpretation. This is regulatory compliance analysis where we need to be defensive.\n\n[Your question]\n\nErr on the side of caution in your analysis.\"",
+"context": "Compliance, regulatory, high-stakes matters",
+"difficulty": "Beginner",
+"follow_up": "Use for all regulatory and high-risk analysis\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"engineering",
+"foundations",
+"legal",
+"masterclass",
+"prompt",
+"techniques"
+]
+},
+{
+"id": "V2T-contract-0243",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "CLAUSE-BY-CLAUSE DEEP DIVE",
+"text": "Please read the following contract and provide a detailed clause-by-clause analysis. For each clause or section, provide: (1) SUMMARY - What does this clause say in plain English?; (2) INTENT - What is the purpose of this clause?; (3) RISK ASSESSMENT - Does this favor the other party, is it balanced, or does it favor us?; (4) COMMON ISSUES - What problems typically arise with this type of clause?; (5) NEGOTIATION POINTS - What changes would be beneficial?; (6) MARKET STANDARD - How does this compare to typical market language?. Organize in the order the clauses appear in the contract. Be thorough but concise for each clause.\n\n[CONTRACT TEXT]",
+"context": "Use for detailed contract evaluation, training purposes, or when you need to understand every provision thoroughly.",
+"difficulty": "Advanced",
+"follow_up": "A.6 (Red flag identification) or D.1 (Negotiation playbook)\n\n---",
+"placeholders": [
+"CONTRACT TEXT"
+],
+"tags": [
+"contract",
+"practice",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0252",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "COMPARE TWO VERSIONS OF SAME CONTRACT",
+"text": "Please compare the two versions of the [CONTRACT TITLE] contract (before and after our redline, or us vs. their redline). Identify all changes, deletions, and additions. For each change, explain: (1) CHANGE - What specifically changed?; (2) WHO PROPOSED IT - Did we propose it or did they?; (3) SIGNIFICANCE - Is this a major change, minor clarification, or housekeeping?; (4) RATIONALE - Why was this change made? What's the business or legal rationale?; (5) IMPACT - Does this change favor us, them, or is it neutral?; (6) ACCEPTABILITY - Should we accept this change, push back, or propose a compromise?. Organize changes by category: Scope Changes, Payment Changes, Liability Changes, Termination Changes, and Other. Provide a summary: Overall, does this version represent progress toward market-standard terms, or are we moving backward?\n\n[VERSION 1]\n[VERSION 2]",
+"context": "Use during negotiation cycles to track movement and understand each side's priorities and concerns.",
+"difficulty": "Intermediate",
+"follow_up": "B.3 (Generate redline comments) or D.2 (Prepare negotiation response)\n\n---",
+"placeholders": [
+"CONTRACT TITLE",
+"VERSION 1",
+"VERSION 2"
+],
+"tags": [
+"contract",
+"practice",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0244",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "COMPARISON AGAINST PLAYBOOK/STANDARD POSITIONS",
+"text": "I have attached a playbook of standard contract terms for [CONTRACT TYPE] that represents our ideal positions. Please compare the following contract against this playbook and identify: (1) WHERE WE'VE ACHIEVED OUR IDEAL POSITION; (2) WHERE WE'VE COMPROMISED ACCEPTABLY; (3) WHERE THE CONTRACT SIGNIFICANTLY DEVIATES FROM OUR PLAYBOOK (red flag these); (4) WHERE WE SHOULD PUSH BACK. Format as a table with columns: CLAUSE | OUR PLAYBOOK POSITION | CONTRACT LANGUAGE | GAP/DEVIATION | PRIORITY TO FIX. Summarize your overall assessment: What percentage of our playbook did we achieve? What are the top 5 things to renegotiate?\n\n[CONTRACT TEXT]\n[PLAYBOOK]",
+"context": "Use when you have documented standard positions and want to track whether this deal achieves them.",
+"difficulty": "Intermediate",
+"follow_up": "D.1 (Playbook-based negotiation strategy)\n\n---",
+"placeholders": [
+"CONTRACT TYPE",
+"CONTRACT TEXT",
+"PLAYBOOK"
+],
+"tags": [
+"contract",
+"practice",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-aiprompt-0339",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "AI Prompts for Corporate Governance",
+"title": "Draft Board Resolution for Capital Raise",
+"text": "You are a corporate lawyer assisting a Singapore private company preparing for a Series A funding round. Draft a comprehensive board resolution for the Board of Directors to approve the capital raising, including: (1) authorization to issue new shares at the proposed valuation; (2) approval of the term sheet terms; (3) delegation to the CEO and CFO to negotiate final SPA terms within specified parameters; (4) authorization to amend the constitution if required; (5) approval of related party transaction disclosure if applicable; (6) direction to the company secretary to lodge Form 45 (notification of change in shareholding) with ACRA within 30 days. The resolution should reflect Singapore Companies Act requirements, include recitals setting out business rationale, and specify any conditions precedent. Include provisions addressing investor board seat, protective provisions, and information rights.",
+"context": "When your company is raising venture capital and needs formal Board approval before signing legal documents",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 008 (Minutes of Board Meeting)\n\n---",
+"placeholders": [],
+"tags": [
+"corporate",
+"governance",
+"practice",
+"prompts",
+"singapore",
+"transactional"
+]
+},
+{
+"id": "V2T-contract-0253",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "IDENTIFY ALL MATERIAL DIFFERENCES BETWEEN TWO CONTRACTS",
+"text": "Please carefully compare these two contracts and identify every material difference, even if they're formatted differently or use different language to express similar ideas. Create a comprehensive list of differences organized by clause/section, with columns: ISSUE | VERSION A LANGUAGE | VERSION B LANGUAGE | SIGNIFICANCE | MATERIALLY IMPACTS. \"Material difference\" means it meaningfully affects rights, obligations, cost, risk, or enforceability. Ignore formatting, minor wordsmithing, and punctuation. Include differences even if they seem small (e.g., 10 days vs. 15 days, exclusive vs. non-exclusive). For each material difference, assess: Does this favor Party A, Party B, or is it neutral? Do we need to reconcile this, or can we live with different terms in different contracts?\n\n[CONTRACT A]\n[CONTRACT B]",
+"context": "Use when contracts with the same counterparty have diverged or when analyzing competing proposals.",
+"difficulty": "Intermediate",
+"follow_up": "B.1 (Track negotiation changes) or D.2 (Prepare response)\n\n---",
+"placeholders": [
+"CONTRACT A",
+"CONTRACT B"
+],
+"tags": [
+"contract",
+"practice",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0247",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "INTERNAL CONSISTENCY & CONTRADICTION CHECK",
+"text": "Please review the following contract for internal consistency and internal contradictions. Check: (1) DEFINITIONS - Are all defined terms used consistently? Do definitions contradict each other?; (2) DATES & TIMELINES - Are all dates and time periods consistent? Do any provisions reference dates that no longer make sense?; (3) OBLIGATIONS - Do obligations in one section contradict obligations in another?; (4) CROSS-REFERENCES - Check all clause references to ensure they're accurate; (5) CONDITIONALITY - Are conditions consistent (e.g., do provisions refer to events that contradict earlier definitions)?; (6) PAYMENT TERMS - Are payment terms consistent throughout?. For each inconsistency, identify the specific clauses involved and whether this creates ambiguity, risk, or an interpretation problem.\n\n[CONTRACT TEXT]",
+"context": "Use as a final quality check before signing. Contradictions can create enforcement and interpretation problems.",
+"difficulty": "Intermediate",
+"follow_up": "A.8 (Clause-by-clause analysis) if major issues found\n\n---",
+"placeholders": [
+"CONTRACT TEXT"
+],
+"tags": [
+"contract",
+"practice",
+"review",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0239",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "KEY TERMS EXTRACTION TABLE",
+"text": "You are a lawyer extracting key terms from a contract for a contract register. Please read the following contract and extract the key terms into a well-organized table with columns: TERM | VALUE/DEFINITION | CLAUSE REFERENCE | NOTES/OBSERVATIONS.\n\nInclude at least 20-30 key terms, organized by category: (1) Parties & Effective Date; (2) Scope of Services/Goods; (3) Payment Terms; (4) Duration & Termination; (5) Obligations; (6) Restrictions & Limitations; (7) Liability & Insurance; (8) Intellectual Property; (9) Confidentiality; (10) Dispute Resolution.\n\nFor complex terms, add brief explanatory notes. Restrict extraction to terms expressly stated in the contract \u2014 do not infer or assume terms not present.\n\n[CONTRACT TEXT]",
+"context": "Use for quick reference, contract database entry, or comparing against a checklist of standard terms.",
+"difficulty": "Beginner",
+"follow_up": "A.5 (Obligation mapping) or A.6 (Red flag identification)\n\n---",
+"placeholders": [
+"CONTRACT TEXT"
+],
+"tags": [
+"contract",
+"intellectual",
+"practice",
+"property",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0245",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "MISSING STANDARD CLAUSES",
+"text": "Please review the following contract and identify any standard clauses that are missing or inadequately addressed. For a [CONTRACT TYPE], standard provisions typically include: [LIST EXPECTED CLAUSES]. For each missing or inadequate clause, explain: (1) what clause is missing; (2) why it's important; (3) what risk exposure exists without it; (4) how it should be drafted or added. Organize by importance: CRITICAL (must add before signing), HIGH (strongly recommend adding), MEDIUM (nice to have). Also flag any clauses that exist but are unusually weak or vague.\n\n[CONTRACT TEXT]",
+"context": "Use to identify gaps and ensure comprehensive protection before signing.",
+"difficulty": "Intermediate",
+"follow_up": "C.1-C.13 (Draft the missing clauses)\n\n---",
+"placeholders": [
+"CONTRACT TYPE",
+"LIST EXPECTED CLAUSES",
+"CONTRACT TEXT"
+],
+"tags": [
+"contract",
+"practice",
+"review",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0240",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "OBLIGATION MAPPING",
+"text": "You are a lawyer preparing a compliance tracking document. Please read the following contract and create a detailed obligation map. Think through this step-by-step. For each party, list every obligation, commitment, or responsibility in the contract.\n\nFormat as follows:\n\n**[PARTY A NAME] Obligations:**\n- Obligation 1 | Timeline | Condition/Exception | Consequence if Breached | Clause Reference\n[etc.]\n\n**[PARTY B NAME] Obligations:**\n- Obligation 1 | Timeline | Condition/Exception | Consequence if Breached | Clause Reference\n[etc.]\n\nBe comprehensive and capture everything, including small details. Restrict your mapping to obligations expressly stated in the contract \u2014 do not infer obligations not present.\n\n[CONTRACT TEXT]",
+"context": "Use to ensure both parties understand their responsibilities, for compliance tracking, and to identify if one party is over-burdened.",
+"difficulty": "Intermediate",
+"follow_up": "A.7 (Red flag identification) or E.2 (Obligation tracking for administration)\n\n---",
+"placeholders": [
+"PARTY A NAME",
+"PARTY B NAME",
+"CONTRACT TEXT"
+],
+"tags": [
+"compliance",
+"contract",
+"practice",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0236",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "PLAIN ENGLISH SUMMARY (100 WORDS)",
+"text": "You are a lawyer summarising a contract for a non-lawyer client. Please read the following contract and provide a 100-word plain English summary. Focus on: what each party is agreeing to do, what they're paying, and when the contract ends. Avoid jargon. Start with \"In simple terms...\" and highlight the most important 2-3 points.\n\nRestrict your summary to the contract text provided. Do not make assumptions about terms not expressly stated.\n\n[CONTRACT TEXT]",
+"context": "Use when you need a quick, accessible overview for stakeholders who aren't lawyers. Good for internal briefing or client communication.",
+"difficulty": "Beginner",
+"follow_up": "A.2 (300-word summary for more detail)\n\n---",
+"placeholders": [
+"CONTRACT TEXT"
+],
+"tags": [
+"contract",
+"practice",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0237",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "PLAIN ENGLISH SUMMARY (300 WORDS)",
+"text": "You are a lawyer summarising a contract for a senior executive with no legal background. Please read the following contract and provide a 300-word plain English summary. Explain: (1) what the contract is for and who's involved; (2) key obligations and rights of each party; (3) payment terms and financial commitment; (4) how long it lasts and how it can end; (5) any unusual or important restrictions. Use short paragraphs and simple language. Highlight any points that seem risky or unusual.\n\nRestrict your summary to the contract text provided. Provide clause references for any unusual or important points you flag.\n\n[CONTRACT TEXT]",
+"context": "Use when presenting to senior management, board members, or clients who need a fuller picture but still in accessible language.",
+"difficulty": "Beginner",
+"follow_up": "A.3 (1-page summary) or A.4 (Key terms table)\n\n---",
+"placeholders": [
+"CONTRACT TEXT"
+],
+"tags": [
+"contract",
+"practice",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0241",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "RED FLAG IDENTIFICATION",
+"text": "You are a lawyer reviewing a contract on behalf of [PARTY \u2014 insert your client]. Please read the following contract and identify all red flags, concerns, or problematic provisions from our client's perspective. Think through this step-by-step.\n\nFor each red flag, explain: (1) clause reference; (2) what the issue is; (3) why it's concerning for our client specifically; (4) what the business impact could be; (5) what change we should request.\n\nOrganize by severity:\n- CRITICAL: must be fixed before signing\n- HIGH: significant risk, strongly recommend negotiating\n- MEDIUM: somewhat concerning, consider negotiating if time permits\n- LOW: minor issue, flag for awareness\n\nRestrict your analysis to the contract text provided. Do not make assumptions about market standard terms without noting your basis. Provide pinpoint clause references for every issue.\n\n[CONTRACT TEXT]",
+"context": "Use during initial contract review to identify deal-breakers and negotiation priorities.",
+"difficulty": "Intermediate",
+"follow_up": "D.1 (Negotiation playbook) or D.2 (Predict counterparty objections)\n\n---",
+"placeholders": [
+"CONTRACT TEXT"
+],
+"tags": [
+"contract",
+"practice",
+"review",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0246",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "REGULATORY COMPLIANCE REVIEW",
+"text": "Please review the following [JURISDICTION] contract for compliance with applicable laws and regulations, specifically: [PDPA/GDPR/data protection, consumer protection, employment laws, anti-corruption, sanctions, export controls, or other relevant regulations]. For each applicable regulation: (1) REQUIREMENT - What does the law require?; (2) CONTRACT LANGUAGE - How does the contract address this?; (3) GAP/RISK - Is there a gap or inadequate provision?; (4) RECOMMENDATION - What should be added or changed?. Organize by regulation. Highlight any CRITICAL compliance gaps that could expose the company to regulatory action or penalties.\n\n[CONTRACT TEXT]",
+"context": "Use when the contract is in a regulated industry or involves regulated activities (data handling, employment, exports, etc.).",
+"difficulty": "Advanced",
+"follow_up": "C.1-C.13 (Draft compliant clauses) or A.6 (Red flag identification)\n\n---",
+"placeholders": [
+"JURISDICTION",
+"CONTRACT TEXT"
+],
+"tags": [
+"compliance",
+"contract",
+"data",
+"employment",
+"practice",
+"review",
+"transactional",
+"work"
+]
+},
+{
+"id": "V2T-contract-0242",
+"volume": "volume-2-transactional",
+"volume_label": "Transactional Practice",
+"category": "Contract Work",
+"title": "RISK SCORING WITH RAG RATING",
+"text": "You are a lawyer preparing a risk assessment for senior management. Please read the following contract and score the risk level of each major clause using a RAG (Red-Amber-Green) rating system from the perspective of [PARTY \u2014 insert your client].\n\nFormat as a table with columns: CLAUSE | CLAUSE REFERENCE | RAG RATING | REASON | SUGGESTED FIX\n\nRatings:\n- R (Red/High Risk): Unacceptable or requires urgent negotiation before signing\n- A (Amber/Medium Risk): Tolerable but should be pushed back on\n- G (Green/Low Risk): Acceptable as drafted\n\nClause types to cover: Scope of Work, Payment Terms, Liability, IP, Data Protection, Termination, Confidentiality, Dispute Resolution, Regulatory Compliance, and any others that apply.\n\nThink through this step-by-step. Restrict your analysis to the contract text provided and cite clause references for every rating.\n\n[CONTRACT TEXT]",
+"context": "Use for executive risk assessment and to prioritise negotiation.",
+"difficulty": "Intermediate",
+"follow_up": "D.1 (Playbook) or D.2 (Counterparty objection prediction)\n\n---",
+"placeholders": [
+"CONTRACT TEXT"
+],
+"tags": [
+"compliance",
+"contract",
+"data",
+"ip",
+"practice",
+"transactional",
+"work"
+]
+},
+{
+"id": "V3D-aiprompt-0462",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "AI Prompts for Interlocutory Applications",
+"title": "Draft Mareva Injunction Application (Asset Preservation)",
+"text": "You are a litigation AI assistant. I am preparing an urgent Mareva injunction application under Singapore Rules of Court 2021, Order 29 Rule 1. The defendant has [DESCRIBE DEFENDANT ACTIONS: e.g., fraudulently diverted company funds, hidden assets, transferred property]. I need to establish: (1) a strong prima facie case of [SPECIFY BREACH: contract breach / tortious conduct / fraud]; (2) the balance of convenience heavily favours the injunction; and (3) risk of asset dissipation is real and imminent.\n\nPlease draft a comprehensive affidavit structure with:\n- Clear narrative of the defendant's suspicious asset movements (with dates, amounts, beneficial owners)\n- Evidence of deliberate concealment or transfer patterns showing consciousness of liability\n- Specific asset tracing (bank transfers, property transactions, beneficial ownership chains)\n- Urgency justification (timeline of when dissipation is likely to occur)\n- Proposed undertaking as to damages and security arrangements\n- Prayer for interim relief and disclosure orders ancillary to the Mareva\n\nEnsure the application addresses the established principles from Gee v Lees [relevant case law] that Mareva relief requires clear evidence of a real risk, not mere suspicion. Include reference to the three-stage test from relevant case law and why our evidence meets each limb. Format as a structured skeleton argument suitable for urgent same-day hearing.",
+"context": "When you need to urgently freeze assets of a defendant to prevent them being dissipated before trial, particularly in cases of fraud, breach of fiduciary duty, or dishonest breach of contract.",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 002 (Mareva Affidavit Details) or PROMPT 010 (Disclosure Order Ancillary to Mareva)\n\n---",
+"placeholders": [],
+"tags": [
+"affidavit",
+"applications",
+"contract",
+"dispute",
+"interlocutory",
+"ip",
+"litigation",
+"prompts",
+"property",
+"resolution",
+"singapore"
+]
+},
+{
+"id": "V3D-legalaip-0398",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-001",
+"text": "**TITLE:** Strength of Case Assessment\n**FULL TEXT:** I am a lawyer acting for [PARTY] in a [jurisdiction] matter. Analyse the strength of our case concerning [BRIEF FACTUAL SUMMARY] where we are claiming [TYPE OF CLAIM] against [DEFENDANT]. Think through this step-by-step. Evaluate the merits based on: (1) strength of legal basis, (2) evidence quality and availability, (3) witness credibility and availability, (4) documentary evidence support, and (5) defendant's likely defences. Provide a percentage likelihood of success and key vulnerabilities. Restrict analysis to the facts and documents provided \u2014 do not make assumptions about evidence not described.\n**CONTEXT:** Used after initial client consultation to determine whether to proceed\n**DIFFICULTY:** Intermediate\n**FOLLOW-UP:** What are the top three risks to success? What additional evidence would strengthen our position?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"PARTY",
+"BRIEF FACTUAL SUMMARY",
+"TYPE OF CLAIM",
+"DEFENDANT"
+],
+"tags": [
+"action",
+"case",
+"dispute",
+"legal",
+"library:",
+"planning",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0399",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-002",
+"text": "**TITLE:** Cause of Action Analysis\n**FULL TEXT:** I am a lawyer acting for [PARTY] in a [jurisdiction] matter. Identify and analyse all potential causes of action arising from the following circumstances: [DETAILED FACTUAL NARRATIVE]. Think through this step-by-step. For each viable cause of action, specify: (1) required elements, (2) which elements are satisfied by the facts provided, (3) which elements are problematic, (4) applicable statutes or common law principles (with citations), and (5) jurisdiction-specific considerations. Rank by viability. Restrict analysis to the facts provided \u2014 note any factual gaps that would affect viability. Verify all cited cases and statutory provisions before use.\n**CONTEXT:** Early case analysis phase; client seeking maximum claim options\n**DIFFICULTY:** Intermediate to Advanced\n**FOLLOW-UP:** Which cause of action offers the strongest damages claim? Are any causes of action mutually exclusive or cumulative?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"PARTY",
+"DETAILED FACTUAL NARRATIVE"
+],
+"tags": [
+"action",
+"case",
+"dispute",
+"ip",
+"legal",
+"library:",
+"planning",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0400",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-003",
+"text": "**TITLE:** Limitation Period Compliance Check\n**FULL TEXT:** I am a lawyer acting for [PARTY] in a [jurisdiction] matter. Determine the applicable limitation period for a claim of [TYPE OF CLAIM] arising from [BRIEF FACTUAL DESCRIPTION]. Key dates: [DATE OF INCIDENT/LOSS], [DATE OF DISCOVERY], [CURRENT DATE]. Think through this step-by-step. Identify: (1) the governing statute with citation, (2) the limitation period length, (3) any extension provisions that apply, (4) the expiry date, (5) risk mitigation steps if close to expiry. Consider the \"date of knowledge\" test where applicable. Cite specific statutory provisions \u2014 verify all citations before use.\n**CONTEXT:** Avoiding claims becoming time-barred; urgent case intake\n**DIFFICULTY:** Intermediate\n**FOLLOW-UP:** If we're within 6 months of limitation, what steps should we take immediately? Are there any extension grounds available?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"PARTY",
+"TYPE OF CLAIM",
+"BRIEF FACTUAL DESCRIPTION",
+"DATE OF INCIDENT/LOSS",
+"DATE OF DISCOVERY",
+"CURRENT DATE"
+],
+"tags": [
+"action",
+"case",
+"compliance",
+"discovery",
+"dispute",
+"ip",
+"legal",
+"library:",
+"planning",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0401",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-004",
+"text": "**TITLE:** Evidence Gap Analysis\n**FULL TEXT:** I am a lawyer acting for [PARTY] in a [jurisdiction] matter. We have the following evidence available regarding our claim for [TYPE OF CLAIM]: [LIST EXISTING EVIDENCE]. Identify: (1) critical evidence gaps that could harm our case, (2) evidence that must be preserved urgently, (3) evidence likely held by the defendant or third parties, (4) feasibility of obtaining missing evidence, (5) impact of each gap on claim strength, and (6) evidence preservation steps needed before action commences. Present findings in a table with columns: Evidence Gap | Impact on Claim (HIGH/MEDIUM/LOW) | Source | Preservation/Acquisition Steps. Restrict analysis to the evidence described \u2014 do not assume other evidence exists.\n**CONTEXT:** Pre-action investigation phase; evidence preservation deadline approaching\n**DIFFICULTY:** Intermediate\n**FOLLOW-UP:** Should we send a preservation notice? What is the cost-benefit of investigating each gap further?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"PARTY",
+"TYPE OF CLAIM",
+"LIST EXISTING EVIDENCE"
+],
+"tags": [
+"action",
+"case",
+"dispute",
+"legal",
+"library:",
+"planning",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0402",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-005",
+"text": "**TITLE:** Forum & Jurisdiction Selection\n**FULL TEXT:** I am a lawyer advising [PARTY] on a [jurisdiction] dispute. We are considering litigation for [TYPE OF CLAIM] in the amount of [ESTIMATED DAMAGES]. The parties are located in [PARTY LOCATIONS] and the contract/tort is connected to [RELEVANT CONNECTIONS]. Think through this step-by-step. Analyse: (1) proper forum (court level, tribunal), (2) jurisdictional grounds available, (3) forum non conveniens risks, (4) competing jurisdiction claims, (5) enforcement implications, and (6) strategic advantages/disadvantages of each forum option. Present as a comparison table. Cite applicable rules of court or statutes \u2014 verify all citations before use.\n**CONTEXT:** Case planning phase; cross-border disputes\n**DIFFICULTY:** Advanced\n**FOLLOW-UP:** If the defendant challenges jurisdiction, what is our strongest argument? What is the cost difference between forums?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"PARTY",
+"TYPE OF CLAIM",
+"ESTIMATED DAMAGES",
+"PARTY LOCATIONS",
+"RELEVANT CONNECTIONS"
+],
+"tags": [
+"action",
+"case",
+"contract",
+"dispute",
+"legal",
+"library:",
+"litigation",
+"planning",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0404",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-007",
+"text": "**TITLE:** Letter of Demand (Formal Pre-Action Notice)\n**FULL TEXT:** Draft a formal letter of demand on behalf of [CLIENT NAME] to [DEFENDANT NAME/ENTITY] regarding [SUBJECT MATTER]. The letter should: (1) clearly state the claim and amount demanded, (2) specify the factual basis with dates and key events, (3) identify the legal basis (statute, common law, contract term), (4) detail the loss suffered with supporting calculations, (5) state the deadline for payment (typically 14-28 days), (6) warn of legal action/costs consequences, and (7) reference any attached documentary support. Maintain a professional but firm tone.\n**CONTEXT:** First formal communication; opens pre-litigation period\n**DIFFICULTY:** Intermediate\n**FOLLOW-UP:** Should we offer a discount for early settlement? How should we handle a partial response?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CLIENT NAME",
+"DEFENDANT NAME/ENTITY",
+"SUBJECT MATTER"
+],
+"tags": [
+"action",
+"case",
+"contract",
+"dispute",
+"legal",
+"library:",
+"litigation",
+"planning",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0405",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-008",
+"text": "**TITLE:** Cease & Desist Letter\n**FULL TEXT:** Draft a cease and desist letter on behalf of [CLIENT NAME] to [INFRINGING PARTY] regarding [SPECIFIC INFRINGING CONDUCT - e.g., trademark use, patent infringement, defamation]. The letter must: (1) identify the specific intellectual property or right being infringed, (2) describe the infringing conduct with specific examples and dates, (3) establish [CLIENT]'s rights and prior ownership, (4) demand immediate cessation of the conduct, (5) specify timeframe for compliance (typically 10-14 days), (6) warn of legal action and damages, (7) identify potential statutory damages available, and (8) reference relevant law. Be direct and unambiguous.\n**CONTEXT:** IP disputes; urgent action needed to establish damages claims\n**DIFFICULTY:** Intermediate\n**FOLLOW-UP:** What evidence should we gather to prove notice if we proceed to court? Should we register the IP right before sending?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CLIENT NAME",
+"INFRINGING PARTY",
+"CLIENT"
+],
+"tags": [
+"action",
+"case",
+"compliance",
+"dispute",
+"intellectual",
+"ip",
+"legal",
+"library:",
+"planning",
+"prompt",
+"property",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0406",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-009",
+"text": "**TITLE:** Pre-Action Protocol Letter\n**FULL TEXT:** Prepare a pre-action protocol compliant letter from [CLIENT] to [DEFENDANT] regarding [CLAIM TYPE] under [APPLICABLE CIVIL PROCEDURE RULES/PROTOCOL]. The letter must: (1) set out concisely the claim including key facts, (2) specify the sum claimed (if quantifiable) with detailed breakdown, (3) identify the legal basis, (4) enclose supporting documents proving the claim, (5) set out a reasonable deadline for response (typically 14-28 days per rules), (6) indicate willingness to negotiate/mediate, (7) warn of costs consequences of non-compliance, and (8) comply with all procedural requirements (e.g., pre-action disclosure requests). Include a response template.\n**CONTEXT:** Mandatory before court filing in many jurisdictions; cost management\n**DIFFICULTY:** Intermediate\n**FOLLOW-UP:** What should we do if the defendant doesn't respond by the deadline? Can we extract admissions from their response letter?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CLIENT",
+"DEFENDANT",
+"CLAIM TYPE",
+"APPLICABLE CIVIL PROCEDURE RULES/PROTOCOL"
+],
+"tags": [
+"action",
+"case",
+"compliance",
+"dispute",
+"legal",
+"library:",
+"planning",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0407",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-010",
+"text": "**TITLE:** Without Prejudice Settlement Communication\n**FULL TEXT:** Draft a settlement proposal letter marked \"WITHOUT PREJUDICE\" from [CLIENT] to [OPPOSING PARTY] regarding the dispute concerning [CLAIM SUMMARY]. Include: (1) acknowledgment of the dispute, (2) settlement proposal with specific terms including payment amount and schedule, (3) any non-monetary conditions (admission, apology, injunction), (4) reference to costs to date and potential future exposure, (5) mediator/expert involvement if applicable, (6) deadline for acceptance (typically 7-21 days), (7) statement that letter cannot be used as evidence if negotiations fail, and (8) indication of binding nature if accepted. Balance commercial reasonableness with firmness.\n**CONTEXT:** Mid-stage settlement negotiations; position advancement\n**DIFFICULTY:** Intermediate\n**FOLLOW-UP:** Should we escalate this to senior management on their side? What fallback position should we prepare?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CLIENT",
+"OPPOSING PARTY",
+"CLAIM SUMMARY"
+],
+"tags": [
+"action",
+"case",
+"dispute",
+"legal",
+"library:",
+"planning",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0408",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-011",
+"text": "**TITLE:** Response to Demand Letter\n**FULL TEXT:** Draft a response to the demand letter received from [CLAIMANT] dated [DATE] demanding [AMOUNT] for [CLAIMED LOSS]. The response should: (1) acknowledge receipt and provide reference information, (2) deny or admit specific allegations clearly, (3) explain disputed facts with our version of events, (4) identify legal defenses (limitation, contributory negligence, novation, etc.), (5) challenge quantum (reduce claimed damages), (6) disclose counterclaims if any exist, (7) indicate willingness or refusal to settle and on what basis, (8) set out our position on liability and quantum separately, and (9) propose next steps. Keep a professional tone while advancing our position.\n**CONTEXT:** Defensive correspondence; shifting negotiation dynamic\n**DIFFICULTY:** Intermediate\n**FOLLOW-UP:** Should we make a counter-offer? What admissions should we avoid in this letter?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CLAIMANT",
+"DATE",
+"AMOUNT",
+"CLAIMED LOSS"
+],
+"tags": [
+"action",
+"case",
+"dispute",
+"ip",
+"legal",
+"library:",
+"planning",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0414",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-017",
+"text": "**TITLE:** Structured Settlement Options Analysis\n**FULL TEXT:** Analyze structured settlement options available for the [CLAIM TYPE] involving [INJURED PARTY/TYPE OF LOSS]. Consider: (1) lump sum versus periodic payment arrangements, (2) tax implications of each structure, (3) structured investment options (annuities, trusts, escrow), (4) inflation adjustment provisions, (5) longevity risk considerations (if personal injury), (6) flexibility for future changes, (7) creditor protection aspects, (8) regulatory compliance requirements, (9) insurance/guarantee mechanisms, and (10) total cost of each option versus present value analysis. Provide recommendations balancing certainty, tax efficiency, and affordability.\n**CONTEXT:** High-value settlements; personal injury claims\n**DIFFICULTY:** Advanced\n**FOLLOW-UP:** What are the insurance implications? Are there government-backed structured settlement schemes available?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CLAIM TYPE",
+"INJURED PARTY/TYPE OF LOSS"
+],
+"tags": [
+"action",
+"case",
+"compliance",
+"dispute",
+"legal",
+"library:",
+"planning",
+"prompt",
+"resolution",
+"tax"
+]
+},
+{
+"id": "V3D-legalaip-0417",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-020",
+"text": "**TITLE:** Litigation Timeline & Milestones\n**FULL TEXT:** Develop a detailed litigation timeline and key milestones for [CLAIM TYPE] litigation likely to proceed in [RELEVANT COURT/JURISDICTION]. Establish critical dates for: (1) pleading phase (notice of claim, defence, reply timeline under rules), (2) disclosure/discovery deadlines, (3) expert report exchange, (4) pre-trial applications and hearing dates, (5) settlement conference/mediation, (6) trial preparation phase, (7) trial dates (estimate duration), (8) judgment delivery and appeal period, (9) enforcement phase if necessary. Include: dependencies between phases, critical path items, statutory requirements, and procedural rules affecting timing. Identify risks to timeline and contingencies.\n**CONTEXT:** Project planning; stakeholder communication\n**DIFFICULTY:** Intermediate\n**FOLLOW-UP:** What are the longest lead time items? Where can we save time if settlement negotiations progress?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CLAIM TYPE",
+"RELEVANT COURT/JURISDICTION"
+],
+"tags": [
+"action",
+"case",
+"discovery",
+"dispute",
+"legal",
+"library:",
+"litigation",
+"mediation",
+"planning",
+"pleading",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V3D-legalaip-0419",
+"volume": "volume-3-disputes",
+"volume_label": "Dispute Resolution",
+"category": "Legal AI Prompt Library: V3_01 Pre-Action & Case Planning",
+"title": "PROMPT ID: PA-022",
+"text": "**TITLE:** Witness Identification & Assessment\n**FULL TEXT:** Identify and assess all potential witnesses for the [CLAIM TYPE] dispute involving [PARTIES/SUBJECT MATTER]. For each witness, specify: (1) name, role, and availability, (2) knowledge of key facts (timeline, causation, damages), (3) credibility assessment (bias, accuracy, communication skills), (4) anticipated testimony areas, (5) consistency with documentary evidence, (6) potential hostile/neutral/favorable status, (7) interview priority ranking, (8) factual versus expert witness designation, (9) accessibility (location, cooperation likely), and (10) legal obligations (employment, NDA, privilege issues). Create a witness dependency map showing information interdependencies. Recommend interview sequence.\n**CONTEXT:** Investigation phase; statement gathering\n**DIFFICULTY:** Intermediate\n**FOLLOW-UP:** Which witnesses are most critical to prove our key allegations? Should we secure witness statements now or wait?\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CLAIM TYPE",
+"PARTIES/SUBJECT MATTER"
+],
+"tags": [
+"action",
+"case",
+"dispute",
+"employment",
+"ip",
+"legal",
+"library:",
+"planning",
+"prompt",
+"resolution"
+]
+},
+{
+"id": "V4R-aiprompt-0594",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "Corporate Actions, M&A Disclosure & Insider Information",
+"text": "Our firm advises clients on corporate actions (M&A transactions, capital reorganizations, major contracts, etc.). I need guidance on managing insider information and regulatory disclosure obligations, including: (1) what constitutes \"material non-public information\" under SFA and MAS regulations; (2) identification of when disclosure to SGX and the market is required (immediate announcements); (3) pre-announcement procedures\u2014timing of disclosure to advisors, investors, and counterparties; (4) trading halts\u2014when to request, how to coordinate with SGX; (5) investor relations communications\u2014what can and cannot be disclosed pre-announcement; (6) blackout periods for insiders\u2014restricting share dealings by company directors and employees; (7) documentation and file management during transaction (privilege considerations); (8) post-announcement obligations; (9) communications with media, analysts, and investors; (10) common disclosure violations and penalties.",
+"context": "For transaction advisory and corporate actions",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 21 (IPO & Capital Raising)\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"contract",
+"corporate",
+"financial",
+"prompts",
+"regulation",
+"regulatory"
+]
+},
+{
+"id": "V4R-aiprompt-0609",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "Fund Management Governance, Valuations & Investor Reporting",
+"text": "We manage investment funds and need to establish strong governance and investor reporting frameworks. Please provide guidance covering: (1) fund governance\u2014Board oversight, management meetings, policies and procedures; (2) valuation policies\u2014asset pricing, illiquid asset valuation, fair value hierarchy; (3) valuation governance\u2014independent price verification, dispute resolution, valuation committee; (4) investor reporting\u2014prospectus updates, periodic fact sheets, annual reports, performance disclosures; (5) performance calculation methodologies (time-weighted, money-weighted, sector benchmarking); (6) comparative disclosure (vs. benchmarks, vs. peer funds); (7) fee structures and fee disclosure; (8) redemption/distribution procedures\u2014fair treatment of investors, timing, documentation; (9) related-party transactions\u2014approval, disclosure, arm's length testing; (10) regulatory audit requirements; (11) fund winding-up or restructuring procedures; (12) MAS reporting and fund statistics.",
+"context": "For asset management and fund administration",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 36 (Outsourcing & Service Provider Management)\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"financial",
+"prompts",
+"regulation",
+"regulatory"
+]
+},
+{
+"id": "V4R-aiprompt-0595",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "IPO Process & Capital Raising Compliance",
+"text": "We are advising a company through an Initial Public Offering (IPO) on SGX. Please create a detailed IPO compliance roadmap covering: (1) pre-IPO stages\u2014regulatory determinations (disclosure standards, SGX Listing Rules, SFA compliance); (2) prospectus preparation and MAS approval process; (3) pre-marketing phase\u2014investor relations, due diligence roadshow, quiet period rules (no selective disclosure); (4) offer phase\u2014pricing, trading halt coordination, settlement; (5) post-IPO obligations\u2014quarterly announcements, annual reports, continuing disclosure obligations; (6) corporate governance requirements under SGX Listing Rules Code of Corporate Governance; (7) management of inside information pre-IPO; (8) common deficiencies in IPO documentation noted by MAS/SGX; (9) timeline and key milestone dates; (10) costs and fee structure.\n\nInclude specific references to SGX Listing Rules and MAS requirements.",
+"context": "During IPO preparation and execution",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 22 (Rights Issues & Dividends)\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"corporate",
+"financial",
+"ip",
+"prompts",
+"regulation",
+"regulatory"
+]
+},
+{
+"id": "V4R-aiprompt-0603",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "Insurance Agent/Broker Licensing & Conduct",
+"text": "We operate an [INSERT: insurance agency, brokerage, bancassurance distribution]. Please guide us through MAS insurance intermediary requirements, including: (1) determination of whether agent or broker license is required; (2) application process and documentation; (3) qualification requirements for insurance agents (exam modules, fit and proper criteria); (4) capital requirements (if applicable for certain brokers); (5) conduct obligations\u2014suitability, disclosure, conflicts of interest, best advice; (6) commissions and fee transparency; (7) client money handling (if applicable); (8) complaints handling procedures; (9) professional indemnity insurance requirements; (10) continuing professional development; (11) regulatory reporting and file maintenance; (12) disciplinary procedures and suspension/cancellation grounds.\n\nInclude references to Insurance Intermediaries Act and relevant MAS Guidelines.",
+"context": "When establishing insurance intermediary operations",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 30 (Insurance Product Governance)\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"financial",
+"ip",
+"prompts",
+"regulation",
+"regulatory"
+]
+},
+{
+"id": "V4R-aiprompt-0583",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "MAS AML/CFT Risk Assessment Framework",
+"text": "We need to conduct a comprehensive AML/CFT risk assessment in accordance with MAS Notice 626 (Notice on AML/CFT). Please help me build an assessment framework that: (1) covers all required risk assessment areas per MAS Notice 626\u2014institutional risk, customer risk, product/service risk, delivery channel risk, geographic risk; (2) includes a detailed questionnaire (50+ questions) for each risk area; (3) provides a risk rating scale (Low/Medium/High) with clear criteria for each rating; (4) produces a risk profile heat map identifying our institution's highest-risk areas; (5) maps findings to specific AML/CFT control requirements\u2014the higher the risk, the more robust the controls; (6) documents assumptions and data sources; (7) includes a plan for periodic reassessment (annually, or when material business changes occur).\n\nFormat as a workable Excel template with scoring, weighting, and output visualizations.",
+"context": "Annual AML/CFT compliance exercise; when launching new products/geographic markets",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 10 (KYC/CDD Procedures)\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"data",
+"financial",
+"prompts",
+"regulation",
+"regulatory"
+]
+},
+{
+"id": "V4R-aiprompt-0578",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "MAS Interaction Protocol & Escalation",
+"text": "Our institution has received [INSERT COMMUNICATION TYPE: inspection notice, request for information, warning letter, or enforcement action]. The communication concerns [INSERT SUBJECT MATTER].\n\nPlease advise on: (1) our statutory obligations for timely response, including any filing deadlines under the FSA and MAS directions; (2) the appropriate approval and escalation pathway within our institution (Board, Senior Management, Compliance, Legal); (3) engagement strategy with MAS\u2014when to proactively engage, when to seek clarification, risk factors that should trigger escalation; (4) format and tone requirements for responses to avoid misinterpretation; (5) privilege considerations\u2014how to structure our response to preserve legal advice privilege; (6) stakeholder management (disclosure to auditors, bankers, insurers, ratings agencies); (7) public disclosure obligations (SGX announcements, financial reporting disclosures); (8) dispute resolution options if we disagree with MAS position.",
+"context": "Upon receipt of regulatory communication from MAS",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 6 (Risk Rating & Supervisory Engagement)\n\n---",
+"placeholders": [
+"INSERT SUBJECT MATTER"
+],
+"tags": [
+"compliance",
+"financial",
+"prompts",
+"regulation",
+"regulatory"
+]
+},
+{
+"id": "V4R-aiprompt-0576",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "MAS Notice Compliance Checklist Builder",
+"text": "I have received the following MAS Notice: [INSERT FULL TEXT OR TITLE OF MAS NOTICE, e.g., MAS Notice 610 (Internal Audit), MAS Notice 637 (AML/CFT)].\n\nPlease create a detailed, risk-weighted compliance checklist for our institution that: (1) breaks down the Notice into its key requirements and sub-requirements, organized by topic; (2) assesses implementation complexity (1-5 scale) for each requirement; (3) identifies interdependencies with other MAS requirements and industry guidelines; (4) highlights any ambiguous or contested interpretations that may require MAS clarification; (5) maps specific requirements to our organization's departments and roles (e.g., Compliance, IT, HR, Audit); (6) suggests timeline for implementation based on realistic assessment of our resources.\n\nFormat as an Excel-ready table with columns for: Requirement ID, Requirement Text, Complexity, Owner, Timeline, Current Status, Evidence of Compliance.",
+"context": "When implementing a new MAS regulatory requirement across your organization",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 3 (Documentation & Evidence Strategy)\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"financial",
+"prompts",
+"regulation",
+"regulatory"
+]
+},
+{
+"id": "V4R-aiprompt-0579",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "MAS Notice to Financial Institutions Implementation",
+"text": "MAS has issued [INSERT NOTICE REFERENCE AND TITLE, e.g., \"Notice on Technology Governance for Financial Institutions\"]. We are a [INSERT INSTITUTION TYPE: bank, insurance, fund manager, fintech, payment service provider].\n\nUsing this Notice and related guidance documents: (1) identify the 5-7 core strategic and operational changes this Notice requires; (2) assess our current state of maturity against the Notice requirements using a 1-5 scale (1=non-compliant, 5=best practice); (3) create a phased roadmap (24-36 months) showing: Quick Wins (achievable in 0-6 months), Medium-term Changes (6-18 months), Long-term Structural Changes (18-36 months); (4) estimate budget and resourcing requirements for each phase; (5) identify overlaps with other regulatory requirements to create efficiencies; (6) document key risks and mitigation strategies for each phase; (7) define success metrics and key performance indicators to track progress.",
+"context": "When MAS issues new or updated regulatory guidance",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 7 (Technology Implementation & Testing)\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"financial",
+"prompts",
+"regulation",
+"regulatory"
+]
+},
+{
+"id": "V4R-aiprompt-0580",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "MAS Risk Rating & Supervisory Engagement Strategy",
+"text": "I need to understand how MAS rates our institution's risk profile and supervisory approach. Please provide: (1) an overview of MAS's Supervisory Framework for [INSERT INSTITUTION TYPE], including how risk ratings are assigned; (2) the key risk categories and indicators MAS typically focuses on; (3) common reasons for rating upgrades/downgrades based on recent MAS inspection and enforcement trends; (4) strategies to proactively engage with MAS to improve our institution's risk profile; (5) how changes in our business model, strategy, or governance should be communicated to MAS; (6) best practices for managing our relationship with MAS's assigned supervisor/examiner team; (7) impact of risk rating changes on regulatory requirements, supervisory intensity, and capital/liquidity requirements.\n\nInclude reference to MAS's latest annual Financial Stability Review and supervisory priorities.",
+"context": "Ongoing relationship management with MAS; when planning strategic changes",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 1 (Regulatory Perimeter Analysis)\n\n---\n\n## FCA/SEC Cross-Reference & International Coordination",
+"placeholders": [
+"INSERT INSTITUTION TYPE"
+],
+"tags": [
+"compliance",
+"financial",
+"ip",
+"prompts",
+"regulation",
+"regulatory",
+"review"
+]
+},
+{
+"id": "V4R-aiprompt-0592",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "PI/Promoter Registration for Investment Schemes",
+"text": "We are organizing an investment scheme (e.g., mutual fund, investment fund, capital guaranteed structured product) in Singapore. Please advise on the registration and approval requirements under the Securities and Futures Act, including: (1) determination of whether the scheme must be registered (collective investment scheme classification); (2) requirements for the promoter/fund manager (financial soundness, key personnel fit and proper); (3) requirements for the custodian/trustee; (4) requirement for a compliant Information Memorandum or Prospectus; (5) ongoing annual returns and financial reporting to MAS; (6) restrictions on marketing and distribution; (7) valuation and pricing requirements; (8) investor protection mechanisms (segregation of assets, audit requirements); (9) periodic management reviews by MAS; (10) amendment/variation procedures; (11) winding-up requirements.\n\nInclude specific references to MAS Notice 334 (Collective Investment Schemes) and SFA sections 286-338.",
+"context": "When organizing a new investment scheme in Singapore",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 35 (Fund Management Governance)\n\n---\n\n## Capital Markets Regulation",
+"placeholders": [],
+"tags": [
+"compliance",
+"financial",
+"prompts",
+"regulation",
+"regulatory",
+"review",
+"singapore"
+]
+},
+{
+"id": "V4R-aiprompt-0596",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "Rights Issues, Dividends & Shareholder Communications",
+"text": "We are assisting a listed company with [INSERT CORPORATE ACTION: rights issue, dividend/bonus share distribution, capital reduction, name change]. Please provide guidance on regulatory requirements and best practices, including: (1) SGX Listing Rules requirements specific to this corporate action; (2) announcement timing and content; (3) circular to shareholders\u2014content requirements, voting procedures; (4) shareholder meeting procedures if required; (5) timing of implementation (ex-date, record date, payment date); (6) impact on share price and trading; (7) tax considerations and disclosure to shareholders; (8) investor communications; (9) regulatory approvals or notifications required; (10) systems and back-office procedures to handle the corporate action; (11) common procedural errors and how to avoid them.",
+"context": "When a listed company is undertaking corporate actions",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 23 (Analyst Coverage & Communications)\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"corporate",
+"financial",
+"prompts",
+"regulation",
+"regulatory",
+"tax"
+]
+},
+{
+"id": "V4R-aiprompt-0593",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "Securities Dealing & Market Abuse Prevention",
+"text": "Our firm engages in securities dealing (trading on behalf of clients and/or proprietary trading) on the Singapore Exchange (SGX). Please create a comprehensive framework covering: (1) core MAS regulatory requirements for securities dealing (MAS Principles of Market Conduct, MAS Guidelines on Conduct of Financial Advisers); (2) market abuse prevention\u2014identifying and preventing front-running, insider trading, market manipulation; (3) internal controls for order management: pre-trade transparency, order review/approval, trade execution best execution procedures, post-trade reporting; (4) conflicts of interest management\u2014Chinese walls, information barriers, blackout periods; (5) communication governance\u2014monitoring of communications to identify potential market abuse; (6) staff training and certification; (7) incident reporting procedures; (8) coordination with SGX and MAS; (9) regulatory reporting requirements; (10) case studies of recent MAS/SGX enforcement against similar firms.",
+"context": "For securities trading operations",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 20 (Corporate Actions & Disclosure)\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"financial",
+"ip",
+"prompts",
+"regulation",
+"regulatory",
+"review",
+"singapore"
+]
+},
+{
+"id": "V4R-aiprompt-0598",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "Short Selling & Market Manipulation Prevention",
+"text": "Our fund or proprietary trading operation engages in short selling activities. Please create a comprehensive short selling compliance framework that includes: (1) overview of Singapore's short selling regime (Regulation 144A/Reg SHO equivalent in Singapore context); (2) operational requirements: locating shares before short sale, delivery timing, fails management; (3) disclosure and reporting requirements for significant short positions; (4) market manipulation considerations\u2014price stabilization, squeeze risks; (5) internal controls and pre-trade checks; (6) coordination with clearing houses and brokers; (7) regulatory reporting to MAS and SGX; (8) crisis management if market manipulation is alleged; (9) recent enforcement actions and lessons learned; (10) best practices from leading global market operators.",
+"context": "For short selling and market abuse prevention",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 25 (Bond Market Regulation)\n\n---\n\n## Payment Services & Digital Assets",
+"placeholders": [],
+"tags": [
+"compliance",
+"financial",
+"ip",
+"prompts",
+"regulation",
+"regulatory",
+"singapore"
+]
+},
+{
+"id": "V4R-aiprompt-0581",
+"volume": "volume-4-regulatory",
+"volume_label": "Regulatory & Compliance",
+"category": "AI Prompts for Financial Regulation",
+"title": "UK/US Regulatory Requirements Mapping (Singapore Hub)",
+"text": "Our Singapore-based [INSERT ENTITY TYPE: wealth management, fund manager, investment bank, fintech] serves clients/conducts business in the UK and/or US. I need to understand regulatory overlaps and conflicts.\n\nPlease provide: (1) a matrix comparing key regulatory frameworks\u2014MAS vs. FCA (UK) and MAS vs. SEC (US)\u2014for [INSERT SPECIFIC AREA: market abuse, MiFID II / Reg SHO / short selling, suitability/best execution, AML/CFT, data protection, conduct risk]; (2) identification of conflicting requirements and practical workarounds; (3) regulatory hierarchy\u2014which jurisdiction's rules take precedence in specific scenarios; (4) cost-benefit analysis of dual-compliance vs. choosing a primary jurisdiction; (5) common pitfalls multinational firms face in managing multiple jurisdictions; (6) regulatory change tracking\u2014how to monitor FCA/SEC initiatives that may affect our Singapore operations; (7) notification/licensing requirements for Singapore firms operating into these markets.",
+"context": "When expanding operations or managing cross-border services",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 8 (Market Conduct Regulation)\n\n---",
+"placeholders": [],
+"tags": [
+"compliance",
+"data",
+"financial",
+"ip",
+"prompts",
+"regulation",
+"regulatory",
+"singapore"
+]
+},
+{
+"id": "V5PA-aiprompt-0796",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Real Estate & Property Law",
+"title": "Analyze Property Title Defects and Remediation",
+"text": "I am reviewing the title to a private property in Singapore and have identified a potential defect: [DESCRIBE DEFECT - e.g., part of the property boundaries encroach onto adjacent land / there is a covenant prohibiting commercial use / the right of way is not clearly documented]. Please provide: (1) analysis of the severity and legal implications of this defect under Singapore land law; (2) impact on property value and marketability; (3) whether the defect is \"material\" and if transaction can proceed; (4) remediation options including indemnity insurance, formal discharge from owner, modification of boundaries, or caveat cancellation; (5) estimated costs and timeline for each remediation approach; (6) impact on mortgage lending and buyer financing; (7) disclosure obligations to the buyer; (8) risk allocation if remediation cannot be completed before completion date. Cite relevant Land Titles Act provisions and case law.",
+"context": "When title defects are discovered during conveyancing",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 001 (Due diligence update), PROMPT 009 (Renegotiation strategy)\n\n---",
+"placeholders": [],
+"tags": [
+"area",
+"estate",
+"mediation",
+"practice",
+"prompts",
+"property",
+"real",
+"review",
+"singapore",
+"specialisms"
+]
+},
+{
+"id": "V5PA-aiprompt-0947",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Tax Law",
+"title": "Building Tax Compliance Documentation & Recordkeeping",
+"text": "I am advising [ORGANIZATION] on establishing a tax compliance documentation system. Current status: [DESCRIBE]. Key challenges: [LIST]. Regulatory requirements: [DESCRIBE].\n\nPlease help me develop a tax documentation framework that:\n\n1. Maps all documentation required under Singapore tax law (invoices, deductions, transfer pricing, withholding tax)\n2. Identifies statutory retention periods (typically 5 years for income tax, 6 years for GST)\n3. Designs a recordkeeping system (digital/physical, organization, accessibility)\n4. Develops procedures for contemporaneous documentation of tax positions\n5. Creates transfer pricing documentation protocols (for intercompany transactions)\n6. Establishes GST invoice compliance procedures\n7. Maps withholding tax documentation and payment records\n8. Develops capital allowance documentation (asset registries, depreciation schedules)\n9. Creates audit trail for tax accounting adjustments\n10. Establishes procedures for document retrieval and IRAS response preparation\n11. Designs staff training on tax documentation requirements",
+"context": "Tax compliance infrastructure; documentation systems; audit readiness",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 1 (Tax compliance planning)\n\n---",
+"placeholders": [
+"ORGANIZATION",
+"DESCRIBE",
+"LIST"
+],
+"tags": [
+"area",
+"compliance",
+"practice",
+"prompts",
+"singapore",
+"specialisms",
+"tax"
+]
+},
+{
+"id": "V5PA-aiprompt-0965",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Insurance Law",
+"title": "Custom Insurance Policy Drafting & Amendment",
+"text": "I am drafting a [POLICY TYPE - bespoke coverage for specific risk] for [CLIENT ORGANIZATION]. The organization has specific risk profile: [DESCRIBE]. Desired coverage: [DESCRIBE]. Budget: [AMOUNT]. Timeline: [TIMEFRAME].\n\nPlease help me develop custom insurance policy wording that:\n\n1. Defines the scope of coverage (what risks are covered, what are excluded)\n2. Identifies the insurable interest and parties to be covered\n3. Maps the limits of liability and deductibles/retentions\n4. Advises on policy term (period of coverage, renewal provisions)\n5. Identifies conditions precedent to coverage (notice, cooperation, investigation)\n6. Drafts definitions specific to the client's business\n7. Maps premium and payment terms\n8. Advises on policy cancellation and non-renewal provisions\n9. Identifies any regulatory requirements affecting policy terms\n10. Maps conflict-of-law and dispute resolution provisions\n11. Advises on whether off-the-shelf policy or custom wording is preferable\n12. Identifies negotiation points with insurer (price, coverage, conditions)",
+"context": "Bespoke insurance program design; policy wording negotiation; custom risk transfer solutions",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 1 (Policy review)\n\n---",
+"placeholders": [
+"CLIENT ORGANIZATION",
+"DESCRIBE",
+"AMOUNT",
+"TIMEFRAME"
+],
+"tags": [
+"area",
+"drafting",
+"insurance",
+"practice",
+"prompts",
+"specialisms"
+]
+},
+{
+"id": "V5PA-aiprompt-0800",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Real Estate & Property Law",
+"title": "First-Time Homebuyer Rights and Protections",
+"text": "I am representing a first-time homebuyer in Singapore purchasing a [HDB / private apartment / landed property]. Please provide comprehensive guidance on: (1) statutory rights and protections afforded specifically to first-time homebuyers under Singapore law; (2) stamp duty relief and exemptions available; (3) cooling-off periods and right to withdraw from purchase; (4) mortgage assistance programs including HDB concessional rates (if applicable); (5) CPF withdrawal maximums and eligibility; (6) housing grant eligibility (if HDB purchase) including income ceilings and subsidy structures; (7) ABSD exemptions and deferral options; (8) conveyancing service provider obligations to explain documentation and risks; (9) contract protection clauses commonly negotiated (inspection rights, mortgage approval contingency, defects notification); (10) dispute resolution avenues if transaction goes wrong (e.g., seller defaults, defects discovered post-completion). Include sample clauses for buyer-friendly contract terms and explain tax implications. Cite Housing and Development Act and relevant ABSD regulations.",
+"context": "When advising first-time homebuyers on their rights",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 001 (Due diligence), PROMPT 004 (CPF withdrawal)\n\n---\n\n## HDB TRANSACTIONS",
+"placeholders": [],
+"tags": [
+"area",
+"contract",
+"estate",
+"practice",
+"prompts",
+"property",
+"real",
+"singapore",
+"specialisms",
+"tax"
+]
+},
+{
+"id": "V5PA-aiprompt-0794",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Real Estate & Property Law",
+"title": "Generate Property Transfer Due Diligence Checklist",
+"text": "I am a conveyancing lawyer handling the purchase of a private residential property in Singapore. The transaction involves a 99-year leasehold HDB resale and includes a mortgage from [BANK NAME]. Please create a comprehensive due diligence checklist that covers: (1) title verification and land office searches; (2) financial checks including outstanding mortgage, property tax (RPPT), and conservancy charges; (3) inspection of title documents and subsidiary strata management certificates; (4) verification of seller's marital status and approval from spouse/co-owners; (5) ABSD eligibility assessment; (6) CPF withdrawal eligibility confirmation for the buyer; (7) flood/fire/defect history through HDB's records; (8) strata management compliance; (9) tenancy verification if occupied by tenant; (10) statutory board consents if applicable. Format this as a step-by-step checklist with estimated timelines for completion and key documents required at each stage.",
+"context": "Before drafting an offer to purchase or exchange of contracts",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 005 (Contract drafting), PROMPT 008 (ABSD calculation)\n\n---",
+"placeholders": [
+"BANK NAME"
+],
+"tags": [
+"area",
+"compliance",
+"estate",
+"practice",
+"prompts",
+"property",
+"real",
+"singapore",
+"specialisms",
+"tax"
+]
+},
+{
+"id": "V5PA-aiprompt-0802",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Real Estate & Property Law",
+"title": "HDB Housing Grant and Eligibility Assessment",
+"text": "My client is a first-time HDB flat buyer and wishes to claim housing grants. The household composition is [DESCRIBE - e.g., married couple, household income SGD X, etc.]. Please provide: (1) detailed breakdown of all available HDB housing grants including Enhanced CPF Housing Grant, Proximity Housing Grant, and Public Housing Grant; (2) eligibility assessment against current income ceiling, relationship, and ownership criteria; (3) quantum calculation for each grant type and total expected grant amount; (4) application process and timelines for grant approval; (5) supporting documentation required from the client; (6) impact of grant on purchase price calculation and CPF withdrawal limits; (7) whether grant can be used to reduce effective price or only for closing gaps in financing; (8) treatment of grant if transaction falls through; (9) coordination with mortgage financing to ensure timely fund availability; (10) tax implications and whether grant is taxable income. Reference current HDB grant guidelines and income ceiling tables.",
+"context": "For first-time HDB buyers seeking grant assistance",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 008 (HDB compliance), PROMPT 004 (CPF withdrawal)\n\n---",
+"placeholders": [],
+"tags": [
+"area",
+"estate",
+"ip",
+"practice",
+"prompts",
+"property",
+"real",
+"specialisms",
+"tax"
+]
+},
+{
+"id": "V5PA-aiprompt-0803",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Real Estate & Property Law",
+"title": "HDB Upgrading Eligibility and Scheme Advising",
+"text": "My client is interested in upgrading from their current HDB flat. Their profile is: [DESCRIBE - e.g., current flat in Jurong East, purchased in 2010, household income SGD 12,000, they have dependents]. Please advise on: (1) eligibility for each HDB upgrading scheme including Home Improvement Programme (HIP), Selective En Bloc Redevelopment Scheme (SERS), and Integrated Refurbishment Programme (IRP); (2) specific criteria for each scheme including ownership duration, flat age, household income, and acceptable locations; (3) financial implications and grants available under each scheme; (4) timeline and process for each upgrading route; (5) sale value or compensation benchmarks for their current flat under applicable schemes; (6) CPF withdrawal implications for financing the new flat; (7) tax treatment of any gains from upgrading; (8) risks if upgrading scheme is delayed or cancelled; (9) coordination with HDB for application; (10) comparative analysis of upgrading vs. selling in open market. Provide scenario modeling for their specific situation.",
+"context": "For HDB flat owners considering upgrading options",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 008 (HDB compliance), PROMPT 009 (Housing grants)\n\n---\n\n## LEASES \u2014 COMMERCIAL & RESIDENTIAL",
+"placeholders": [],
+"tags": [
+"area",
+"estate",
+"ip",
+"practice",
+"prompts",
+"property",
+"real",
+"specialisms",
+"tax"
+]
+},
+{
+"id": "V5PA-aiprompt-0946",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Tax Law",
+"title": "IRAS Correspondence: Audit Enquiry Response",
+"text": "I am responding to an IRAS audit enquiry regarding [ISSUE - e.g., expense deduction, income recognition, transfer pricing]. IRAS letter date: [DATE]. Information requested: [BRIEF DESCRIPTION]. Response deadline: [DATE].\n\nPlease help me prepare a response to IRAS that:\n\n1. Addresses each of IRAS's specific enquiries point-by-point\n2. Organizes the response clearly with document references\n3. Provides supporting documentation (contracts, invoices, explanatory memoranda)\n4. Explains the tax treatment with reference to relevant law/practice notes\n5. Anticipates IRAS's likely counter-arguments and addresses them proactively\n6. Maintains respectful and cooperative tone\n7. Avoids overstating facts or making admissions\n8. Uses correct terminology and proper references to statutory provisions\n9. Includes a cover letter summarizing the key points\n10. Provides both written explanation and documentary support\n11. Meets the IRAS deadline and includes confirmation of receipt requested",
+"context": "IRAS correspondence; audit response management; tax authority engagement",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 1 (Tax audit preparation)\n\n---",
+"placeholders": [
+"DATE",
+"BRIEF DESCRIPTION"
+],
+"tags": [
+"area",
+"contract",
+"ip",
+"practice",
+"prompts",
+"specialisms",
+"tax"
+]
+},
+{
+"id": "V5PA-aiprompt-0954",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Insurance Law",
+"title": "Insurance Disputes: Litigation & Arbitration Strategy",
+"text": "I am preparing to litigate an insurance coverage dispute with [INSURER]. The dispute concerns: [BRIEF DESCRIPTION]. Amounts at issue: [AMOUNT]. Grounds: [LIST].\n\nPlease help me prepare litigation/arbitration strategy that:\n\n1. Identifies the forum (Singapore courts, arbitration, expert determination)\n2. Maps the relevant insurance law and regulations\n3. Analyzes the strength of the coverage claim (likelihood of success)\n4. Identifies burden of proof (who bears burden of proving coverage?)\n5. Maps procedural steps (filing complaint, discovery, expert disclosure)\n6. Identifies expert evidence needed (policy interpretation, valuation, causation)\n7. Prepares statement of claim highlighting coverage grounds\n8. Anticipates insurer's defenses and prepares rebuttal\n9. Maps discovery strategy (what documents to request from insurer)\n10. Advises on settlement leverage and negotiation strategy\n11. Prepares for trial/hearing (oral argument, cross-examination of experts)\n12. Identifies appellate issues if decision is adverse",
+"context": "Insurance coverage litigation; dispute resolution strategy; court proceedings",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 7 (Coverage defenses and insurer liability)\n\n---\n\n## Section 3: Coverage Defects & Defenses",
+"placeholders": [
+"INSURER",
+"BRIEF DESCRIPTION",
+"AMOUNT",
+"LIST"
+],
+"tags": [
+"arbitration",
+"area",
+"discovery",
+"insurance",
+"ip",
+"litigation",
+"practice",
+"prompts",
+"singapore",
+"specialisms"
+]
+},
+{
+"id": "V5PA-aiprompt-0869",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Estate Planning & Probate",
+"title": "Intestate Succession Disputes",
+"text": "[DECEASED NAME] passed away intestate on [DATE]. The estate is valued at SGD [AMOUNT]. There is disagreement among the deceased's family about the correct distribution under intestacy law. Specifically, [DESCRIBE DISPUTE - e.g., child claims they should receive larger share / ambiguity about who qualifies as \"child\"]. The deceased is survived by [DESCRIBE FAMILY COMPOSITION]. Please advise on: (1) statutory intestate succession rules under Intestate Succession Act; (2) determination of heirship and who qualifies to inherit: (a) legitimate children vs. illegitimate/adopted children; (b) stepchildren and foster children; (c) estranged family members; (3) share calculation for each heir; (4) resolution procedures for intestacy disputes: (a) negotiation among heirs; (b) mediation; (c) court application for determination of shares; (5) evidence requirements to prove heirship (birth certificates, adoption papers, etc.); (6) impact of marriage/divorce on succession; (7) challenges to heirship or distribution. Provide intestacy distribution analysis and dispute resolution framework.",
+"context": "When intestate succession creates disagreements",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 211 (Intestacy), PROMPT 212 (Estate disputes)\n\n---\n\n---\n\n## VERSION NOTES\n- Version 5.05 | Created: March 2026\n- Comprehensive estate planning and probate prompts tailored to Singapore practice\n- Covers Wills, trusts, powers of attorney, probate, and estate administration\n- Suitable for estate planning attorneys and trust professionals",
+"placeholders": [
+"DECEASED NAME",
+"DATE",
+"AMOUNT",
+"DESCRIBE FAMILY COMPOSITION"
+],
+"tags": [
+"area",
+"estate",
+"family",
+"ip",
+"mediation",
+"planning",
+"practice",
+"probate",
+"prompts",
+"specialisms"
+]
+},
+{
+"id": "V5PA-aiprompt-0960",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Insurance Law",
+"title": "Marine Insurance Claims & Coverage",
+"text": "I am handling a marine insurance claim for [VESSEL/CARGO DESCRIPTION]. The loss involves: [BRIEF DESCRIPTION - e.g., vessel damage, cargo loss, ship collision]. Date of loss: [DATE]. Policy type: [HULL INSURANCE / CARGO INSURANCE / P&I]. Loss amount: [AMOUNT].\n\nPlease help me manage marine claims that:\n\n1. Maps marine insurance coverage (Institute Clauses or similar market standards)\n2. Identifies covered perils (total loss, particular loss, average)\n3. Maps the concept of general average (shared losses among all interests)\n4. Analyzes whether loss is partial or total loss (and implications)\n5. Identifies valuation basis (agreed value, replacement cost, etc.)\n6. Maps notice and salvage obligations specific to marine insurance\n7. Advises on survey requirements (damage surveys, condition surveys)\n8. Identifies coverage for salvage costs and sue/labor clause\n9. Maps war risks coverage if incident occurred in war zone\n10. Identifies coverage for bunker (fuel), stores, provisions\n11. Maps duty to minimize loss and timely salvage attempts\n12. Advises on subrogation and salvage right allocation",
+"context": "Marine insurance claims; vessel/cargo loss management; salvage coordination",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 4 (Claims investigation)\n\n---\n\n## Section 5: Insurance Regulation & Compliance",
+"placeholders": [
+"VESSEL/CARGO DESCRIPTION",
+"DATE",
+"AMOUNT"
+],
+"tags": [
+"area",
+"insurance",
+"ip",
+"practice",
+"prompts",
+"specialisms"
+]
+},
+{
+"id": "V5PA-aiprompt-0950",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Insurance Law",
+"title": "Policy Ambiguity Interpretation & Coverage Dispute Resolution",
+"text": "I am analyzing coverage for a claim under [POLICY TYPE] policy. The insured is seeking coverage for [BRIEF CLAIM DESCRIPTION]. The insurer's position: [DESCRIBE]. The policy language at issue: [QUOTE]. Ambiguity: [DESCRIBE].\n\nPlease help me analyze the policy interpretation and coverage dispute that:\n\n1. Identifies the applicable principles of policy interpretation (Singapore Insurance Act, case law)\n2. Maps contra proferentem rule (ambiguities construed against the drafter-insurer)\n3. Identifies the natural and ordinary meaning of key terms\n4. Analyzes whether policy definition resolves the ambiguity\n5. Maps relevant case law on similar policy language\n6. Identifies expert evidence that might support interpretation (actuarial, industry practice)\n7. Constructs argument that ambiguity supports insured's coverage position\n8. Anticipates insurer's counter-arguments and rebuttal\n9. Advises on whether dispute would likely be resolved in insured's favor\n10. Recommends whether to demand coverage or litigate the dispute\n11. Maps settlement leverage (what settlement would be fair?)",
+"context": "Policy interpretation disputes; coverage advocacy; ambiguity argument development",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 3 (Claims handling and dispute)\n\n---",
+"placeholders": [
+"POLICY TYPE",
+"BRIEF CLAIM DESCRIPTION",
+"DESCRIBE",
+"QUOTE"
+],
+"tags": [
+"area",
+"insurance",
+"ip",
+"practice",
+"prompts",
+"singapore",
+"specialisms"
+]
+},
+{
+"id": "V5PA-aiprompt-0942",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Tax Law",
+"title": "Property Tax & Rental Income Deductions",
+"text": "I am advising [PROPERTY OWNER] on property tax and rental income deductions for [PROPERTY DETAILS - residential/commercial, location, annual rental income]. Current tax treatment: [DESCRIBE]. Key issues: [LIST].\n\nPlease help me optimize property tax and rental deductions that:\n\n1. Analyzes assessable rental income (is all rental income taxable?)\n2. Maps property tax deduction eligibility (mortgage interest, property tax, repairs, maintenance)\n3. Identifies capital vs revenue expenditure distinctions (capital cannot be deducted)\n4. Advises on depreciation of building and fixtures (if eligible)\n5. Identifies deductible expenses: management fees, insurance, utilities, repairs\n6. Addresses non-deductible items: mortgage principal, loan arrangement fees\n7. Maps timing of deductions (when can expense be claimed?)\n8. Advises on use of losses (if expenses exceed rental income)\n9. Identifies property gains tax implications on eventual sale\n10. Recommends expense documentation and record-keeping\n11. Advises on whether to use corporate or individual ownership structure",
+"context": "Rental income tax optimization; property deduction maximization; investment property taxation",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 1 (Tax compliance planning)\n\n---\n\n## Section 9: Tax Due Diligence & Compliance Investigations",
+"placeholders": [
+"PROPERTY OWNER",
+"DESCRIBE",
+"LIST"
+],
+"tags": [
+"area",
+"corporate",
+"ip",
+"practice",
+"prompts",
+"property",
+"specialisms",
+"tax"
+]
+},
+{
+"id": "V5PA-aiprompt-0964",
+"volume": "volume-5-practice-areas",
+"volume_label": "Practice Area Specialisms",
+"category": "AI Prompts for Insurance Law",
+"title": "Reinsurance Coverage & Claims Strategy",
+"text": "I am advising [CEDENT INSURER/REINSURED] on reinsurance coverage following an insured loss. The underlying loss involves: [BRIEF DESCRIPTION]. Original insured's claim: [AMOUNT]. Reinsurance treaty: [DESCRIBE]. Coverage question: [DESCRIBE].\n\nPlease help me manage reinsurance recovery that:\n\n1. Maps the reinsurance treaty structure (proportional, non-proportional, excess of loss)\n2. Identifies what losses are covered under the reinsurance treaty\n3. Maps the reinsurer's obligations (duty to defend, duty to pay)\n4. Advises on attachment point and coverage limits under treaty\n5. Identifies retrocession concerns (if reinsurer is also reinsured)\n6. Maps notice and reporting requirements to reinsurer\n7. Advises on cooperation obligations in claims handling\n8. Identifies coverage defects that might be raised by reinsurer\n9. Maps settlement authority (can cedent settle without reinsurer consent?)\n10. Advises on how reinsurance claim is valued and paid\n11. Maps bad faith obligations in reinsurer claim handling\n12. Identifies dispute resolution mechanism (arbitration typically in reinsurance treaties)",
+"context": "Reinsurance recovery strategy; cedent claim management; treaty compliance",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 4 (Claims investigation)\n\n---\n\n## Section 7: Insurance Contract Drafting & Policy Wording",
+"placeholders": [
+"CEDENT INSURER/REINSURED",
+"BRIEF DESCRIPTION",
+"AMOUNT",
+"DESCRIBE"
+],
+"tags": [
+"arbitration",
+"area",
+"insurance",
+"ip",
+"practice",
+"prompts",
+"specialisms"
+]
+},
+{
+"id": "V6ILO-legalaip-0994",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-CM-001",
+"text": "**TITLE:** Contract Playbook Builder for [Contract Type]\n\n**FULL TEXT:**\nDevelop a comprehensive playbook for managing [CONTRACT TYPE] with [COUNTERPARTY CATEGORY]. The playbook should include standard terms the business will accept, key negotiation boundaries, escalation triggers for legal review, red flags that require board approval, and specific amendments we should always propose. Structure this as a practical guide that business teams can reference during negotiations, with decision trees for common negotiation scenarios.\n\n**CONTEXT:** In-house counsel needs to standardize contract negotiations across the organization while empowering business teams to move faster. A playbook reduces back-and-forth and ensures consistent risk management.\n\n**DIFFICULTY:** Medium\n\n**FOLLOW-UP:** Create a one-page summary version for business stakeholders; develop a training script for rolling this out to [SPECIFIC TEAM].\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CONTRACT TYPE",
+"COUNTERPARTY CATEGORY",
+"SPECIFIC TEAM"
+],
+"tags": [
+"contract",
+"counsel",
+"general",
+"house",
+"in-house",
+"ip",
+"legal",
+"library",
+"prompt",
+"review",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-0995",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-CM-002",
+"text": "**TITLE:** Inbound Contract Fast Review Framework\n\n**FULL TEXT:**\nCreate a rapid triage framework for reviewing contracts received from external parties in [INDUSTRY/SECTOR]. Design a checklist that takes 15-30 minutes and identifies whether the contract is: (1) Acceptable as-is, (2) Requires minor amendments, (3) Requires negotiation, or (4) Requires escalation/rejection. Include specific red flags for each category and suggested language for common revisions. Structure this to minimize time spent on standard terms while flagging genuine risks early.\n\n**CONTEXT:** Legal teams are overwhelmed with inbound contracts and need a repeatable screening mechanism to prioritize effort. Fast review processes reduce deal cycle time and improve business satisfaction.\n\n**DIFFICULTY:** Medium\n\n**FOLLOW-UP:** Build a template amendment letter for category (2) contracts; create a summary report showing which contracts are slowing down [BUSINESS UNIT].\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"INDUSTRY/SECTOR",
+"BUSINESS UNIT"
+],
+"tags": [
+"contract",
+"counsel",
+"general",
+"house",
+"in-house",
+"legal",
+"library",
+"prompt",
+"review",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-0996",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-CM-003",
+"text": "**TITLE:** Contract Abstraction for CLM System\n\n**FULL TEXT:**\nDevelop a standardized data abstraction protocol for extracting key contract data into our CLM system for [CONTRACT CATEGORY]. Define which data fields must be captured for reporting and compliance purposes, how to structure renewal dates, liability caps, insurance requirements, and key obligations. Create a template that business teams can complete in under 10 minutes per contract, with validation rules to ensure data quality. Include guidance on how to flag ambiguous language that requires further legal review.\n\n**CONTEXT:** A CLM system is only valuable if contracts are properly entered and maintained. Standardized abstraction ensures consistent data, enables better reporting, and surfaces upcoming compliance deadlines.\n\n**DIFFICULTY:** Medium\n\n**FOLLOW-UP:** Design a data quality audit process; create a dashboard report that uses this data to show upcoming renewals and expiring obligations.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CONTRACT CATEGORY"
+],
+"tags": [
+"compliance",
+"contract",
+"counsel",
+"data",
+"general",
+"house",
+"in-house",
+"legal",
+"library",
+"prompt",
+"review",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-0998",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-CM-005",
+"text": "**TITLE:** Contract Renewal Decision Brief\n\n**FULL TEXT:**\nFor the [CONTRACT NAME] with [COUNTERPARTY] expiring [DATE], prepare a brief that recommends whether to: (1) Renew on existing terms, (2) Renew with renegotiated terms, (3) Replace with alternative vendor, or (4) Let expire. Analyze the current relationship, market alternatives, cost trends, performance issues, and any significant risk factors. Include 2-3 negotiation objectives if renewal is recommended, and a timeline for action. Present this in a format suitable for [APPROVAL AUTHORITY] decision-making.\n\n**CONTEXT:** Renewal decisions often fall through the cracks or are made reactively close to expiration. Systematic renewal analysis ensures informed strategic decisions and better negotiation outcomes.\n\n**DIFFICULTY:** Medium\n\n**FOLLOW-UP:** Develop a renewal negotiation checklist; create a communication template for notifying the counterparty of renewal intentions.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CONTRACT NAME",
+"COUNTERPARTY",
+"DATE",
+"APPROVAL AUTHORITY"
+],
+"tags": [
+"contract",
+"counsel",
+"general",
+"house",
+"in-house",
+"ip",
+"legal",
+"library",
+"prompt",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-0999",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-CM-006",
+"text": "**TITLE:** Contract Portfolio Analysis & Insights\n\n**FULL TEXT:**\nAnalyze our [DEPARTMENT/COMPANY] contract portfolio for [TIME PERIOD] to identify trends, risks, and opportunities. Provide data on: (1) Total active contracts by category, (2) Upcoming renewal dates and potential renegotiation opportunities, (3) Concentration risk (e.g., percentage of spend with top 5 vendors), (4) Common problematic terms across the portfolio, (5) Compliance gaps, (6) Cost savings opportunities, and (7) Contracts requiring attention due to performance issues. Present findings in a format suitable for executive review, with prioritized action items.\n\n**CONTEXT:** Legal teams need visibility into their entire contract portfolio to identify strategic risks and opportunities. Portfolio analysis enables proactive management rather than reactive fire-fighting.\n\n**DIFFICULTY:** High\n\n**FOLLOW-UP:** Deep-dive analysis of top 10 contracts; develop a contract governance policy based on portfolio insights.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"DEPARTMENT/COMPANY",
+"TIME PERIOD"
+],
+"tags": [
+"compliance",
+"contract",
+"counsel",
+"data",
+"general",
+"house",
+"in-house",
+"legal",
+"library",
+"prompt",
+"review",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-1000",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-CM-007",
+"text": "**TITLE:** Auto-Renewal Trap Identification & Prevention\n\n**FULL TEXT:**\nAudit our contract portfolio to identify all contracts with auto-renewal provisions, including [SPECIFIC CONTRACT TYPES]. For each contract, extract: (1) Renewal date and notice period, (2) Mechanism for opting out, (3) Changes to terms upon renewal, (4) Financial impact if renewed, and (5) Whether business stakeholders are aware of the renewal. Create a dashboard showing which contracts will auto-renew within [TIME PERIOD] and flag any where the notice period is approaching. Recommend improvements to our contract review process to prevent accidental renewals of contracts we don't want.\n\n**CONTEXT:** Auto-renewal clauses catch many organizations by surprise, resulting in unwanted contract continuations and unexpected costs. Systematic tracking prevents this trap.\n\n**DIFFICULTY:** Medium\n\n**FOLLOW-UP:** Set up automated renewal alerts in our CLM system; establish a quarterly renewal review meeting with procurement and finance.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"SPECIFIC CONTRACT TYPES",
+"TIME PERIOD"
+],
+"tags": [
+"contract",
+"counsel",
+"finance",
+"general",
+"house",
+"in-house",
+"legal",
+"library",
+"prompt",
+"review",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-1015",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-CP-004",
+"text": "**TITLE:** Compliance Training Script Development\n\n**FULL TEXT:**\nCreate a training script for [SPECIFIC COMPLIANCE TOPIC] to be delivered to [AUDIENCE: all employees, sales team, board, etc.] covering: (1) Why this matters to our organization and society, (2) Applicable laws and regulations, (3) Company policies implementing compliance obligations, (4) Common scenarios and how to handle them, (5) Real or hypothetical case studies, (6) Resources and escalation procedures, (7) Consequences of non-compliance, and (8) Q&A guidance. Write this for [DELIVERY METHOD: live training, video, online module, etc.] and audience education level. Include suggested timing, materials, and assessment approach.\n\n**CONTEXT:** Effective training ensures compliance obligations are understood and followed. Well-designed training changes behavior better than policies alone.\n\n**DIFFICULTY:** Medium\n\n**FOLLOW-UP:** Record/deliver training; track attendance; develop refresher content; assess training effectiveness through surveys or compliance metrics.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"SPECIFIC COMPLIANCE TOPIC"
+],
+"tags": [
+"compliance",
+"counsel",
+"general",
+"house",
+"in-house",
+"ip",
+"legal",
+"library",
+"prompt",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-1020",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-EP-001",
+"text": "**TITLE:** Employment Contract Review Memo\n\n**FULL TEXT:**\nReview the proposed employment contract for [ROLE TITLE] and prepare a memo assessing compliance with: (1) Applicable employment laws in [JURISDICTION], (2) Company policies and standard employment terms, (3) Industry-standard terms for this role, (4) Specific negotiated provisions, (5) Restrictive covenants enforceability, (6) Compensation structure and equity terms, (7) Key risks or unusual terms, and (8) Recommended changes or clarifications. Provide a clear recommendation on whether to execute as drafted or what changes to request. Include risk assessment if we make/don't make recommended changes.\n\n**CONTEXT:** Employment contracts are high-stakes agreements affecting talent relationships and creating legal obligations. Careful review prevents disputes and protects the organization.\n\n**DIFFICULTY:** Medium\n\n**FOLLOW-UP:** Negotiate recommended changes; prepare for signature; ensure contract is uploaded to employee file; comply with all applicable legal requirements for execution.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"ROLE TITLE",
+"JURISDICTION"
+],
+"tags": [
+"compliance",
+"contract",
+"counsel",
+"employment",
+"general",
+"house",
+"in-house",
+"ip",
+"legal",
+"library",
+"prompt",
+"review",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-1036",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-RF-003",
+"text": "**TITLE:** Board Legal Update - [Topic/Period]\n\n**FULL TEXT:**\nPrepare a concise board legal update (suitable for board meeting agenda) on [TOPIC/DEVELOPMENTS], structured as: (1) Key developments and why they matter, (2) Business implications and risks, (3) Actions taken or planned, (4) Board approvals or decisions needed (if any), (5) Timeline for resolution, and (6) Key contacts for follow-up. Keep to 1-2 pages maximum and use executive language. Format to facilitate efficient board discussion without requiring extensive background briefing.\n\n**CONTEXT:** Board updates require clear, concise communication of legal issues at appropriate level of detail. Well-structured updates drive informed board decisions and oversight.\n\n**DIFFICULTY:** Medium\n\n**FOLLOW-UP:** Present to board; address any board questions; execute on board decisions or approvals; report back on execution.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"TOPIC/DEVELOPMENTS"
+],
+"tags": [
+"counsel",
+"general",
+"house",
+"in-house",
+"legal",
+"library",
+"prompt",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-1004",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-RM-001",
+"text": "**TITLE:** Legal Risk Register Entry Creation\n\n**FULL TEXT:**\nFor the legal risk related to [RISK AREA/SITUATION], create a detailed entry for our legal risk register including: (1) Risk description and business context, (2) Potential impact scenarios (financial, operational, reputational), (3) Current likelihood assessment (high/medium/low), (4) Current controls or mitigations in place, (5) Residual risk rating, (6) Owner and stakeholders, (7) Planned remediation actions with target dates, and (8) Monitoring approach. Format this for review by [APPROVAL AUTHORITY] and ensure it integrates with our broader enterprise risk framework.\n\n**CONTEXT:** Enterprise risk management requires legal risks to be systematically identified, assessed, and tracked. Risk registers ensure risks don't fall through gaps and drive accountability for mitigation.\n\n**DIFFICULTY:** Medium\n\n**FOLLOW-UP:** Schedule quarterly review of this risk; integrate into board risk reporting if rating is high.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"RISK AREA/SITUATION",
+"APPROVAL AUTHORITY"
+],
+"tags": [
+"counsel",
+"general",
+"house",
+"in-house",
+"ip",
+"legal",
+"library",
+"mediation",
+"prompt",
+"review",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-1005",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-RM-002",
+"text": "**TITLE:** Legal Risk Heatmap Generation\n\n**FULL TEXT:**\nCreate a risk heatmap that visualizes our legal department's top 15-20 risks across [BUSINESS AREAS]. Use a standard heatmap format with likelihood (low/medium/high) on one axis and impact (low/medium/high) on the other. For each high-risk item, provide: (1) Brief description, (2) Key drivers of risk, (3) Current mitigation status, (4) Responsible owner, and (5) Target risk rating. Include a summary explaining trends in our legal risk profile and recommended focus areas. This document should be suitable for executive and board presentation.\n\n**CONTEXT:** Heatmaps provide rapid risk visualization for stakeholders and boards. They highlight where legal effort should concentrate and facilitate constructive board discussions about risk appetite.\n\n**DIFFICULTY:** High\n\n**FOLLOW-UP:** Update quarterly; create detailed mitigation plans for each high-risk item; present to [BOARD COMMITTEE].\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"BUSINESS AREAS",
+"BOARD COMMITTEE"
+],
+"tags": [
+"counsel",
+"general",
+"house",
+"in-house",
+"ip",
+"legal",
+"library",
+"prompt",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-1006",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-RM-003",
+"text": "**TITLE:** Legal Function Dashboard Creation\n\n**FULL TEXT:**\nDesign a dashboard that provides legal leadership with real-time visibility into: (1) Active matters by category and status, (2) Outside counsel spend and cost drivers, (3) Key contract renewal dates approaching, (4) Regulatory compliance deadlines, (5) Top legal risks and their status, (6) Legal team utilization and capacity, (7) Matter cycle times by category, and (8) KPIs for [SPECIFIC GOALS]. Recommend data sources for each metric and suggest ideal refresh frequency. Include guidance on interpreting the dashboard and taking action based on alerts or trends.\n\n**CONTEXT:** Legal leaders need integrated visibility into operations to manage proactively. Dashboards surface issues early and support data-driven decision-making.\n\n**DIFFICULTY:** High\n\n**FOLLOW-UP:** Build the dashboard using [SPECIFIC TOOL]; establish a weekly review cadence; use dashboard metrics in legal team meetings.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"SPECIFIC GOALS",
+"SPECIFIC TOOL"
+],
+"tags": [
+"compliance",
+"contract",
+"counsel",
+"data",
+"general",
+"house",
+"in-house",
+"ip",
+"legal",
+"library",
+"prompt",
+"review",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-1007",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-RM-004",
+"text": "**TITLE:** Escalation Memo to Board - [Risk/Issue]\n\n**FULL TEXT:**\nPrepare a concise escalation memo for the Board [COMMITTEE] regarding [LEGAL RISK/ISSUE], structured as: (1) Executive summary (2-3 sentences), (2) Business context and why this matters, (3) Current situation and key facts, (4) Risk exposure and potential scenarios, (5) Actions taken to date, (6) Recommended next steps and timeline, (7) Resource needs if applicable, and (8) Approval sought from Board. Use clear, non-technical language and focus on business impact, not legal minutiae. Include attachments with technical detail but keep the memo itself to one page.\n\n**CONTEXT:** Board escalations require precise, executive-level communication. Well-structured escalations build confidence in legal leadership and enable informed board decision-making.\n\n**DIFFICULTY:** High\n\n**FOLLOW-UP:** Prepare talking points for [EXECUTIVE SPONSOR] to present to Board; develop action plan for board-approved recommendations.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"COMMITTEE",
+"LEGAL RISK/ISSUE",
+"EXECUTIVE SPONSOR"
+],
+"tags": [
+"counsel",
+"general",
+"house",
+"in-house",
+"ip",
+"legal",
+"library",
+"prompt",
+"v6.01:"
+]
+},
+{
+"id": "V6ILO-legalaip-1009",
+"volume": "volume-6-inhouse-legal-ops",
+"volume_label": "In-house & Legal Ops",
+"category": "Legal AI Prompt Library - V6.01: In-House Counsel & General Counsel",
+"title": "PROMPT ID: GC-RM-006",
+"text": "**TITLE:** Quarterly Legal Risk Review Framework\n\n**FULL TEXT:**\nCreate a standardized framework for conducting quarterly reviews of our legal risk portfolio. Include: (1) Risk register review process and ownership, (2) Criteria for escalating risks or adding new risks, (3) Review template for each risk owner to complete, (4) Escalation procedures for risks showing deterioration, (5) Documentation of mitigation progress, (6) Discussion questions for legal leadership meetings, (7) Reporting format for [APPROVAL AUTHORITY/BOARD], and (8) Process for updating risk ratings and timelines. Build this as a repeatable process that creates consistency and accountability.\n\n**CONTEXT:** Quarterly reviews create discipline around risk management and prevent risks from being forgotten. Structured reviews ensure consistent evaluation and support informed decision-making.\n\n**DIFFICULTY:** Medium\n\n**FOLLOW-UP:** Establish first quarterly review cycle; integrate with fiscal quarter-end close processes; report to audit committee if applicable.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"APPROVAL AUTHORITY/BOARD"
+],
+"tags": [
+"counsel",
+"general",
+"house",
+"in-house",
+"ip",
+"legal",
+"library",
+"prompt",
+"review",
+"v6.01:"
+]
+},
+{
+"id": "V7SA-singapor-1097",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "CLASS ACTIONS UNDER RULES OF COURT 2021",
+"text": "Recent amendments to the Supreme Court of Judicature Act and Rules of Court 2021 introduced a structured Class Action Framework. Advise whether [DISPUTE INVOLVING MULTIPLE AFFECTED PERSONS] qualifies for class action treatment. Analyze: (1) whether the case is a \"class action\" within the statutory definition (common issues of law or fact, class has 50+ members or criteria satisfied); (2) the \"test\" for certification (commonality, typicality, adequacy of representation, superiority for class action resolution); (3) procedure for obtaining class certification order from court; (4) role of the class representative and class counsel; (5) notification and claims procedures; (6) settlement and approval processes; (7) funding mechanisms including litigation funding. Draft a motion for class certification, including proposed class definition and statement of proposed issues.",
+"context": "The Class Action Framework modernizes Singapore's approach to aggregated claims and is modeled partly on comparable regimes in other jurisdictions. Certification is a jurisdictional prerequisite and the court must be satisfied that class action is superior to other methods of resolving the dispute. The framework balances access to justice with court efficiency and protection of absentee class members.",
+"difficulty": "Advanced",
+"follow_up": "Discuss: (1) likely defendant opposition to certification and key contested issues; (2) funding arrangements with litigation funders; (3) claims administration and notification strategies; (4) potential for settlement and the approval process; (5) appeals of certification decisions.\n\n---\n\n## B. INTERLOCUTORY APPLICATIONS",
+"placeholders": [
+"DISPUTE INVOLVING MULTIPLE AFFECTED PERSONS"
+],
+"tags": [
+"apac",
+"civil",
+"ip",
+"litigation",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1094",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "CONCURRENT WRITS AND RE-SERVICE",
+"text": "[CLIENT'S] Originating Claim against [DEFENDANT] was issued on [DATE], with service validity expiring on [DATE]. Service has not yet been effected due to [REASON - e.g., defendant's difficulty locating, overseas relocation]. Advise on the option to issue a concurrent writ (O6 r4 ROC 2021) and whether this is preferable to seeking an extension of service validity or a fresh Originating Claim. Explain: the procedural requirements for issuing a concurrent writ; how it operates alongside the original writ; cost implications; practical considerations for service. Draft the prayer for issue of a concurrent writ, or advise on the application for extension of service validity under O6 r7 ROC 2021. Consider whether the proposed service method (personal, substituted, or outside jurisdiction) affects the choice.",
+"context": "Concurrent writs are useful when original service validity has expired and re-service is required. They must be issued before expiry of original writ validity and must have a corresponding prayer in the Originating Claim. Extensions of service validity are also available but concurrent writs provide a fresher document and separate service validity period.",
+"difficulty": "Intermediate",
+"follow_up": "Discuss: (1) whether defendant may have moved or become harder to locate; (2) costs of re-service attempts; (3) alternative dispute resolution as a parallel track; (4) whether freezing or security measures should be considered.\n\n---",
+"placeholders": [
+"DEFENDANT",
+"DATE"
+],
+"tags": [
+"apac",
+"civil",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-aiprompt-1168",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "AI Prompts for Singapore Employment Law",
+"title": "Employment Contract Review for Singapore Statutory Compliance",
+"text": "I have an employment contract for a [POSITION TITLE] role in [COMPANY NAME] operating in Singapore. The contract includes: [DESCRIBE KEY TERMS: salary structure, working hours, leave provisions, probation period, termination clause]. Please analyze this contract against the Singapore Employment Act (Cap. 91) and identify:\n\n1. Any provisions that conflict with or fall below statutory minimums (e.g., Section 37 minimum wage, Section 43 maximum working hours of 44 hours/week, Section 53 annual leave entitlements)\n2. Whether mandatory clauses under the Employment Act are present (e.g., section 10 essential terms, section 66 gratuity if applicable)\n3. Specific risks if this is a [EMPLOYEE TYPE: domestic worker / foreign worker / part-time employee], noting different statutory protections for each category\n4. Whether termination-related clauses comply with Section 14 (unfair dismissal) and Section 15 (notice requirements and in-lieu-of-notice payments)\n5. Recommendations for amendments to strengthen protection or ensure full compliance",
+"context": "Use when negotiating employment terms, onboarding new staff, or reviewing existing contracts pre-dispute.",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 2 (Wrongful Dismissal Analysis)\n\n---",
+"placeholders": [
+"POSITION TITLE",
+"COMPANY NAME"
+],
+"tags": [
+"apac",
+"compliance",
+"contract",
+"employment",
+"prompts",
+"review",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1101",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "GENERAL DISCOVERY AND DISCOVERY DISPUTES",
+"text": "Standard disclosure under O26 r1-3 ROC 2021 is due on [DATE]. [CLIENT] is preparing its List of Documents. Advise on: (1) scope of documents to be disclosed (documents \"in the possession, custody or power\" of [CLIENT], including deleted/destroyed documents with explanation); (2) documents privileged from disclosure (legal advice privilege, litigation privilege, without prejudice communications); (3) documents that should not be disclosed due to confidentiality or public interest immunity; (4) procedure for preparing schedules (Standard Form 11, identifying document, date, author, recipient, brief description); (5) affidavit verifying the list; (6) procedure for inspection of disclosed documents; (7) if [OPPOSING PARTY] has made a discovery request or allegations of non-disclosure, how to respond. Address any dispute regarding scope of disclosure and whether a discovery protocol or tiered/staged disclosure should be implemented. Draft the List of Documents with appropriate assertions of privilege or immunity where necessary.",
+"context": "General discovery is mandatory in most civil proceedings and serves to promote fair resolution and prevent trial by surprise. The scope can be modified by agreement between parties. Document production can be a significant cost driver, particularly in digital-heavy disputes. Proper classification of documents (disclosed, privileged, confidential) is essential to avoid waiver of privilege or unintended exposure.",
+"difficulty": "Intermediate",
+"follow_up": "Discuss: (1) whether e-disclosure or electronic discovery platform should be used; (2) document retention and search protocols; (3) any disputes with the opposing party regarding scope or completeness; (4) costs management and whether cost-benefit analysis supports obtaining all documents sought; (5) implications of any non-disclosure or delay in disclosure.\n\n---",
+"placeholders": [
+"DATE",
+"CLIENT",
+"OPPOSING PARTY"
+],
+"tags": [
+"affidavit",
+"apac",
+"civil",
+"discovery",
+"ip",
+"litigation",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1096",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "INTERPLEADER PROCEEDINGS",
+"text": "[CLIENT NAME], a [STAKEHOLDER - e.g., insurance company, bailee, agent] holds [ASSET/FUNDS] of value SGD [AMOUNT] to which [CLAIMANT 1] and [CLAIMANT 2] claim entitlement on the basis of [CONFLICTING CLAIMS DESCRIPTION]. [CLIENT] does not itself claim an interest in the asset but wishes to deposit it with the court and be released from liability. Advise on: (1) interpleader proceedings under O17 ROC 2021; (2) prerequisites (no genuine dispute between client and claimants, genuine doubt as to who is entitled, mutual exclusivity of claims); (3) whether the claim should be commenced by Originating Claim or Originating Application; (4) procedure for deposit of the asset; (5) implications if [CLIENT] has a competing claim or genuine doubt of its own. Draft an Originating Claim or Application on an interpleader basis, clearly pleading the conflict and [CLIENT'S] neutrality.",
+"context": "Interpleader allows a disinterested stakeholder to seek judicial determination of conflicting claims without becoming involved in the substantive dispute. It requires absence of genuine dispute between the stakeholder and claimants and mutual exclusivity of claims. If the stakeholder has a competing claim, interpleader is unavailable and a multi-party action is required instead.",
+"difficulty": "Intermediate",
+"follow_up": "Address: (1) whether claimants will agree to the interpleader or may resist; (2) security for costs implications; (3) funding and payment of the disputed sum into court; (4) directions needed for trial of the competing claims; (5) recovery of [CLIENT'S] costs from the fund.\n\n---",
+"placeholders": [
+"CLIENT NAME",
+"ASSET/FUNDS",
+"AMOUNT",
+"CLAIMANT 1",
+"CLAIMANT 2",
+"CONFLICTING CLAIMS DESCRIPTION",
+"CLIENT"
+],
+"tags": [
+"apac",
+"civil",
+"ip",
+"pleading",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1092",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "JURISDICTION ANALYSIS: STATE COURTS VS HIGH COURT VS SICC",
+"text": "A claim involving [FACTUAL SCENARIO] with an estimated value of [AMOUNT SGD] is contemplated. Analyze the appropriate forum: (1) State Courts (District Court or Magistrates' Court); (2) High Court; or (3) Singapore International Commercial Court (SICC). For each forum, address: jurisdiction and monetary thresholds under the State Courts Act (Cap. 396) and Supreme Court of Judicature Act (Cap. 322); subject matter jurisdiction for equity, defamation, or other specialized disputes; jurisdiction to award damages; procedural differences and rules of court applicable. Consider whether the dispute has international elements and whether SICC would be appropriate under O110 ROC 2021 (international commercial disputes). Provide a recommendation with supporting rationale. Note any tactical implications of forum choice.",
+"context": "Forum selection significantly impacts procedure, available remedies, appellate routes, and costs. SICC is increasingly used for international transactions; State Courts are cost-effective for lower-value claims but have jurisdictional caps. High Court is the primary forum for higher-value disputes and specialist matters.",
+"difficulty": "Advanced",
+"follow_up": "After analysis, discuss: (1) whether any objections to jurisdiction are likely and the strength of such objections; (2) cost-benefit of higher court forum; (3) appeal routes and implications; (4) whether settlement strategy should differ by forum.\n\n---",
+"placeholders": [
+"FACTUAL SCENARIO",
+"AMOUNT SGD"
+],
+"tags": [
+"apac",
+"civil",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1103",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "MAREVA INJUNCTION / FREEZING ORDER APPLICATION",
+"text": "[CLIENT] has evidence that [DEFENDANT] is likely to dissipate, conceal, or remove assets from [JURISDICTION/COUNTRY] with intent to defeat any judgment that [CLIENT] may obtain in [CASE REFERENCE] or related proceedings. [CLIENT] seeks a Mareva injunction (freezing order) under O29 r3 ROC 2021 to restrain [DEFENDANT] from dealing with assets up to the value of SGD [AMOUNT]. The applicant must establish: (1) a strong prima facie case on the merits; (2) that there is a real risk of dissipation; (3) that the balance of convenience favors granting the order; (4) that there is no alternative remedy; (5) that the court's discretion should be exercised (including public interest considerations). Affidavit evidence addressing each element, including details of the defendant's conduct, asset holdings, and flight risk. The order should be proportionate and include exceptions (living expenses, legal fees, ordinary business expenses). Draft the application and supporting affidavit, addressing the test comprehensively.",
+"context": "Mareva injunctions are powerful interim remedies preventing asset dissipation pending trial. They require careful application as they are interlocutory and may affect the defendant's livelihood if too broad. The standard is demanding: \"strong\" prima facie case and \"real risk\" of dissipation (not merely possibility). Orders are often granted on a without-notice basis initially to preserve their effect, followed by inter partes hearing.",
+"difficulty": "Advanced",
+"follow_up": "Discuss: (1) whether to apply without notice (ex parte) initially or on notice; (2) undertaking in damages required from the applicant; (3) scope of the order and exceptions (family living expenses, business operations); (4) disclosure obligations and updating affidavits; (5) variation or discharge applications if circumstances change; (6) ancillary orders (disclosure of assets, bank account information); (7) implications of breach of the order.\n\n---",
+"placeholders": [
+"CLIENT",
+"DEFENDANT",
+"JURISDICTION/COUNTRY",
+"CASE REFERENCE",
+"AMOUNT"
+],
+"tags": [
+"affidavit",
+"apac",
+"civil",
+"ip",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1091",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "ORIGINATING APPLICATION ANALYSIS",
+"text": "Advise whether [DISPUTE DESCRIPTION] should proceed by Originating Application (Form 7) rather than Originating Claim (Form 8) under Rules of Court 2021. Consider whether the matter: (a) involves a question of law alone or predominantly points of law; (b) arises under an express statutory jurisdiction; (c) concerns rights under a trust, will, or other determinable issue; (d) is expeditiously determined on facts substantially not in dispute. Draft the Originating Application and supporting affidavit if this procedure is appropriate. Include a clear brief, statement of facts, and identification of the legal issues. Advise on the advantages (speed, cost) and disadvantages (limited discovery, expert evidence constraints) compared to normal proceedings.",
+"context": "Originating Applications under O28 ROC 2021 are appropriate for narrow disputes or applications for declaratory relief, interpretation of documents, or statutory matters. Mischaracterizing a claim as an application may result in dismissal or ordering conversion to normal proceedings.",
+"difficulty": "Intermediate",
+"follow_up": "Discuss: (1) timing for filing evidence and oral argument preparation; (2) likely areas of disagreement on facts; (3) whether an agreed statement of facts would be beneficial; (4) potential for summary dismissal or conversion to full trial.\n\n---",
+"placeholders": [
+"DISPUTE DESCRIPTION"
+],
+"tags": [
+"affidavit",
+"apac",
+"civil",
+"discovery",
+"ip",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1090",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "ORIGINATING CLAIM (FORM 8) DRAFTING",
+"text": "Draft an Originating Claim (Form 8) under Rules of Court 2021 for [CLIENT NAME] claiming [RELIEF SOUGHT - e.g., breach of contract/negligence/defamation] against [DEFENDANT(S)]. The claim arises from [FACTUAL BACKGROUND - 2-3 sentences]. [CLIENT NAME] seeks [SPECIFIC DAMAGES/REMEDY] and [OTHER RELIEF]. The claim is filed in [STATE COURTS/HIGH COURT] on the basis that [JURISDICTION BASIS - e.g., subject matter amount, nature of dispute]. Please draft concise, numbered paragraphs following best practice formatting. Include a Statement of Claim properly particularized with dates, amounts, and specific breaches or wrongs alleged. Ensure compliance with Practice Direction 3.1 (Drafting of Pleadings) and include an Indemnity on Form 6 if appropriate.",
+"context": "Form 8 is the standard originating document for commencement of proceedings in both State Courts and High Court. Proper pleading is critical as defects may lead to striking out or dismissal under O18 ROC 2021. The Statement of Claim must contain sufficient particularity to give fair notice and enable proper response.",
+"difficulty": "Intermediate",
+"follow_up": "After drafting, discuss: (1) potential defences and how the pleading addresses them; (2) whether the claim should be bifurcated with liability and quantum separately; (3) service strategy and any requirement for service outside jurisdiction.\n\n---",
+"placeholders": [
+"CLIENT NAME",
+"SPECIFIC DAMAGES/REMEDY",
+"OTHER RELIEF",
+"STATE COURTS/HIGH COURT"
+],
+"tags": [
+"apac",
+"civil",
+"compliance",
+"contract",
+"drafting",
+"pleading",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1095",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "REPRESENTATIVE PROCEEDINGS AND CLASS ACTIONS",
+"text": "[ORGANIZATION/MULTIPLE INDIVIDUALS] have suffered loss from [COMMON FACTUAL MATRIX - e.g., defective product, fraudulent investment scheme, breach of contract by [DEFENDANT]]. [NUMBER] affected persons exist, with individual claims ranging from SGD [AMOUNT] to SGD [AMOUNT]. Advise on: (1) whether representative proceedings under O15 r12 ROC 2021 may be appropriate (common interest and common grievance requirements); (2) Class Action Framework introduced by recent Supreme Court of Judicature Act amendments (if applicable); (3) requirements for appointment of representative(s) and authority documentation; (4) definition of the class and representable claim; (5) procedural differences in representative vs individual proceedings; (6) limitation period issues and accrual of claims across multiple claimants. Draft an Originating Claim on a representative basis, clearly defining the class and identifying the representative(s).",
+"context": "Representative proceedings consolidate multiple claims to improve efficiency and reduce duplicative litigation. The Class Action Framework (if adopted in the jurisdiction you're advising in) provides a structured mechanism. Requirements include common interest, common grievance, and suitability of representation. The representative must have authority from the represented persons.",
+"difficulty": "Advanced",
+"follow_up": "Discuss: (1) notification and opt-in/opt-out mechanics; (2) management of potential conflicts between represented parties; (3) costs management and funding arrangements; (4) settlement approval processes; (5) enforcement and distribution of any judgment to represented persons.\n\n---",
+"placeholders": [
+"ORGANIZATION/MULTIPLE INDIVIDUALS",
+"DEFENDANT",
+"NUMBER",
+"AMOUNT"
+],
+"tags": [
+"apac",
+"civil",
+"contract",
+"ip",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1093",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "SERVICE REQUIREMENTS AND COMPLIANCE",
+"text": "[CLIENT NAME] has obtained an Originating Claim against [DEFENDANT NAME/S]. The defendant(s): [SERVICE SCENARIO - e.g., \"are individuals in Singapore,\" \"are a company registered in Singapore but with principal place of business overseas,\" \"are outside jurisdiction\"]. Advise on: (1) service methods available (O10 ROC 2021 - personal service, service on solicitor, substituted service); (2) timeframes (2 months for defendants in Singapore, extended period for overseas service); (3) requirements for service outside jurisdiction (O11 ROC 2021) and need for court permission; (4) service on foreign companies and agents; (5) deemed service provisions; (6) steps to take if service cannot be effected. Draft a service affidavit if personal service has been completed, or a prayer for substituted service if personal service is impracticable.",
+"context": "Service is foundational to jurisdiction; non-compliance with service requirements can result in proceedings being set aside. Different methods have different evidentiary requirements and timeframes. Leave for service outside jurisdiction is discretionary and requires satisfaction of jurisdictional gateways (nexus with Singapore).",
+"difficulty": "Intermediate",
+"follow_up": "Address: (1) what evidence of service must be filed; (2) consequences if defendant challenges service; (3) whether to seek extension of service validity period; (4) timing implications for subsequent steps.\n\n---",
+"placeholders": [
+"CLIENT NAME",
+"DEFENDANT NAME/S"
+],
+"tags": [
+"affidavit",
+"apac",
+"civil",
+"compliance",
+"ip",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1100",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "SPECIFIC DISCOVERY APPLICATION",
+"text": "In [CASE REFERENCE], [CLIENT] requires discovery of specific documents from [OPPOSING PARTY] beyond standard disclosure under O26 ROC 2021. [CLIENT] seeks specific discovery of: [DOCUMENT CATEGORY 1 - e.g., \"all communications between [PERSON A] and [PERSON B] concerning [SUBJECT]\"], [DOCUMENT CATEGORY 2], and [DOCUMENT CATEGORY 3]. These documents are [RELEVANCE - highly relevant/critical] to [CLIENT'S] [CLAIM/DEFENCE] because [FACTUAL/LEGAL RELEVANCE]. [OPPOSING PARTY] has [SUGGESTED REASON FOR WITHHOLDING - e.g., \"claimed privilege,\" \"stated documents do not exist,\" \"refused to search\"]. Draft an application for specific discovery under O26 r5 ROC 2021, including: affidavit addressing necessity and relevance; detailed description of each category; explanation of why standard disclosure is insufficient; and consideration of any legitimate privacy or privilege concerns. Ensure compliance with Practice Direction 3.2 (Discovery).",
+"context": "Specific discovery can be ordered to compel production of identified documents beyond the scope of standard disclosure. The applicant must demonstrate that the documents are relevant to a fact in issue, necessary for fair disposition of the case, and that standard disclosure is insufficient. Courts balance the need for information against parties' privacy interests and privilege. Practice Direction 3.2 requires a reasoned search protocol.",
+"difficulty": "Intermediate",
+"follow_up": "Discuss: (1) likely objections based on privilege (legal advice, litigation, without prejudice) or confidentiality; (2) scope and definition of document categories (dates, parties, subjects); (3) search methodology and what the opposing party realistically can search; (4) timing and logistics of production; (5) costs burden if discovery is very extensive.\n\n---",
+"placeholders": [
+"CASE REFERENCE",
+"CLIENT",
+"OPPOSING PARTY",
+"PERSON A",
+"PERSON B",
+"SUBJECT",
+"DOCUMENT CATEGORY 2",
+"DOCUMENT CATEGORY 3",
+"CLAIM/DEFENCE",
+"FACTUAL/LEGAL RELEVANCE"
+],
+"tags": [
+"affidavit",
+"apac",
+"civil",
+"compliance",
+"discovery",
+"ip",
+"privacy",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1099",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "STRIKING OUT PROCEEDINGS",
+"text": "[OPPOSING PARTY'S] pleading (being [Originating Claim/Defence/Counterclaim/Reply]) contains [DEFECT DESCRIPTION]. [CLIENT] seeks to strike out the pleading or parts thereof under O18 r8 ROC 2021 on the grounds that: (1) it discloses no reasonable cause of action/defence; (2) it is frivolous or vexatious; (3) it constitutes an abuse of process; and/or (4) [OTHER GROUND - e.g., procedural defect]. The pleading fails to [SPECIFIC FAILURE - e.g., \"particularize the alleged breach with dates and amounts,\" \"establish causation between the act complained of and the loss claimed\"]. Draft an application to strike out with detailed affidavit evidence addressing each ground, identifying the specific paragraphs or passages that are objectionable, and explaining why each is unmaintainable. Include proposed alternative relief (striking out with leave to amend) if appropriate.",
+"context": "Striking out is a drastic remedy available only when the defect is patent and self-evident from the pleading itself, without requiring investigation of facts. It is not available merely because the pleading is weak on the merits or inadequately supported by evidence (which is addressed through summary judgment or at trial). Courts approach striking out applications cautiously to avoid denying parties their right to litigate.",
+"difficulty": "Intermediate",
+"follow_up": "Address: (1) whether the defect can be cured by amendment and, if so, whether to offer leave to amend; (2) procedures and timelines for any amendment; (3) costs recovery if striking out is successful; (4) any threshold objections to jurisdiction or service that should be dealt with first; (5) whether striking out should be pursued or whether summary judgment is a more efficient remedy.\n\n---",
+"placeholders": [
+"DEFECT DESCRIPTION",
+"CLIENT"
+],
+"tags": [
+"affidavit",
+"apac",
+"civil",
+"ip",
+"pleading",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V7SA-singapor-1098",
+"volume": "volume-7-singapore-apac",
+"volume_label": "Singapore & APAC",
+"category": "Singapore Civil Procedure",
+"title": "SUMMARY JUDGMENT APPLICATION",
+"text": "[CLIENT - CLAIMANT/DEFENDANT] seeks summary judgment on [CLAIM/DEFENCE] in proceedings [CASE REFERENCE]. The [OPPOSING PARTY] has filed [DEFENCE/COUNTERCLAIM] alleging [DEFENCE SUMMARY]. [CLIENT] contends that there is no triable issue of fact and [OPPOSING PARTY] has no real prospect of success because [SUBSTANTIVE ARGUMENT - 1-2 sentences]. Apply the test under O14 ROC 2021 (if State Courts) or O13 ROC 2021 (if High Court), addressing: (1) whether [OPPOSING PARTY] has a real prospect of success (not just an arguable case); (2) whether there is a triable issue of fact; (3) whether there are compelling reasons for a trial despite meeting the test; (4) the strength and credibility of affidavit evidence. Prepare a supporting affidavit with exhibits (documents, correspondence, expert opinion if available) and draft the prayer for summary judgment. Address anticipated defences and why they do not raise a triable issue.",
+"context": "Summary judgment (called \"summons for directions\" in some contexts) is a critical interlocutory remedy allowing parties to obtain judgment without trial when the opposing party has no real prospect of success. The threshold is high: the opposing party must have more than a fanciful case but need not be strong on the merits. Court considers whether a trial would truly add value.",
+"difficulty": "Advanced",
+"follow_up": "Discuss: (1) likely grounds of opposition and counter-arguments; (2) whether partial summary judgment (on some issues) is achievable; (3) whether conditional judgment (summary judgment on liability with quantum to trial) should be sought; (4) costs implications and recovery of costs; (5) timing of application and impact on case progression.\n\n---",
+"placeholders": [
+"CLIENT - CLAIMANT/DEFENDANT",
+"CLAIM/DEFENCE",
+"CASE REFERENCE",
+"OPPOSING PARTY",
+"DEFENCE/COUNTERCLAIM",
+"DEFENCE SUMMARY",
+"CLIENT"
+],
+"tags": [
+"affidavit",
+"apac",
+"civil",
+"ip",
+"procedure",
+"singapore"
+]
+},
+{
+"id": "V8AP-aiethics-1237",
+"volume": "volume-8-ai-practice",
+"volume_label": "AI in Legal Practice",
+"category": "AI Ethics & Best Practices for Legal Professionals",
+"title": "AI & Legal Billing Ethics: Charging Clients for AI-Assisted Work",
+"text": "Create a comprehensive legal billing ethics framework addressing the question: \"Can lawyers bill for AI-assisted work, and if so, how?\" This framework should clarify: (1) Foundational ethics question\u2014does using AI reduce the time spent (and thus the hours billable), or can you bill at your normal hourly rate for AI-assisted work?, (2) Disclosure requirements\u2014must you tell clients you used AI? If disclosed, can you still charge full rates?, (3) Different billing models: (a) charging the time saved by using AI to the firm as \"efficiency gains,\" (b) charging reduced rates because AI reduced your time, (c) passing savings to the client, (d) not discounting at all if AI is a firm investment, (4) Time-tracking implications\u2014how do you record AI-assisted work in your time entries?, (5) Flat-fee matters\u2014if you use AI to reduce time on a flat-fee engagement, is that a gain to the firm or benefit to the client?, (6) Regulatory guidance\u2014what do Singapore Law Society, the Bar Council, and international ethics opinions (ABA, Law Society of England) say?, (7) Client communication templates for different billing scenarios, (8) Avoiding misleading billing (e.g., can you bill for time reviewing AI output as if it took a lawyer that full time?), (9) Dealing with client objections to being \"billed for AI work,\" and (10) Profitability analysis\u2014how to model AI cost savings while maintaining ethical billing practices. Provide sample engagement letters and billing narratives.",
+"context": "Use when setting firm billing policies and discussing rates with clients",
+"difficulty": "Intermediate",
+"follow_up": "PROMPT 6 (Quality Assurance Checklists)\n\n---",
+"placeholders": [],
+"tags": [
+"best",
+"ethics",
+"legal",
+"practice",
+"practices",
+"professionals",
+"review",
+"singapore"
+]
+},
+{
+"id": "V8AP-aiethics-1234",
+"volume": "volume-8-ai-practice",
+"volume_label": "AI in Legal Practice",
+"category": "AI Ethics & Best Practices for Legal Professionals",
+"title": "AI Use Disclosure Obligations to Clients & Courts",
+"text": "Draft a comprehensive client advisory and court disclosure protocol for lawyers using AI in legal work. This protocol should address: (1) When must AI use be disclosed? (e.g., in initial client engagement letters, if AI significantly contributed to work product, if AI output was used without human verification), (2) What should the disclosure statement contain? (name of AI tool, its limitations, human review methodology, quality assurance measures), (3) How does disclosure vary by matter type? (litigation vs. transactional vs. advisory), (4) What about court disclosure obligations? (Do you need to tell opposing counsel? The judge? The court?), (5) Client consent\u2014is it required? Can it be implicit or must it be express in writing?, (6) How to document client consent and obtain retroactive consent if needed, (7) What disclosure is required in court filings? (Can you just mention AI was used or must you explain which parts?), (8) Handling scenarios where AI-generated content contains errors\u2014who bears responsibility?, (9) Managing client expectations about AI limitations and accuracy, (10) Special rules for regulated sectors (family law, criminal law, conveyancing). Provide template disclosure statements and court filing language.",
+"context": "Use when updating engagement letters, retainer agreements, and court protocols; essential for litigation practice",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 3 (Hallucination Defence Strategies)\n\n---",
+"placeholders": [],
+"tags": [
+"best",
+"criminal",
+"ethics",
+"family",
+"legal",
+"litigation",
+"practice",
+"practices",
+"professionals",
+"review"
+]
+},
+{
+"id": "V8AP-aiethics-1235",
+"volume": "volume-8-ai-practice",
+"volume_label": "AI in Legal Practice",
+"category": "AI Ethics & Best Practices for Legal Professionals",
+"title": "Hallucination Defence Strategies & Verification Protocols",
+"text": "Create a comprehensive risk mitigation strategy to defend against claims that AI hallucinations (invented facts, false citations, fabricated case law) caused professional negligence. The strategy should include: (1) A definition of hallucinations specific to legal contexts (wrong case citations, fabricated statutes, invented legal precedents), (2) Step-by-step verification procedures that a lawyer MUST follow before relying on any AI-generated legal analysis (how to verify cases cited exist, confirm holdings are accurate, check statutes are current, validate legal reasoning), (3) A quality assurance checklist for reviewing AI outputs (cross-referencing with primary sources, using legal research databases like LexisNexis or Singapore Academy of Law's database, verifying dates and jurisdiction), (4) Documentation requirements proving verification was performed (screenshots of verification, notes of research conducted), (5) Training materials for lawyers and paralegals on hallucination risks, (6) Procedures for when an hallucination is discovered (notifying clients, correcting court filings, assessing malpractice exposure), (7) How to structure warnings and disclaimers in engagement letters about AI limitations, (8) Insurance implications and disclosure to professional indemnity providers, (9) Establishing a \"verification audit trail\" showing the human review process, and (10) Case studies of hallucination failures in legal AI and lessons learned. Make this a practical, defensible methodology.",
+"context": "Use to protect firm from AI-related professional negligence claims and establish best practices",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 4 (Confidentiality & Data Security)\n\n---",
+"placeholders": [],
+"tags": [
+"best",
+"data",
+"ethics",
+"legal",
+"practice",
+"practices",
+"professionals",
+"review",
+"singapore"
+]
+},
+{
+"id": "V8AP-aiethics-1233",
+"volume": "volume-8-ai-practice",
+"volume_label": "AI in Legal Practice",
+"category": "AI Ethics & Best Practices for Legal Professionals",
+"title": "Law Society Singapore AI Compliance Checklist",
+"text": "You are a legal ethics consultant specializing in Singapore Law Society compliance. A lawyer is integrating AI tools into their practice. Create a comprehensive compliance checklist ensuring the lawyer meets all Law Society professional conduct obligations when using generative AI. The checklist should cover: (1) duty of honesty and integrity when representing AI-assisted work, (2) confidentiality and data protection obligations under the Personal Data Protection Act (PDPA), (3) duty to disclose AI use to clients, (4) maintaining client privilege despite AI tool usage, (5) supervision requirements for junior lawyers using AI, (6) continuing professional development (CPD) obligations related to AI literacy, (7) conflict-of-interest checks when using AI vendors with competing clients, (8) record-keeping and audit trail requirements, (9) competence obligations\u2014not using AI beyond one's expertise level, and (10) handling complaints and professional misconduct related to AI negligence. Structure this as an actionable checklist with yes/no questions and remediation steps for each area. Include specific references to Singapore Law Society's Code of Professional Conduct and Ethics (CPCE).",
+"context": "Use when establishing AI governance in a law firm or advising partners on compliance requirements",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 2 (AI Disclosure Obligations)\n\n---",
+"placeholders": [],
+"tags": [
+"best",
+"compliance",
+"data",
+"ethics",
+"legal",
+"mediation",
+"practice",
+"practices",
+"professionals",
+"singapore"
+]
+},
+{
+"id": "V8AP-aiethics-1236",
+"volume": "volume-8-ai-practice",
+"volume_label": "AI in Legal Practice",
+"category": "AI Ethics & Best Practices for Legal Professionals",
+"title": "PDPA Compliance & Confidentiality Protocols for AI Use",
+"text": "Draft comprehensive confidentiality and data protection protocols for lawyers using AI tools in Singapore, compliant with the Personal Data Protection Act (PDPA) and lawyer-client privilege requirements. Address: (1) What constitutes personal data in a legal context and whether feeding it into AI tools violates PDPA obligations, (2) Obtaining explicit client consent before inputting personal data into AI systems (template consent forms), (3) Data minimization strategies\u2014can you anonymize/redact client information before using AI? How?, (4) Third-party data processors\u2014if an AI vendor stores data, what are your obligations under PDPA?, (5) Cross-border data transfer issues (if AI servers are outside Singapore, what are the implications?), (6) Lawyer-client privilege and work product protection\u2014does using AI tools waive privilege?, (7) Data retention and deletion obligations\u2014if you use an AI tool to draft a memo, how long must you keep it? Can you delete it from the AI tool's system?, (8) Vendor assessment criteria (what questions should you ask an AI vendor about data security, encryption, access controls, audit logs?), (9) Incident response procedures if a data breach occurs involving AI-processed client information, (10) Creating audit trails and demonstrating compliance during Law Society audits or complaints investigations. Include specific PDPA provisions and practical implementation guidance for different AI tools (ChatGPT, Claude, Microsoft Copilot, custom solutions).",
+"context": "Use when onboarding AI tools, updating privacy policies, and conducting vendor due diligence",
+"difficulty": "Advanced",
+"follow_up": "PROMPT 5 (Billing Ethics)\n\n---",
+"placeholders": [],
+"tags": [
+"best",
+"compliance",
+"data",
+"ethics",
+"legal",
+"practice",
+"practices",
+"professionals",
+"singapore"
+]
+},
+{
+"id": "V9CFL-practice-1279",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "AEIC PREPARATION OUTLINE",
+"text": "You are assisting a Singapore litigator to prepare an affidavit of evidence-in-chief (AEIC) under the Rules of Court 2021. From the witness's account and documents below, produce:\n\n1. A chronological outline of the witness's evidence, numbered by topic\n2. For each topic: the facts within the witness's personal knowledge, the exhibits to reference (mark as [WITNESS-1], [WITNESS-2]\u2026), and any statement that is opinion or hearsay that must be reframed or removed\n3. A list of open questions to put to the witness before drafting\n4. Cross-examination exposure: the three weakest points and how opposing counsel will likely attack them\n\nDraft in neutral, first-person language suitable for an AEIC. Do not embellish beyond the source material.\n\n[WITNESS ACCOUNT AND DOCUMENTS]",
+"context": "Adapted from claude-for-legal's deposition-preparation skill, converted to Singapore's AEIC practice.",
+"difficulty": "Advanced",
+"follow_up": "Drafting tool for the full AEIC skeleton\n\n---",
+"placeholders": [
+"WITNESS-1",
+"WITNESS-2",
+"WITNESS ACCOUNT AND DOCUMENTS"
+],
+"tags": [
+"(adapted",
+"(claude",
+"affidavit",
+"area",
+"claude",
+"drafting",
+"from",
+"legal)",
+"practice",
+"practice-area",
+"singapore",
+"skills"
+]
+},
+{
+"id": "V9CFL-practice-1278",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "CLAIM CHART / ELEMENTS TABLE",
+"text": "You are a Singapore litigator preparing an elements chart. For the cause of action stated below, produce a table with columns: Element | Supporting facts from the documents | Source (document + paragraph) | Strength (Strong / Arguable / Weak / No evidence yet) | Gaps and further evidence needed.\n\nBe rigorous: only rely on the documents provided; never invent facts; where an element has no support, say \"No evidence yet\" and suggest what document or witness would fill the gap. Conclude with a 3-sentence merits assessment flagged as preliminary.\n\nCause of action: [e.g. breach of contract / negligence / misrepresentation]\n[DOCUMENT EXTRACTS]",
+"context": "Adapted from claude-for-legal's litigation claim-chart skill for Singapore causes of action.",
+"difficulty": "Intermediate",
+"follow_up": "B.2 (AEIC preparation)\n\n---",
+"placeholders": [
+"DOCUMENT EXTRACTS"
+],
+"tags": [
+"(adapted",
+"(claude",
+"area",
+"claude",
+"contract",
+"from",
+"legal)",
+"practice",
+"practice-area",
+"singapore",
+"skills"
+]
+},
+{
+"id": "V9CFL-practice-1277",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "CONTRACT RENEWAL / EXPIRY TRIAGE",
+"text": "You are preparing a renewals watchlist. From the contract text below, extract into a table: contract name; counterparty; commencement date; initial term; renewal mechanism (auto-renew / by notice / none); notice window and deadline to prevent or trigger renewal; price adjustment on renewal; termination-for-convenience rights. Then state, in two sentences, the single most time-sensitive action and its calendar deadline. If any date cannot be determined from the text, say so explicitly rather than guessing.\n\n[CONTRACT TEXT]",
+"context": "Adapted from claude-for-legal's renewal-watcher agent, reworked as an on-demand prompt for a local model (the original is a scheduled cloud agent).",
+"difficulty": "Beginner",
+"follow_up": "Chronology tool for multi-contract timelines\n\n---\n\n## B. LITIGATION",
+"placeholders": [
+"CONTRACT TEXT"
+],
+"tags": [
+"(adapted",
+"(claude",
+"area",
+"claude",
+"contract",
+"from",
+"legal)",
+"practice",
+"practice-area",
+"skills"
+]
+},
+{
+"id": "V9CFL-practice-1282",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "CONTRACTOR VS EMPLOYEE CLASSIFICATION",
+"text": "You are a Singapore employment lawyer assessing worker classification. Apply the multi-factor control test as used in Singapore (control; ownership of factors of production; economic reality/integration) to the working arrangement described below. For each factor: the facts pointing to employment, the facts pointing to independent contracting, and which way it leans. Conclude with: overall classification risk (Low/Medium/High), the practical consequences if reclassified (CPF contributions, Employment Act entitlements, tax withholding), and the three contract or practice changes that would most reduce risk.\n\n[WORKING ARRANGEMENT DESCRIPTION]",
+"context": "Adapted from claude-for-legal's worker-classification skill for the Singapore control test and CPF regime.",
+"difficulty": "Intermediate",
+"follow_up": "A.1 to review the contractor agreement itself\n\n---\n\n## D. DATA PROTECTION (PDPA)",
+"placeholders": [
+"WORKING ARRANGEMENT DESCRIPTION"
+],
+"tags": [
+"(adapted",
+"(claude",
+"area",
+"claude",
+"contract",
+"employment",
+"from",
+"ip",
+"legal)",
+"practice",
+"practice-area",
+"singapore",
+"skills",
+"tax"
+]
+},
+{
+"id": "V9CFL-practice-1284",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "DATA BREACH NOTIFIABILITY ASSESSMENT (PDPA)",
+"text": "You are advising on a suspected data breach under the PDPA's Data Breach Notification Obligation. Work step-by-step from the incident facts below:\n\n1. IS IT A DATA BREACH? \u2014 unauthorised access, collection, use, disclosure, copying, modification or disposal of personal data\n2. NOTIFIABILITY: does it (a) result in, or is likely to result in, significant harm (check against the prescribed categories of personal data) or (b) affect 500 or more individuals?\n3. CLOCK: assess-without-unreasonable-delay duty; 3-calendar-day PDPC notification once assessed notifiable; affected-individual notification requirements and exceptions\n4. CONTAINMENT AND REMEDIATION actions to take now \u2014 checklist\n5. DRAFT PDPC NOTIFICATION SKELETON with the required content fields\n\nState assumptions explicitly and mark every legal threshold conclusion [verify] \u2014 this assessment must be confirmed by the responsible lawyer before any notification decision.\n\n[INCIDENT FACTS]",
+"context": "Adapted from claude-for-legal's privacy incident skill for the PDPA breach-notification regime.",
+"difficulty": "Advanced",
+"follow_up": "Audit Log to evidence the assessment trail\n\n---\n\n## E. IN-HOUSE TRIAGE",
+"placeholders": [
+"INCIDENT FACTS"
+],
+"tags": [
+"(adapted",
+"(claude",
+"area",
+"claude",
+"data",
+"from",
+"legal)",
+"mediation",
+"practice",
+"practice-area",
+"skills"
+]
+},
+{
+"id": "V9CFL-practice-1280",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "LETTER OF DEMAND RESPONSE STRATEGY",
+"text": "You are a Singapore disputes lawyer. Opposing counsel's letter of demand is below. Produce:\n\n1. CLAIMS ASSERTED: each claim, the amount, and the legal basis asserted\n2. FACTUAL ASSERTIONS TO VERIFY with the client \u2014 as a checklist\n3. LIMITATION CHECK: relevant limitation periods and whether any appear close (state the assumption on accrual dates and mark [verify])\n4. RESPONSE OPTIONS: substantive reply / holding reply / without-prejudice settlement overture / no response \u2014 with a two-sentence pro/con for each in this matter's context\n5. DRAFT HOLDING REPLY: courteous, admits nothing, reserves all rights, buys 14 days\n\n[LETTER OF DEMAND]",
+"context": "Adapted from claude-for-legal's demand-response skill for Singapore limitation and practice norms.",
+"difficulty": "Intermediate",
+"follow_up": "Drafting tool \u2192 letters for the full reply\n\n---\n\n## C. EMPLOYMENT",
+"placeholders": [
+"LETTER OF DEMAND"
+],
+"tags": [
+"(adapted",
+"(claude",
+"area",
+"claude",
+"from",
+"legal)",
+"practice",
+"practice-area",
+"singapore",
+"skills"
+]
+},
+{
+"id": "V9CFL-practice-1276",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "NDA RAPID SCREEN",
+"text": "You are a Singapore commercial lawyer performing a 10-minute NDA screen. Assess the attached NDA against this standard and report in a table (Issue | Clause | Position | Verdict):\n\n- Mutuality: obligations should bind both parties equally\n- Definition of Confidential Information: marked-or-reasonably-understood scope, standard carve-outs (public domain, independently developed, legally compelled)\n- Term: 2\u20135 years for confidentiality; perpetual only for trade secrets\n- Residuals clauses: flag ANY residuals clause prominently \u2014 usually unacceptable\n- Non-solicitation or non-compete riders hidden in the NDA: flag prominently\n- Governing law: note if not Singapore\n- Injunctive relief: acknowledgment is standard; one-sided attorney-fee shifting is not\n\nEnd with a one-line recommendation: SIGN AS-IS / SIGN WITH MINOR EDITS / NEGOTIATE / ESCALATE, and list the edits if any. Cite clause numbers throughout.\n\n[NDA TEXT]",
+"context": "Adapted from claude-for-legal's NDA triage skill. High-volume screening before deeper review.",
+"difficulty": "Beginner",
+"follow_up": "A.1 for full commercial review\n\n---",
+"placeholders": [
+"NDA TEXT"
+],
+"tags": [
+"(adapted",
+"(claude",
+"area",
+"claude",
+"from",
+"legal)",
+"practice",
+"practice-area",
+"singapore",
+"skills"
+]
+},
+{
+"id": "V9CFL-practice-1283",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "PDPA ACCESS REQUEST RESPONSE PLAN",
+"text": "You are a Singapore data protection officer's counsel handling an access request under s 21 of the PDPA. From the request and context below, produce:\n\n1. SCOPE: what personal data and uses the requester is entitled to, and what falls outside (other individuals' data, opinion data exempted, prescribed exemptions in the Fifth Schedule \u2014 list any that plausibly apply here and mark [verify])\n2. CLOCK: the 30-day response obligation, and the notification required if you cannot meet it\n3. SEARCH PLAN: systems and custodians to check, as a checklist\n4. FEE AND FORM: whether a fee estimate is needed and the required manner of response\n5. DRAFT ACKNOWLEDGMENT: a short reply confirming receipt, any fee estimate, and the expected timeline\n\n[ACCESS REQUEST AND CONTEXT]",
+"context": "Adapted from claude-for-legal's privacy DSAR-response skill, converted from GDPR to the Singapore PDPA regime.",
+"difficulty": "Intermediate",
+"follow_up": "D.2 (data breach assessment)\n\n---",
+"placeholders": [
+"ACCESS REQUEST AND CONTEXT"
+],
+"tags": [
+"(adapted",
+"(claude",
+"area",
+"claude",
+"data",
+"from",
+"ip",
+"legal)",
+"practice",
+"practice-area",
+"singapore",
+"skills"
+]
+},
+{
+"id": "V9CFL-practice-1285",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "PRODUCT/MARKETING CLAIM REVIEW",
+"text": "You are Singapore product counsel reviewing marketing copy before launch. For the copy below: flag every factual claim and classify it (verifiable performance claim / puffery / comparative claim / pricing claim); for each verifiable or comparative claim state what substantiation should exist; check against the Singapore Code of Advertising Practice themes (truthfulness, comparisons, testimonials) and consumer protection (CPFTA unfair practices); propose minimally-invasive rewording for any claim that cannot be substantiated. Output as a table: Claim | Type | Risk | Suggested fix.\n\n[MARKETING COPY]",
+"context": "Adapted from claude-for-legal's product-legal launch-review skill for SCAP/CPFTA.",
+"difficulty": "Intermediate",
+"follow_up": "A.1 for the underlying supplier claims\n\n---",
+"placeholders": [
+"MARKETING COPY"
+],
+"tags": [
+"(adapted",
+"(claude",
+"area",
+"claude",
+"from",
+"legal)",
+"practice",
+"practice-area",
+"review",
+"singapore",
+"skills"
+]
+},
+{
+"id": "V9CFL-practice-1281",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "TERMINATION RISK REVIEW (SINGAPORE)",
+"text": "You are a Singapore employment lawyer advising an employer before a termination. Using the facts below, assess step-by-step:\n\n1. Contractual position: notice period, PILON availability, post-termination restraints \u2014 cite the clauses\n2. Statutory position: Employment Act 1968 coverage of this employee, notice/termination requirements, wrongful dismissal exposure (including TADM/ECT route), maternity or other protected-status considerations\n3. CPF, leave encashment, and final-payment timing obligations\n4. Risk table: claim type | likelihood | exposure | mitigation\n5. RECOMMENDED PROCESS: a numbered checklist from decision to exit conversation to final payment, with timing\n\nWhere facts are missing, list them under \"Information needed\" instead of assuming. Mark uncertain legal positions [verify].\n\n[EMPLOYMENT CONTRACT AND FACTS]",
+"context": "Adapted from claude-for-legal's employment termination-review skill, re-anchored to the Employment Act 1968 and Singapore tripartite guidelines.",
+"difficulty": "Advanced",
+"follow_up": "Drafting tool for the termination letter\n\n---",
+"placeholders": [
+"EMPLOYMENT CONTRACT AND FACTS"
+],
+"tags": [
+"(adapted",
+"(claude",
+"area",
+"claude",
+"contract",
+"employment",
+"from",
+"legal)",
+"practice",
+"practice-area",
+"review",
+"singapore",
+"skills"
+]
+},
+{
+"id": "V9CFL-practice-1275",
+"volume": "volume-9-claude-for-legal",
+"volume_label": "Practice-Area Skills (Claude for Legal)",
+"category": "Practice-Area Skills (adapted from Claude for Legal)",
+"title": "VENDOR AGREEMENT REVIEW (PLAYBOOK-STYLE)",
+"text": "You are a Singapore commercial lawyer reviewing a vendor agreement for the customer side. Work through the contract step-by-step and produce a review memo in this exact structure:\n\n1. DEAL SNAPSHOT: parties, services, term, total contract value, renewal mechanics \u2014 one line each.\n2. PLAYBOOK CHECK \u2014 for each of the following, state the contract's position, cite the clause, and mark \u2705 acceptable / \u26a0\ufe0f negotiate / \u274c unacceptable:\n   - Limitation of liability (target: capped at 12 months' fees; no cap on data breaches or IP infringement)\n   - Indemnities (target: mutual, fault-based)\n   - Data protection (target: PDPA-compliant processing terms, breach notice within 72 hours)\n   - Termination for convenience (target: customer may exit on 30 days' notice)\n   - Auto-renewal (target: none, or 60-day opt-out window)\n   - Governing law and dispute resolution (target: Singapore law, SICC or SIAC)\n3. UNUSUAL TERMS: anything not on the playbook that a reviewing partner should see.\n4. NEGOTIATION EMAIL: a short, courteous draft to the vendor listing the \u26a0\ufe0f/\u274c items as requested amendments.\n\nRestrict your analysis to the attached contract; cite clauses for every position. Flag any conclusion you are unsure of with [verify].\n\n[CONTRACT TEXT]",
+"context": "Adapted from claude-for-legal's commercial-legal vendor review skill. Attach the vendor contract via Contract Review, or paste key clauses.",
+"difficulty": "Intermediate",
+"follow_up": "A.2 (NDA screen) or the Redline tool for tracked-changes edits\n\n---",
+"placeholders": [
+"CONTRACT TEXT"
+],
+"tags": [
+"(adapted",
+"(claude",
+"area",
+"claude",
+"contract",
+"data",
+"from",
+"ip",
+"legal)",
+"practice",
+"practice-area",
+"review",
+"singapore",
+"skills"
+]
+},
+{
+"id": "QSP-aiprompt-0003",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Litigation Lawyers",
+"title": "Cause of Action Analysis",
+"text": "Act as a litigation partner with expertise in [PRACTICE AREA, e.g. contract disputes / tort / company law]. The following facts have been given to me by a potential client: [PASTE FACT SUMMARY]. For each potential cause of action, provide: (1) the name of the cause of action, (2) the legal elements I must prove, (3) how the facts map to each element, (4) the likely evidence I will need, and (5) a RAG rating (Red/Amber/Green) for prospects of success. Present your analysis as a table.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"PASTE FACT SUMMARY"
+],
+"tags": [
+"contract",
+"lawyers",
+"litigation",
+"pack",
+"packs",
+"prompt",
+"quick-start"
+]
+},
+{
+"id": "QSP-aiprompt-0117",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Legal Administrators, Paralegals & Legal Support Staff",
+"title": "Comparative Table from Multiple Documents",
+"text": "I have [NUMBER] documents that I need to compare. Documents: [DESCRIBE \u2014 e.g. 3 supplier quotes / 4 NDAs from different counterparties / 5 employment contracts for different employees]. For each document, extract the following information and present it in a comparison table: [LIST THE FIELDS \u2014 e.g. Parties | Effective Date | Term | Key Price | Payment Terms | Termination Clause | Governing Law | Any unusual terms]. Highlight in the table any significant differences between the documents.\n\n\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"NUMBER"
+],
+"tags": [
+"administrators,",
+"contract",
+"employment",
+"ip",
+"legal",
+"pack",
+"packs",
+"paralegals",
+"prompt",
+"quick-start",
+"staff",
+"support"
+]
+},
+{
+"id": "QSP-aiprompt-0043",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for In-House Counsel, General Counsel & Legal Operations",
+"title": "Contract Abstraction for Database",
+"text": "Act as a legal operations specialist. I need to extract key data from the following contract for our contract management system. Extract into a structured table: Contract Title | Contract Type | Parties | Effective Date | Expiry Date | Auto-Renewal (Y/N) | Notice Period for Termination | Governing Law | Dispute Resolution | Key Commercial Terms | Payment Terms | Liability Cap | Data Processing Agreement Required (Y/N) | Jurisdiction-Specific Compliance Notes. [PASTE CONTRACT]\n\n\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"PASTE CONTRACT"
+],
+"tags": [
+"compliance",
+"contract",
+"counsel",
+"counsel,",
+"data",
+"general",
+"house",
+"legal",
+"operations",
+"pack",
+"packs",
+"prompt",
+"quick-start"
+]
+},
+{
+"id": "QSP-aiprompt-0011",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Litigation Lawyers",
+"title": "Document Review Summary",
+"text": "Act as a litigation paralegal. I have gathered the following documents in a dispute about [DESCRIBE THE DISPUTE]. Review the document list below and for each document: (1) summarise its contents in 2-3 sentences, (2) identify its relevance to the issues in dispute, (3) note if it helps or hurts our case, and (4) flag any privilege issues. Documents: [PASTE LIST OR SUMMARIES OF DOCUMENTS].\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"DESCRIBE THE DISPUTE",
+"PASTE LIST OR SUMMARIES OF DOCUMENTS"
+],
+"tags": [
+"lawyers",
+"litigation",
+"pack",
+"packs",
+"prompt",
+"quick-start",
+"review"
+]
+},
+{
+"id": "QSP-aiprompt-0048",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for In-House Counsel, General Counsel & Legal Operations",
+"title": "Escalation Memo to Board",
+"text": "Draft an escalation memo from the General Counsel to the Board of Directors regarding the following legal matter: [DESCRIBE \u2014 nature of the issue, when it arose, what has been done so far, current status]. The memo should: summarise the issue in non-technical language, state the potential financial and reputational exposure, outline the options available, identify the decision the Board is being asked to make, and recommend a course of action. Maximum 1 page.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [],
+"tags": [
+"counsel",
+"counsel,",
+"general",
+"house",
+"legal",
+"operations",
+"pack",
+"packs",
+"prompt",
+"quick-start"
+]
+},
+{
+"id": "QSP-aiprompt-0047",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for In-House Counsel, General Counsel & Legal Operations",
+"title": "Legal Function Dashboard Summary",
+"text": "Act as a legal operations manager. Prepare a monthly legal dashboard summary for the following data: [DESCRIBE OR PASTE DATA \u2014 number of contracts reviewed, average turnaround time, matters opened and closed, external legal spend, headcount, any significant regulatory developments]. The summary should be suitable for the CFO and COO. Present as a one-page narrative with: headline metrics in a table, 3 key highlights, and 3 items requiring leadership attention. Keep it jargon-free.\n\n\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [],
+"tags": [
+"contract",
+"counsel",
+"counsel,",
+"data",
+"general",
+"house",
+"ip",
+"legal",
+"operations",
+"pack",
+"packs",
+"prompt",
+"quick-start",
+"review"
+]
+},
+{
+"id": "QSP-aiprompt-0107",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Legal Administrators, Paralegals & Legal Support Staff",
+"title": "Matter Status Summary",
+"text": "I need to prepare a matter status update for [LAWYER NAME]. The matter is [DESCRIBE BRIEFLY]. Key events so far: [LIST IN DATE ORDER \u2014 what happened, what was filed, what was received, what is outstanding]. Prepare a concise one-page matter status summary table with: [Date | Event | Description | Next Step | Deadline | Responsible]. Highlight any overdue items in the \"Next Steps\" column.\n\n\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"LAWYER NAME",
+"DESCRIBE BRIEFLY"
+],
+"tags": [
+"administrators,",
+"ip",
+"legal",
+"pack",
+"packs",
+"paralegals",
+"prompt",
+"quick-start",
+"staff",
+"support"
+]
+},
+{
+"id": "QSP-aiprompt-0016",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Litigation Lawyers",
+"title": "Opening Statement Outline",
+"text": "Draft an opening statement outline for the [CLAIMANT / DEFENDANT] in a [TRIAL / ARBITRATION] about: [DESCRIBE THE DISPUTE AND KEY ISSUES]. The opening should: introduce the parties and the dispute, tell a clear narrative of what happened from our client's perspective, identify the key issues the tribunal must decide, preview our key evidence and witnesses, and conclude with the outcome we are seeking. Keep it to a 10-minute delivery. Flag where I should use visual aids or exhibits.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"CLAIMANT / DEFENDANT",
+"TRIAL / ARBITRATION",
+"DESCRIBE THE DISPUTE AND KEY ISSUES"
+],
+"tags": [
+"arbitration",
+"lawyers",
+"litigation",
+"pack",
+"packs",
+"prompt",
+"quick-start",
+"review"
+]
+},
+{
+"id": "QSP-aiprompt-0077",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Shareholder Disputes & Corporate Litigation",
+"title": "Optimised for Microsoft Copilot, Claude, ChatGPT & Legal AI Tools",
+"text": "---\n\n> **Who this is for:** Lawyers advising minority shareholders, majority shareholders, companies, and directors in shareholder disputes, deadlocks, oppression claims, and related corporate litigation.\n>\n> \u26a0 **Disclaimer:** These prompts are starting points, not legal advice. Shareholder disputes are highly fact-specific and jurisdiction-sensitive. Every output must be reviewed by a qualified lawyer. Nothing here constitutes legal advice.\n\n---\n\n## Section A: Assessing the Dispute",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [],
+"tags": [
+"corporate",
+"disputes",
+"litigation",
+"pack",
+"packs",
+"prompt",
+"quick-start",
+"review",
+"shareholder"
+]
+},
+{
+"id": "QSP-aiprompt-0030",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Corporate Lawyers",
+"title": "Representations & Warranties \u2014 Red Flags",
+"text": "Review the following representations and warranties in a Share Purchase Agreement and: 1. Identify any that are overly broad and expose the [SELLER / BUYER] to disproportionate risk. 2. Flag any standard warranties that are missing. 3. Identify any warranties that are likely to be heavily negotiated and suggest compromise positions. 4. Note any warranties that require disclosure against the disclosure letter. [PASTE THE WARRANTIES SECTION]\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"SELLER / BUYER",
+"PASTE THE WARRANTIES SECTION"
+],
+"tags": [
+"corporate",
+"lawyers",
+"pack",
+"packs",
+"prompt",
+"quick-start",
+"review"
+]
+},
+{
+"id": "QSP-aiprompt-0025",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Corporate Lawyers",
+"title": "Shareholders' Resolution",
+"text": "Draft a shareholders' ordinary / special resolution for [COMPANY NAME] to approve the following: [DESCRIBE \u2014 e.g. alteration of constitution, change of company name, increase of share capital, approval of related party transaction]. The resolution should: state whether it is an ordinary or special resolution and why, include the precise statutory authority relied upon, use standard drafting, and note any notice period or quorum requirements that apply under [JURISDICTION] law.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"COMPANY NAME",
+"JURISDICTION"
+],
+"tags": [
+"corporate",
+"drafting",
+"lawyers",
+"pack",
+"packs",
+"prompt",
+"quick-start"
+]
+},
+{
+"id": "QSP-aiprompt-0027",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Corporate Lawyers",
+"title": "Term Sheet Review",
+"text": "Act as an M&A lawyer. Review the following term sheet and: 1. Summarise the proposed transaction structure. 2. Identify the key commercial terms (price, consideration, conditions, timeline). 3. Flag any terms that are unusual, one-sided, or particularly favourable / unfavourable to my client [BUYER / SELLER / INVESTOR]. 4. Identify any key points for negotiation. 5. List the next steps and documents that will follow from this term sheet. [PASTE TERM SHEET TEXT]\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"BUYER / SELLER / INVESTOR",
+"PASTE TERM SHEET TEXT"
+],
+"tags": [
+"corporate",
+"lawyers",
+"pack",
+"packs",
+"prompt",
+"quick-start",
+"review"
+]
+},
+{
+"id": "QSP-aiprompt-0014",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Litigation Lawyers",
+"title": "Timeline of Key Events",
+"text": "Create a chronological timeline of events in the following dispute. Facts provided: [PASTE THE FACTS]. The timeline should: list each event with date, brief description, and source document, be in table format with columns [Date | Event | Significance | Document Reference], highlight any gaps in the timeline where evidence is missing, and flag any dates that are in dispute between the parties.\n\n---\n\n## Section D: Hearings & Trial Preparation",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"PASTE THE FACTS"
+],
+"tags": [
+"ip",
+"lawyers",
+"litigation",
+"pack",
+"packs",
+"prompt",
+"quick-start"
+]
+},
+{
+"id": "QSP-aiprompt-0015",
+"volume": "quick-start-packs",
+"volume_label": "Quick-Start Packs",
+"category": "AI Prompt Pack for Litigation Lawyers",
+"title": "Witness Preparation Questions",
+"text": "I am preparing [WITNESS NAME] for cross-examination in a [TRIAL / ARBITRATION / HEARING] about [DESCRIBE THE DISPUTE]. The opposing party's case is: [SUMMARISE]. Draft 20 likely cross-examination questions the opposing counsel will ask this witness, focusing on: (1) inconsistencies with the documentary record, (2) credibility of the witness's account, and (3) any concessions they can extract. For each question, suggest the best way for the witness to answer it truthfully and clearly.\n\n---",
+"context": "",
+"difficulty": "",
+"follow_up": "",
+"placeholders": [
+"WITNESS NAME",
+"TRIAL / ARBITRATION / HEARING",
+"DESCRIBE THE DISPUTE",
+"SUMMARISE"
+],
+"tags": [
+"arbitration",
+"lawyers",
+"litigation",
+"pack",
+"packs",
+"prompt",
+"quick-start"
+]
+}
+]

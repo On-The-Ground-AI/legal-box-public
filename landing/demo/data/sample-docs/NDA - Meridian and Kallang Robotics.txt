@@ -1,0 +1,63 @@
+MUTUAL NON-DISCLOSURE AGREEMENT
+
+This Agreement is made on 3 March 2026
+
+BETWEEN
+
+(1) Meridian Construction Pte Ltd (UEN 199801234C), a company incorporated in Singapore with its registered office at 8 Shenton Way, #28-01, Singapore 068811 ("Meridian"); and
+
+(2) Kallang Robotics Pte Ltd (UEN 202087654D), a company incorporated in Singapore with its registered office at 71 Ayer Rajah Crescent, #06-20, Singapore 139951 ("Kallang Robotics"),
+
+(each a "Party" and together the "Parties").
+
+RECITALS
+
+A. The Parties wish to explore a potential collaboration involving automated site-inspection drones for construction sites ("the Purpose").
+
+B. In connection with the Purpose, each Party may disclose certain confidential and proprietary information to the other.
+
+NOW IT IS AGREED as follows:
+
+1. DEFINITION OF CONFIDENTIAL INFORMATION
+1.1 "Confidential Information" means all technical, commercial, financial and business information disclosed by either Party, whether orally or in writing, including but not limited to product designs, pricing, source code, and customer lists.
+
+2. OBLIGATIONS
+2.1 The receiving Party shall keep all Confidential Information strictly confidential and shall not disclose it to any third party without the prior written consent of the disclosing Party.
+2.2 The receiving Party shall use the Confidential Information solely for the Purpose.
+2.3 The receiving Party shall protect the Confidential Information using at least the same degree of care it uses for its own confidential information, and in any event no less than a reasonable degree of care.
+
+3. EXCLUSIONS
+3.1 Confidential Information does not include information that: (a) is or becomes publicly available through no fault of the receiving Party; (b) was already known to the receiving Party before disclosure; or (c) is independently developed without reference to the Confidential Information.
+
+4. TERM
+4.1 This Agreement shall remain in force for a period of two (2) years from the date of execution. The confidentiality obligations in Clause 2 shall survive for a further five (5) years after termination or expiry of this Agreement, regardless of the reason for termination.
+
+5. RETURN OF MATERIALS
+5.1 Upon written request by the disclosing Party, the receiving Party shall promptly return or destroy all documents and materials containing Confidential Information.
+
+6. NO LICENCE
+6.1 Nothing in this Agreement shall be construed as granting any licence or right in respect of any patent, trademark, copyright, or other intellectual property right, except the limited right to use Confidential Information for the Purpose.
+
+7. REMEDIES
+7.1 Each Party acknowledges that damages alone may not be an adequate remedy for breach of this Agreement, and the disclosing Party shall be entitled to seek injunctive relief in addition to any other remedy available at law.
+
+8. LIABILITY
+8.1 Neither Party's liability under this Agreement shall be limited or excluded in any respect, and each Party shall be fully liable for any loss arising from a breach of Clause 2, whether direct, indirect, or consequential, and however arising.
+
+9. GOVERNING LAW AND JURISDICTION
+9.1 This Agreement is governed by the laws of Singapore, and the Parties submit to the exclusive jurisdiction of the Singapore courts.
+
+10. NOTICES
+10.1 Notices under this Agreement shall be sent to the contacts below:
+ Meridian: Ms Farhana Yusof, legal@meridianconstruction.example.sg, mobile +65 8123 9988
+ Kallang Robotics: Mr Bryan Ong, bryan.ong@kallangrobotics.example.com, NRIC S8877665D (director, for authentication of signed counterparts only)
+
+IN WITNESS WHEREOF the Parties have executed this Agreement on the date first written above.
+
+For and on behalf of Meridian Construction Pte Ltd
+Name: Farhana Yusof
+Title: General Counsel
+
+For and on behalf of Kallang Robotics Pte Ltd
+Name: Bryan Ong
+Title: Director

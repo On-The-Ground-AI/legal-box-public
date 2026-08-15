@@ -1,0 +1,20 @@
+{
+  "description": "Affidavit with NRICs, passport, labelled DOBs, context-gated bank account",
+  "regex_pii": {
+    "NRIC": ["S7654321B", "T0312345D"],
+    "UEN": ["199801234C"],
+    "PASSPORT": ["E7654321K"],
+    "DOB": ["12/03/1985", "12 March 1985"],
+    "EMAIL": ["rajeswari.m@advisors.example.com"],
+    "PHONE": ["+65 8765 4321"],
+    "ADDRESS": ["Block 88 Bedok North Street 4"],
+    "POSTAL_CODE": ["460088"],
+    "BANK_ACCT": ["98765432"],
+    "CASE_NO": ["HC/S 456/2026", "[2025] SGCA 7"]
+  },
+  "ner_pii": {
+    "PERSON": ["Lim Boon Keng", "Muhammad Faizal Bin Ismail", "Rajeswari d/o Muthu"],
+    "ORG": ["Meridian Construction Pte Ltd"]
+  },
+  "must_survive": ["5 January 2026", "14 February 2026", "clause 14", "20th day of May 2026", "eighteen years"]
+}

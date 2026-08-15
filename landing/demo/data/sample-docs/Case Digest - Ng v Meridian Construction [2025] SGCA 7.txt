@@ -1,0 +1,17 @@
+CASE DIGEST
+
+Ng v. Meridian Construction Pte Ltd [2025] SGCA 7
+Court of Appeal, Singapore
+
+CATCHWORDS: Building and Construction Law — Negligence — Duty of care of a project manager to a third-party site visitor — Standard of care expected of a reasonably competent project manager on a construction site.
+
+FACTS
+The appellant, a site visitor, was injured after falling from an unguarded platform during a scheduled site inspection. The respondent's project manager had certified the site as inspection-ready earlier that day. At first instance, the High Court found the respondent 60% liable and the appellant 40% contributorily negligent for failing to wear provided safety equipment.
+
+HELD, allowing the appeal in part:
+(1) A project manager who certifies a site as safe for visitors owes a direct duty of care to those visitors, independent of any duty owed by the main contractor. This duty is not discharged merely by delegating inspection tasks to subordinates. [45]-[52]
+(2) The standard of care is that of a reasonably competent project manager exercising the skill ordinarily expected in the construction industry, having regard to Singapore's Workplace Safety and Health Act 2006. [58]
+(3) On the facts, the respondent's apportionment of liability at first instance was too favourable to the respondent; liability is revised to 75% respondent / 25% appellant. [71]-[76]
+
+RELEVANCE TO CURRENT MATTER
+Cited for the proposition that a project manager's personal certification of site safety can found an independent duty of care to third parties, relevant where the current matter similarly involves a certification of a site as ready for inspection prior to an incident.

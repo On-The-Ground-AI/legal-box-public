@@ -1,0 +1,18 @@
+{
+  "description": "Letter of demand with the full spread of Singapore regex PII classes",
+  "regex_pii": {
+    "NRIC": ["S1234567A"],
+    "EMAIL": ["tan.ahkow@example.com.sg", "priya.krishnan@chanlee.example.sg"],
+    "PHONE": ["+65 9123 4567", "81234567"],
+    "UEN": ["201912345A"],
+    "ADDRESS": ["Block 123 Ang Mo Kio Avenue 3"],
+    "POSTAL_CODE": ["560123"],
+    "BANK_ACCT": ["123456789012"],
+    "CASE_NO": ["[2024] SGHC 12", "HC/S 123/2026"]
+  },
+  "ner_pii": {
+    "PERSON": ["Tan Ah Kow", "Siti Binte Rahman", "Priya d/o Krishnan"],
+    "ORG": ["Acme Holdings Pte Ltd", "Chan & Lee LLC"]
+  },
+  "must_survive": ["15 June 2026", "3 February 2025", "1 March 2026", "S$45,000", "fourteen (14) days"]
+}

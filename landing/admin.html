@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OTG Legal Box — Admin</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --bg: #0a0a0f; --surface: #12121a; --surface-2: #1a1a26;
+      --border: #2a2a3a; --text: #e8e8f0; --text-muted: #8888a0;
+      --accent: #6e8efb; --accent-glow: #4a6cf7; --gold: #c9a84c;
+      --green: #34d399; --amber: #fbbf24; --red: #f87171;
+    }
+    body { font-family: 'Inter', -apple-system, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; }
+    code { font-family: ui-monospace, Menlo, monospace; font-size: 0.85em; background: var(--surface-2); border: 1px solid var(--border); border-radius: 5px; padding: 0.1em 0.4em; }
+    a { color: var(--accent); }
+
+    .gate { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 2rem; }
+    .gate .logo { font-weight: 800; font-size: 1.3rem; margin-bottom: 2.5rem; }
+    .gate .logo span { color: var(--gold); }
+    .gate h1 { font-size: 1.5rem; font-weight: 800; margin-bottom: 0.75rem; }
+    .gate p { color: var(--text-muted); max-width: 400px; margin-bottom: 2rem; font-size: 0.95rem; }
+    .gate input { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; color: var(--text); font-size: 1.05rem; text-align: center; padding: 0.9rem 1rem; width: 280px; outline: none; font-family: ui-monospace, Menlo, monospace; }
+    .gate input:focus { border-color: var(--accent-glow); }
+    .gate button { margin-top: 1.25rem; background: linear-gradient(135deg, var(--accent-glow), #7c5bf0); color: #fff; border: none; border-radius: 12px; font-weight: 600; font-size: 1rem; padding: 0.85rem 2.5rem; cursor: pointer; font-family: inherit; }
+    .gate .error { color: var(--red); font-size: 0.85rem; margin-top: 1rem; min-height: 1.2em; }
+
+    .doc { max-width: 900px; margin: 0 auto; padding: 3.5rem 1.5rem 6rem; display: none; }
+    .doc header { margin-bottom: 2.5rem; border-bottom: 1px solid var(--border); padding-bottom: 1.75rem; }
+    .doc header .logo { font-weight: 800; font-size: 1.05rem; margin-bottom: 1.25rem; }
+    .doc header .logo span { color: var(--gold); }
+    .doc h1 { font-size: 2rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 0.5rem; }
+    .doc header p { color: var(--text-muted); font-size: 0.95rem; }
+    .doc h2 { font-size: 1.3rem; font-weight: 800; margin: 2.75rem 0 1rem; padding-top: 1.75rem; border-top: 1px solid var(--border); }
+    .doc p, .doc li, .doc td { color: var(--text-muted); font-size: 0.93rem; }
+    .doc p { margin-bottom: 1rem; }
+    .doc ul, .doc ol { margin: 0 0 1rem 1.4rem; }
+    .doc li { margin-bottom: 0.45rem; }
+    .doc strong { color: var(--text); }
+    .doc table { width: 100%; border-collapse: collapse; margin-bottom: 1.25rem; font-size: 0.88rem; }
+    .doc th, .doc td { text-align: left; padding: 0.6rem 0.75rem; border: 1px solid var(--border); vertical-align: top; }
+    .doc th { color: var(--text); background: var(--surface); font-weight: 600; }
+    .pill { display: inline-block; border-radius: 999px; padding: 0.1rem 0.7rem; font-size: 0.75rem; font-weight: 700; white-space: nowrap; }
+    .pill.done { background: rgba(52,211,153,0.12); color: var(--green); border: 1px solid rgba(52,211,153,0.3); }
+    .pill.todo { background: rgba(251,191,36,0.10); color: var(--amber); border: 1px solid rgba(251,191,36,0.3); }
+    .callout { background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--gold); border-radius: 10px; padding: 1rem 1.25rem; margin-bottom: 1.25rem; font-size: 0.9rem; color: var(--text-muted); }
+  </style>
+</head>
+<body>
+
+  <!-- ACCESS GATE — courtesy gate for a static page (password held as a
+       SHA-256 hash, not in source). Owner-facing project dashboard. -->
+  <section class="gate" id="gate">
+    <div class="logo">OTG <span>Legal Box</span></div>
+    <h1>Admin</h1>
+    <p>Project status dashboard for the owner. Enter the admin password.</p>
+    <form id="gateForm">
+      <input id="code" type="password" autocomplete="off" placeholder="password" autofocus />
+      <br/>
+      <button type="submit">Unlock</button>
+      <div class="error" id="gateError"></div>
+    </form>
+  </section>
+
+  <article class="doc" id="doc">
+    <header>
+      <div class="logo">OTG <span>Legal Box</span></div>
+      <h1>Project dashboard</h1>
+      <p>Pilot-readiness status, remaining owner actions, and the key runbooks — mirrored from the repository docs (<code>docs/PILOT_PLAN.md</code>, <code>docs/WORKLOG.md</code>). Updated 10 July 2026 · v1.0.0 · PR #10 merged to <code>main</code>.</p>
+    </header>
+
+    <h2>1. Build status — all engineering phases complete</h2>
+    <table>
+      <tr><th>Phase</th><th>Scope</th><th>Status</th></tr>
+      <tr><td><strong>0 — PII shield</strong></td><td>Rebuilt on Presidio + Singapore recognizers (NRIC, UEN, passports, postal codes, addresses, case numbers, DOBs, cards, bank accounts); restore-corruption bug fixed; bundles endpoint leak closed; degradation surfaced in UI; first test suite (47 tests) + per-entity benchmark + CI</td><td><span class="pill done">DONE</span></td></tr>
+      <tr><td><strong>1 — Zero-egress</strong></td><td>Socket-level egress guard; ChromaDB telemetry off; embedding model bundled/offline; anonymize-at-ingest (search index stores masked text only); Confidentiality panel ("see what the AI sees"); CORS tightened; scripted 5-min client demo</td><td><span class="pill done">DONE</span></td></tr>
+      <tr><td><strong>2 — Install/uninstall</strong></td><td>Ollama bundled + lifecycle-managed by the app; single-instance lock; "Remove all data…" wipe + uninstall scripts; CI build workflow fixed with GitHub Releases on version tags; INSTALL 3 steps / UNINSTALL 2 steps</td><td><span class="pill done">DONE</span></td></tr>
+      <tr><td><strong>3 — Resource dashboard</strong></td><td>Live CPU/RAM/disk/GPU endpoint + Settings panel + sidebar meters; loaded-model chip; honest Apple-Silicon reporting</td><td><span class="pill done">DONE</span></td></tr>
+      <tr><td><strong>4 — Licensing &amp; robustness</strong></td><td>AGPL PyMuPDF removed → pdfplumber/MarkItDown (fast) + Docling (accurate) + Tesseract OCR toggle; LLM timeout 600s; honest truncation reporting; version 1.0.0</td><td><span class="pill done">DONE</span></td></tr>
+      <tr><td><strong>5 — Ecosystem</strong></td><td>NOTICE.md credits; 11 SG-adapted claude-for-legal skills (prompt library now 1,286 prompts); tracked-changes Word export; filing-ready bundle PDFs; dev-side runbooks (SG case-law set, PII benchmark)</td><td><span class="pill done">DONE</span></td></tr>
+    </table>
+    <p>CI: <strong>green</strong> on <code>main</code>. Public site + this dashboard deploy automatically from <code>main</code>.</p>
+
+    <h2>2. What's left — owner actions</h2>
+    <table>
+      <tr><th>Action</th><th>Why / How</th><th>Status</th></tr>
+      <tr><td><strong>Apple Developer enrollment</strong></td><td>Removes the macOS "unidentified developer" install friction. US$99/yr. Long pole is the D-U-N-S number (up to 5 business days) — start with the <a href="https://developer.apple.com/enroll/duns-lookup/" rel="noopener">D-U-N-S lookup</a>, then enroll as an Organization. Full runbook: <code>docs/CODE_SIGNING_ENROLLMENT.md</code> §1. When done: flip <code>notarize</code> in <code>electron/package.json</code>, add the CI secrets listed in the runbook.</td><td><span class="pill todo">OWNER</span></td></tr>
+      <tr><td><strong>Windows signing (only if pilot uses Windows)</strong></td><td>Azure Trusted Signing, ~US$10/month — identity validation takes days. Runbook §2. Skip if the pilot firm is Mac-only.</td><td><span class="pill todo">DECIDE</span></td></tr>
+      <tr><td><strong>Cut the first installer</strong></td><td><code>git tag v1.0.0 &amp;&amp; git push origin v1.0.0</code> — CI builds the DMG and publishes a draft GitHub Release automatically.</td><td><span class="pill todo">OWNER</span></td></tr>
+      <tr><td><strong>Fresh-machine verification</strong></td><td>On a clean Mac before the client demo: stopwatch the install; run everything with Wi-Fi off; watch the resource meters under a big contract review; uninstall and confirm zero residue (<code>find ~/Library -iname '*legalbox*'</code> comes back empty). Checklist: <code>docs/PILOT_PLAN.md</code> §Verification.</td><td><span class="pill todo">OWNER</span></td></tr>
+      <tr><td><strong>SG case-law starter set</strong></td><td>Run the worldwidelaw/legal-sources collectors on a dev machine and import 200–500 public-domain judgments. Runbook: <code>scripts/content/build-sg-caselaw.md</code>. (AGPL code stays out of the product; only data ships.)</td><td><span class="pill todo">CONTENT</span></td></tr>
+      <tr><td><strong>Grow the PII benchmark corpus</strong></td><td>Label real-shaped documents in Label Studio and feed the export to <code>tests/benchmark_pii.py</code>; recall must never regress between releases. Runbook: <code>docs/PII_BENCHMARK.md</code>.</td><td><span class="pill todo">ONGOING</span></td></tr>
+    </table>
+
+    <h2>3. The client demo, in five minutes</h2>
+    <ol>
+      <li><strong>Wi-Fi off first.</strong> Then run Chat, Contract Review, Summarize, Chronology — everything works offline.</li>
+      <li><strong>Settings → Confidentiality.</strong> Paste any text; show the masked version — "this is exactly what the AI sees." Shield status and egress lock are shown live.</li>
+      <li><strong>Terminal proof:</strong> <code>lsof -i -P | grep -iE 'legalbox|ollama'</code> — loopback only.</li>
+      <li><strong>Audit Log:</strong> metadata-only entries, PII counts, <code>local_only</code> on every line.</li>
+      <li>Point technically-minded participants at the public <a href="/technical">/technical</a> page for the full write-up.</li>
+    </ol>
+    <p>Full script with talking points and FAQ answers: <code>docs/CONFIDENTIALITY_DEMO.md</code>.</p>
+
+    <h2>4. Key documents in the repository</h2>
+    <table>
+      <tr><th>Document</th><th>What it is</th></tr>
+      <tr><td><code>docs/PILOT_PLAN.md</code></td><td>The approved end-state plan — all phases, the ecosystem-integration table (Presidio, OpenContracts/Docling, claude-for-legal, legal-sources, Label Studio, MarkItDown, Tesseract, Stirling-PDF), and the verification checklist.</td></tr>
+      <tr><td><code>docs/WORKLOG.md</code></td><td>Live status + how any contributor or AI session resumes work from the repo alone (setup commands, environment gotchas, decisions on record).</td></tr>
+      <tr><td><code>docs/CODE_SIGNING_ENROLLMENT.md</code></td><td>Apple + Windows signing enrollment runbook with costs, timelines, and CI wiring.</td></tr>
+      <tr><td><code>docs/CONFIDENTIALITY_DEMO.md</code></td><td>The scripted client-facing confidentiality proof.</td></tr>
+      <tr><td><code>docs/PII_BENCHMARK.md</code> · <code>scripts/content/build-sg-caselaw.md</code></td><td>Dev-side runbooks: PII benchmark corpus (Label Studio) and the SG case-law starter set.</td></tr>
+      <tr><td><code>NOTICE.md</code></td><td>Every third-party project, its license, and how it's used — including the AGPL boundary.</td></tr>
+      <tr><td><code>INSTALL.md</code> · <code>UNINSTALL.md</code> · <code>BUILD-GUIDE.md</code></td><td>End-user install (3 steps), removal (2 steps), and developer build docs.</td></tr>
+    </table>
+
+    <h2>5. Pending decision — make the GitHub repo public</h2>
+    <div class="callout" style="border-left-color: var(--red);">
+      <p style="margin-bottom:0.75rem;"><strong>Not yet done, and deliberately not done automatically.</strong> The homepage and technical page now describe an "open-core" model — MIT-licensed self-hosting, plus a paid managed option — and the license file already says MIT. But <code>On-The-Ground-AI/legal-box</code> is currently a <strong>private</strong> repository (verified: <code>github.com/On-The-Ground-AI/legal-box</code> returns 404 to the public). The site copy is written to stay honest about this — it says "request access by email," not "clone it from GitHub" — but the narrative only becomes fully true once you flip the repo to public.</p>
+      <p style="margin-bottom:0.75rem;">Before flipping it, worth a deliberate pass over:</p>
+      <ul style="margin-bottom:0;">
+        <li>Git history for anything sensitive — client names, API keys, internal notes in commit messages (a secrets scan is worth running)</li>
+        <li>Whether any planning docs (this dashboard's source included) should move to a private location first</li>
+        <li>Whether you want a CONTRIBUTING.md / issue templates in place before public issues start arriving</li>
+        <li>Confirming the LICENSE and NOTICE.md attributions are exactly how you want them presented publicly</li>
+      </ul>
+    </div>
+    <p>When ready: repo Settings → Danger Zone → Change visibility → Public on GitHub, then swap the placeholder clone URL on <code>/technical#self-host</code> and the homepage's "Request source access" copy for a direct link.</p>
+
+    <h2>6. Post-pilot backlog (deferred by design)</h2>
+    <ul>
+      <li>Streaming chat (needs token-boundary-safe de-anonymization buffering)</li>
+      <li>Auto-update via electron-updater (unblocked once signing is in place)</li>
+      <li>Server-mode authentication for the shared Mac Mini deployment (toggle hidden until then)</li>
+      <li>Windows CI builds + signing (if demand appears)</li>
+      <li>OpenContracts-style case workspace: annotations, citation graphs</li>
+      <li>Stronger Asian-name NER, benchmarked against the growing PII corpus</li>
+    </ul>
+
+    <div class="callout">
+      Reminder: this dashboard is a static page behind a courtesy password gate — fine for status
+      sharing, but don't add client names, credentials, or anything genuinely sensitive here.
+      Those belong in the private repository or the password manager.
+    </div>
+  </article>
+
+  <script>
+    const EXPECTED = '92239ef21e4f722b7f4b8dfdde635e469c6adbe2e1b43304584babceef37b821';
+    async function sha256Hex(str) {
+      const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+      return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+    }
+    function unlock() {
+      document.getElementById('gate').style.display = 'none';
+      document.getElementById('doc').style.display = 'block';
+      window.scrollTo(0, 0);
+    }
+    document.getElementById('gateForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const code = document.getElementById('code').value;
+      if (await sha256Hex(code) === EXPECTED) {
+        try { sessionStorage.setItem('lbx_admin_ok', '1'); } catch {}
+        unlock();
+      } else {
+        document.getElementById('gateError').textContent = 'Incorrect password.';
+        document.getElementById('code').value = '';
+        document.getElementById('code').focus();
+      }
+    });
+    try { if (sessionStorage.getItem('lbx_admin_ok') === '1') unlock(); } catch {}
+  </script>
+
+</body>
+</html>

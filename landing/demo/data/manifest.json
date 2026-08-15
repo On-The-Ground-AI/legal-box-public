@@ -1,0 +1,97 @@
+[
+  {
+    "filename": "Affidavit - Ismail v Meridian Construction.txt",
+    "docType": "Affidavit",
+    "description": "Sworn affidavit from a construction dispute, dense with NRICs, a passport number, an address, and a case citation \u2014 good for testing the PII shield and chronology extraction.",
+    "tools": [
+      "chronology",
+      "bundle",
+      "pii",
+      "search"
+    ],
+    "chars": 1203
+  },
+  {
+    "filename": "Board Resolution - Golden Orchid Investments.txt",
+    "docType": "Secondary material",
+    "description": "A board resolution authorising the SPA above \u2014 add it to a bundle as a secondary material.",
+    "tools": [
+      "bundle",
+      "search"
+    ],
+    "chars": 1304
+  },
+  {
+    "filename": "Case Digest - Ng v Meridian Construction [2025] SGCA 7.txt",
+    "docType": "Case authority",
+    "description": "A short case digest cited in the affidavit above \u2014 add it to a bundle of authorities as a \"case\" item.",
+    "tools": [
+      "bundle",
+      "search"
+    ],
+    "chars": 1680
+  },
+  {
+    "filename": "Employment Agreement - Havelock Logistics.txt",
+    "docType": "Contract (employment)",
+    "description": "An employment agreement with a broad 24-month non-compete and IP assignment clause \u2014 try redlining it for the employee.",
+    "tools": [
+      "contract-review",
+      "redline"
+    ],
+    "chars": 2701
+  },
+  {
+    "filename": "Internal Memo - Havelock Logistics Dispute Chronology.txt",
+    "docType": "Internal memo",
+    "description": "A dated timeline of events in a supply dispute \u2014 feed this to Chronology Drafting to see events extracted and sorted automatically.",
+    "tools": [
+      "chronology",
+      "search",
+      "pii"
+    ],
+    "chars": 1115
+  },
+  {
+    "filename": "Letter of Demand - Acme Holdings.txt",
+    "docType": "Letter of demand",
+    "description": "A formal demand letter with a bank account number, case citations, and contact details \u2014 useful for both PII shield and case search.",
+    "tools": [
+      "chronology",
+      "search",
+      "pii"
+    ],
+    "chars": 1195
+  },
+  {
+    "filename": "NDA - Meridian and Kallang Robotics.txt",
+    "docType": "Contract (NDA)",
+    "description": "A mutual NDA with an uncapped liability clause and a 5-year survival period \u2014 a good candidate for redlining from either party's side.",
+    "tools": [
+      "contract-review",
+      "redline"
+    ],
+    "chars": 3879
+  },
+  {
+    "filename": "Sale and Purchase Agreement Extract - Golden Orchid.txt",
+    "docType": "Contract (property SPA)",
+    "description": "A property sale-and-purchase extract with a card number, bank account, and passport \u2014 run it through Contract Review for a risk report.",
+    "tools": [
+      "contract-review",
+      "redline",
+      "pii"
+    ],
+    "chars": 1181
+  },
+  {
+    "filename": "Statute Extract - Workplace Safety and Health Act 2006.txt",
+    "docType": "Statute",
+    "description": "A statute extract cited alongside the case digest above \u2014 add it to a bundle of authorities as a \"statute\" item.",
+    "tools": [
+      "bundle",
+      "search"
+    ],
+    "chars": 1376
+  }
+]

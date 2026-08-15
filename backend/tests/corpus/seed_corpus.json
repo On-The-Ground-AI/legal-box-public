@@ -1,0 +1,321 @@
+[
+  {
+    "source": "affidavit.txt",
+    "text": "IN THE GENERAL DIVISION OF THE HIGH COURT\nOF THE REPUBLIC OF SINGAPORE\n\nHC/S 456/2026\n\nBetween\nLim Boon Keng (NRIC S7654321B) ... Plaintiff\nAnd\nMeridian Construction Pte Ltd (UEN 199801234C) ... Defendant\n\nAFFIDAVIT OF MUHAMMAD FAIZAL BIN ISMAIL\n\nI, Muhammad Faizal Bin Ismail, holder of NRIC T0312345D, date of birth 12/03/1985, of Block 88 Bedok North Street 4, #11-203, Singapore 460088, do hereby make oath and state as follows:\n\n1. I am a project manager employed by the Defendant. I hold Singapore passport E7654321K, which I produced when travelling to Kuala Lumpur for the site inspection on 5 January 2026.\n\n2. On 14 February 2026 I met the Plaintiff and his advisor Rajeswari d/o Muthu at the project site. She can be reached at rajeswari.m@advisors.example.com or +65 8765 4321.\n\n3. The Plaintiff asked that the retention sum be paid to his personal account number 98765432 at OCBC. I said payment terms were governed by clause 14 of the contract.\n\n4. I was born on 12 March 1985 and have worked in the construction industry for eighteen years. The events described in Ng v. Meridian Construction [2025] SGCA 7 are within my personal knowledge.\n\nSWORN at Singapore this 20th day of May 2026.\n",
+    "spans": [
+      {
+        "start": 72,
+        "end": 85,
+        "label": "CASE_NO"
+      },
+      {
+        "start": 95,
+        "end": 108,
+        "label": "PERSON"
+      },
+      {
+        "start": 115,
+        "end": 124,
+        "label": "NRIC"
+      },
+      {
+        "start": 144,
+        "end": 173,
+        "label": "ORG"
+      },
+      {
+        "start": 179,
+        "end": 189,
+        "label": "UEN"
+      },
+      {
+        "start": 250,
+        "end": 276,
+        "label": "PERSON"
+      },
+      {
+        "start": 293,
+        "end": 302,
+        "label": "NRIC"
+      },
+      {
+        "start": 318,
+        "end": 328,
+        "label": "DOB"
+      },
+      {
+        "start": 333,
+        "end": 362,
+        "label": "ADDRESS"
+      },
+      {
+        "start": 383,
+        "end": 389,
+        "label": "POSTAL_CODE"
+      },
+      {
+        "start": 513,
+        "end": 522,
+        "label": "PASSPORT"
+      },
+      {
+        "start": 676,
+        "end": 695,
+        "label": "PERSON"
+      },
+      {
+        "start": 739,
+        "end": 771,
+        "label": "EMAIL"
+      },
+      {
+        "start": 775,
+        "end": 788,
+        "label": "PHONE"
+      },
+      {
+        "start": 876,
+        "end": 884,
+        "label": "BANK_ACCT"
+      },
+      {
+        "start": 977,
+        "end": 990,
+        "label": "DOB"
+      },
+      {
+        "start": 1108,
+        "end": 1121,
+        "label": "CASE_NO"
+      }
+    ]
+  },
+  {
+    "source": "chronology_memo.txt",
+    "text": "INTERNAL MEMO — DISPUTE CHRONOLOGY\nMatter: Havelock Logistics Pte Ltd (UEN 201598765K) v. Tan Wei Ming\n\nPrepared by: Nurul Ain Binte Hassan, Associate\n\nKey events assembled from discovery documents:\n\n2024-11-03  Supply contract signed. Contract reference SC-2024-1103.\n2025-01-15  First delivery rejected at the warehouse, Block 5 Toh Guan Road East, #01-44, Singapore 608831. Warehouse manager David Chen (mobile 96543210) recorded the rejection.\n2025-02-20  Defendant emailed weiming.tan@logistics.example.com stating the goods were non-conforming.\n2025-04-01  Payment of the disputed invoice (S$120,500) demanded. The Defendant's NRIC as stated on the personal guarantee is S8123456F.\n2025-06-30  Statutory demand served. See DC/S 789/2025.\n2026-01-10  Mediation at the Singapore Mediation Centre failed after two sessions.\n\nNote: the limitation period expires 6 years from breach. The relevant invoice numbers are INV-2025-0042 and INV-2025-0043; order quantity was 20240115 units in aggregate across the disputed period (a coincidence flagged by the client — this is a quantity, not a date or account number).\n",
+    "spans": [
+      {
+        "start": 43,
+        "end": 69,
+        "label": "ORG"
+      },
+      {
+        "start": 75,
+        "end": 85,
+        "label": "UEN"
+      },
+      {
+        "start": 90,
+        "end": 102,
+        "label": "PERSON"
+      },
+      {
+        "start": 117,
+        "end": 139,
+        "label": "PERSON"
+      },
+      {
+        "start": 323,
+        "end": 349,
+        "label": "ADDRESS"
+      },
+      {
+        "start": 369,
+        "end": 375,
+        "label": "POSTAL_CODE"
+      },
+      {
+        "start": 395,
+        "end": 405,
+        "label": "PERSON"
+      },
+      {
+        "start": 414,
+        "end": 422,
+        "label": "PHONE"
+      },
+      {
+        "start": 478,
+        "end": 511,
+        "label": "EMAIL"
+      },
+      {
+        "start": 677,
+        "end": 686,
+        "label": "NRIC"
+      },
+      {
+        "start": 729,
+        "end": 742,
+        "label": "CASE_NO"
+      },
+      {
+        "start": 773,
+        "end": 799,
+        "label": "ORG"
+      }
+    ]
+  },
+  {
+    "source": "letter_of_demand.txt",
+    "text": "CHAN & LEE LLC\nAdvocates & Solicitors\n\nOur ref: CL/2026/0457\n15 June 2026\n\nBY REGISTERED POST AND EMAIL\n\nMr Tan Ah Kow\nNRIC S1234567A\nBlock 123 Ang Mo Kio Avenue 3, #05-12\nSingapore 560123\nEmail: tan.ahkow@example.com.sg\nMobile: +65 9123 4567\n\nDear Sir,\n\nLETTER OF DEMAND — OUTSTANDING SUM OF S$45,000 OWED TO ACME HOLDINGS PTE LTD (UEN 201912345A)\n\n1. We act for Acme Holdings Pte Ltd (\"our client\"), a company incorporated in Singapore.\n\n2. Under the loan agreement dated 3 February 2025, you borrowed S$45,000 from our client, repayable by 1 March 2026. Despite repeated reminders sent to you and to your colleague Ms Siti Binte Rahman (contactable at 81234567), the sum remains unpaid.\n\n3. TAKE NOTICE that unless full payment of S$45,000 is received into our client's bank account no. 123456789012 within fourteen (14) days of the date of this letter, our client will commence legal proceedings against you without further notice, in reliance on the principles established in Tan v. Lee [2024] SGHC 12 and the pending matter HC/S 123/2026.\n\n4. All our client's rights are expressly reserved.\n\nYours faithfully,\n\nPriya d/o Krishnan\nDirector, Chan & Lee LLC\npriya.krishnan@chanlee.example.sg\n",
+    "spans": [
+      {
+        "start": 108,
+        "end": 118,
+        "label": "PERSON"
+      },
+      {
+        "start": 124,
+        "end": 133,
+        "label": "NRIC"
+      },
+      {
+        "start": 134,
+        "end": 163,
+        "label": "ADDRESS"
+      },
+      {
+        "start": 182,
+        "end": 188,
+        "label": "POSTAL_CODE"
+      },
+      {
+        "start": 196,
+        "end": 220,
+        "label": "EMAIL"
+      },
+      {
+        "start": 229,
+        "end": 242,
+        "label": "PHONE"
+      },
+      {
+        "start": 337,
+        "end": 347,
+        "label": "UEN"
+      },
+      {
+        "start": 364,
+        "end": 385,
+        "label": "ORG"
+      },
+      {
+        "start": 621,
+        "end": 638,
+        "label": "PERSON"
+      },
+      {
+        "start": 655,
+        "end": 663,
+        "label": "PHONE"
+      },
+      {
+        "start": 790,
+        "end": 802,
+        "label": "BANK_ACCT"
+      },
+      {
+        "start": 992,
+        "end": 1006,
+        "label": "CASE_NO"
+      },
+      {
+        "start": 1030,
+        "end": 1043,
+        "label": "CASE_NO"
+      },
+      {
+        "start": 1117,
+        "end": 1135,
+        "label": "PERSON"
+      },
+      {
+        "start": 1146,
+        "end": 1160,
+        "label": "ORG"
+      },
+      {
+        "start": 1161,
+        "end": 1194,
+        "label": "EMAIL"
+      }
+    ]
+  },
+  {
+    "source": "spa_extract.txt",
+    "text": "SALE AND PURCHASE AGREEMENT (EXTRACT)\n\nTHIS AGREEMENT is made on 2 April 2026\n\nBETWEEN\n\n(1) GOLDEN ORCHID INVESTMENTS PTE LTD (UEN 202254321H), a company incorporated in Singapore with its registered office at Block 71 Ayer Rajah Crescent, #02-18, Singapore 139951 (the \"Vendor\"); and\n\n(2) Mdm Wong Mei Ling (NRIC S9012345E), of 25 Jalan Kembangan, Singapore 419139 (the \"Purchaser\").\n\nRECITALS\n\nA. The Vendor is the registered proprietor of the property known as 71 Ayer Rajah Crescent #02-18.\n\nB. The Purchaser has appointed Harvinder Singh s/o Ajit Singh (passport number K1234567J) as her authorised representative.\n\n1. PURCHASE PRICE\n\n1.1 The purchase price is S$2,850,000 payable as follows: a deposit of S$285,000 upon execution, with the balance on completion, which shall take place within 12 weeks.\n\n1.2 The deposit shall be paid to the Vendor's solicitors' conveyancing account (a/c 555123456789, UOB Main Branch).\n\n1.3 For card-secured reservation fees only: the Purchaser authorises a charge of S$5,000 to card 4111 1111 1111 1111 (expiry 08/28).\n\n2. NOTICES\n\n2.1 Notices to the Vendor: finance@goldenorchid.example.sg, attention Mr Teo Chee Hean, telephone 62345678.\n",
+    "spans": [
+      {
+        "start": 92,
+        "end": 125,
+        "label": "ORG"
+      },
+      {
+        "start": 131,
+        "end": 141,
+        "label": "UEN"
+      },
+      {
+        "start": 210,
+        "end": 238,
+        "label": "ADDRESS"
+      },
+      {
+        "start": 258,
+        "end": 264,
+        "label": "POSTAL_CODE"
+      },
+      {
+        "start": 294,
+        "end": 307,
+        "label": "PERSON"
+      },
+      {
+        "start": 314,
+        "end": 323,
+        "label": "NRIC"
+      },
+      {
+        "start": 359,
+        "end": 365,
+        "label": "POSTAL_CODE"
+      },
+      {
+        "start": 527,
+        "end": 557,
+        "label": "PERSON"
+      },
+      {
+        "start": 575,
+        "end": 584,
+        "label": "PASSPORT"
+      },
+      {
+        "start": 894,
+        "end": 906,
+        "label": "BANK_ACCT"
+      },
+      {
+        "start": 1024,
+        "end": 1043,
+        "label": "CREDIT_CARD"
+      },
+      {
+        "start": 1100,
+        "end": 1131,
+        "label": "EMAIL"
+      },
+      {
+        "start": 1146,
+        "end": 1159,
+        "label": "PERSON"
+      },
+      {
+        "start": 1171,
+        "end": 1179,
+        "label": "PHONE"
+      }
+    ]
+  }
+]

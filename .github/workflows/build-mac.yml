@@ -1,0 +1,179 @@
+# Build the OTG Legal Box macOS installer (.dmg) on a real macOS runner.
+#
+# Trigger:
+#   - Manually from the "Actions" tab ("Run workflow")
+#   - Automatically when you push to the installation-process branch
+#
+# The workflow runs the same three stages as scripts/build-app.sh:
+#   1. Build the React frontend (Vite)
+#   2. Compile the Python backend into a standalone binary (PyInstaller)
+#   3. Package everything into a .dmg with electron-builder
+#
+# Artifacts (downloadable from the Actions run page):
+#   - OTG-Legal-Box-<version>-mac-arm64.dmg   (Apple Silicon)
+#   - OTG-Legal-Box-<version>-mac-x64.dmg     (Intel Macs)
+#   - Matching .zip files (same content, used by electron-updater)
+#
+# Builds are UNSIGNED (no Apple Developer cert needed). Recipients use the
+# right-click → Open Gatekeeper workaround documented in INSTALL.md.
+
+name: Build macOS DMG
+
+on:
+  workflow_dispatch:          # lets you click "Run workflow" from the Actions tab
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'                  # tagged builds publish a GitHub Release below
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - 'electron/**'
+      - 'scripts/build-app.sh'
+      - '.github/workflows/build-mac.yml'
+
+jobs:
+  build:
+    runs-on: macos-14         # Apple Silicon macOS runner (arm64)
+    timeout-minutes: 45
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ── Stage 1 — Frontend ────────────────────────────────────────────────
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci --no-audit --no-fund
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+
+      # ── Stage 2 — Python backend → PyInstaller binary ─────────────────────
+      - name: Create Python venv + install backend dependencies
+        working-directory: backend
+        run: |
+          python3.11 -m venv venv
+          source venv/bin/activate
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pyinstaller
+          # Prefer the large NER model (better recall on Asian names for the
+          # PII shield); it is bundled into the backend binary by the spec.
+          python -m spacy download en_core_web_lg || python -m spacy download en_core_web_sm
+          # Pre-download the embedding model and save it INTO the build tree
+          # so the packaged app is fully offline (the backend blocks all
+          # non-loopback connections; nothing may fetch at runtime).
+          # device='cpu' is required here: this Apple Silicon CI runner has
+          # MPS (Metal GPU) available but not enough allocatable GPU memory
+          # for it in a virtualized environment, and this step only needs to
+          # download + serialize weights to disk — no training or inference
+          # speed to protect — so forcing CPU sidesteps the OOM entirely.
+          python -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('all-MiniLM-L6-v2', device='cpu').save('embedding_model')"
+
+      - name: Compile backend with PyInstaller
+        working-directory: backend
+        run: |
+          source venv/bin/activate
+          pyinstaller legalbox.spec \
+            --distpath "$GITHUB_WORKSPACE/backend-dist" \
+            --workpath "$GITHUB_WORKSPACE/.pyinstaller-work" \
+            --clean --noconfirm
+          chmod +x "$GITHUB_WORKSPACE/backend-dist/legalbox-backend/legalbox-backend"
+          ls -la "$GITHUB_WORKSPACE/backend-dist/legalbox-backend" | head -20
+
+      # ── Stage 3 — Electron builder → .dmg ─────────────────────────────────
+      - name: Stage bundled Ollama runtime
+        working-directory: electron
+        run: |
+          mkdir -p vendor/ollama
+          curl -fsSL -o /tmp/ollama-darwin.tgz "https://ollama.com/download/ollama-darwin.tgz"
+          tar -xzf /tmp/ollama-darwin.tgz -C vendor/ollama
+          chmod +x vendor/ollama/ollama || true
+          ls -la vendor/ollama
+
+      - name: Install electron dependencies
+        working-directory: electron
+        run: npm install --no-audit --no-fund
+
+      - name: Restrict package.json's mac.target to arm64 only
+        working-directory: electron
+        # The --arm64 CLI shorthand does NOT override the explicit
+        # arch: ["arm64", "x64"] array already set on each mac.target entry
+        # in package.json — confirmed by a real run that built BOTH arm64
+        # and x64 DMGs in one job. Both tried to mount a DMG staging volume
+        # named /Volumes/OTG Legal Box at the same time, collided ("mkdir
+        # /Volumes/OTG Legal Box: permission denied"), and that crashed
+        # electron-builder's app-builder helper process — surfacing as the
+        # unrelated-looking ERR_ELECTRON_BUILDER_CANNOT_EXECUTE.
+        #
+        # A first attempt at fixing this passed -c.mac.target='[...]' on the
+        # electron-builder CLI, assuming it would be parsed as JSON and
+        # replace the array — instead electron-builder's CLI dot-path
+        # parsing kept it as a raw string, which failed schema validation
+        # outright ("configuration.mac.target should be an object/array/..").
+        # Mutating package.json directly in this ephemeral CI checkout has
+        # no parsing/merge ambiguity to get wrong: PyInstaller on this
+        # runner only ever produces an arm64 backend binary, so an x64 DMG
+        # would bundle a broken backend anyway — Intel Mac support needs
+        # its own job on its own runner, not attempted in this workflow.
+        run: |
+          node -e "
+            const fs = require('fs');
+            const pkg = JSON.parse(fs.readFileSync('package.json', 'utf8'));
+            pkg.build.mac.target = [
+              { target: 'dmg', arch: ['arm64'] },
+              { target: 'zip', arch: ['arm64'] },
+            ];
+            fs.writeFileSync('package.json', JSON.stringify(pkg, null, 2));
+            console.log('mac.target is now:', JSON.stringify(pkg.build.mac.target));
+          "
+
+      - name: Build macOS DMG (arm64 only, unsigned)
+        working-directory: electron
+        env:
+          # Skip code-signing — we don't have an Apple Developer cert in CI.
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+        run: npx electron-builder --mac --arm64
+
+      - name: List produced artifacts
+        run: |
+          echo "── dist-electron/ ──"
+          ls -lah dist-electron/ || true
+
+      # ── Upload the DMGs so you can download them from the Actions tab ─────
+      - name: Upload DMG artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: OTG-Legal-Box-macOS
+          path: |
+            dist-electron/*.dmg
+            dist-electron/*.zip
+            dist-electron/latest-mac.yml
+          if-no-files-found: error
+          retention-days: 14
+
+      # ── Tagged builds become a GitHub Release (artifacts otherwise expire) ─
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: false
+          prerelease: false
+          files: |
+            dist-electron/*.dmg
+            dist-electron/*.zip
+            dist-electron/latest-mac.yml
+          generate_release_notes: true

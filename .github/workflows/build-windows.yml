@@ -1,0 +1,149 @@
+# Build the OTG Legal Box Windows installer (.exe) on a real Windows runner.
+#
+# Trigger:
+#   - Manually from the "Actions" tab ("Run workflow")
+#   - Automatically on pushes to main / version tags that touch the app
+#
+# Mirrors build-mac.yml's three stages (see scripts/build-app.bat locally):
+#   1. Build the React frontend (Vite)
+#   2. Compile the Python backend into a standalone binary (PyInstaller)
+#   3. Package everything into an .exe (NSIS) with electron-builder
+#
+# Artifacts (downloadable from the Actions run page):
+#   - OTG-Legal-Box-<version>-win-x64.exe
+#   - latest.yml (used by electron-updater)
+#
+# Builds are UNSIGNED (no code-signing cert in CI). Recipients get one
+# "Windows protected your PC" SmartScreen prompt — click More info → Run
+# anyway, as documented in INSTALL.md.
+
+name: Build Windows EXE
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    tags:
+      - 'v*'
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - 'electron/**'
+      - 'scripts/build-app.bat'
+      - '.github/workflows/build-windows.yml'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    timeout-minutes: 45
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Checkout source
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Set up Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ── Stage 1 — Frontend ────────────────────────────────────────────────
+      - name: Install frontend dependencies
+        working-directory: frontend
+        run: npm ci --no-audit --no-fund
+
+      - name: Build frontend
+        working-directory: frontend
+        run: npm run build
+
+      # ── Stage 2 — Python backend → PyInstaller binary ─────────────────────
+      # Uses the venv's python/pip/pyinstaller executables directly by path
+      # rather than sourcing an activation script, to avoid PowerShell
+      # execution-policy friction in CI.
+      - name: Create Python venv + install backend dependencies
+        working-directory: backend
+        run: |
+          python -m venv venv
+          venv/Scripts/python.exe -m pip install --upgrade pip
+          venv/Scripts/python.exe -m pip install -r requirements.txt
+          venv/Scripts/python.exe -m pip install pyinstaller
+          # Prefer the large NER model (better recall on Asian names for the
+          # PII shield); it is bundled into the backend binary by the spec.
+          venv/Scripts/python.exe -m spacy download en_core_web_lg || venv/Scripts/python.exe -m spacy download en_core_web_sm
+          # Pre-download the embedding model and save it INTO the build tree
+          # so the packaged app is fully offline (the backend blocks all
+          # non-loopback connections; nothing may fetch at runtime).
+          # device='cpu' matches build-mac.yml: this step only needs to
+          # download + serialize weights to disk, so there's no reason to
+          # risk a GPU-backend surprise on whatever runner it lands on.
+          venv/Scripts/python.exe -c "from sentence_transformers import SentenceTransformer; SentenceTransformer('all-MiniLM-L6-v2', device='cpu').save('embedding_model')"
+
+      - name: Compile backend with PyInstaller
+        working-directory: backend
+        run: |
+          venv/Scripts/pyinstaller.exe legalbox.spec \
+            --distpath "$GITHUB_WORKSPACE/backend-dist" \
+            --workpath "$GITHUB_WORKSPACE/.pyinstaller-work" \
+            --clean --noconfirm
+          ls -la "$GITHUB_WORKSPACE/backend-dist/legalbox-backend" | head -20
+
+      # ── Stage 3 — Electron builder → .exe ─────────────────────────────────
+      - name: Stage bundled Ollama runtime
+        working-directory: electron
+        run: |
+          mkdir -p vendor/ollama
+          curl -fsSL -o /tmp/ollama-windows-amd64.zip "https://ollama.com/download/ollama-windows-amd64.zip"
+          unzip -q /tmp/ollama-windows-amd64.zip -d vendor/ollama
+          ls -la vendor/ollama
+          if [ ! -f vendor/ollama/ollama.exe ]; then
+            echo "::error::ollama.exe not found after extraction — Ollama's Windows download layout may have changed; check https://ollama.com/download for the current asset name/structure."
+            exit 1
+          fi
+
+      - name: Install electron dependencies
+        working-directory: electron
+        run: npm install --no-audit --no-fund
+
+      - name: Build Windows EXE (x64, unsigned)
+        working-directory: electron
+        # No CSC_LINK/certificate configured in CI, so electron-builder
+        # produces an unsigned NSIS installer automatically — same tradeoff
+        # as the unsigned macOS DMG (see build-mac.yml), documented in
+        # INSTALL.md's "Unsigned-build note".
+        run: npx electron-builder --win --x64
+
+      - name: List produced artifacts
+        run: |
+          echo "── dist-electron/ ──"
+          ls -lah dist-electron/ || true
+
+      # ── Upload the EXE so you can download it from the Actions tab ────────
+      - name: Upload EXE artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: OTG-Legal-Box-Windows
+          path: |
+            dist-electron/*.exe
+            dist-electron/latest.yml
+          if-no-files-found: error
+          retention-days: 14
+
+      # ── Tagged builds become a GitHub Release (artifacts otherwise expire) ─
+      - name: Publish GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
+        with:
+          draft: false
+          prerelease: false
+          files: |
+            dist-electron/*.exe
+            dist-electron/latest.yml
+          generate_release_notes: true

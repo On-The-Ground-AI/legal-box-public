@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Live Demo — OTG Legal Box</title>
+  <meta name="description" content="Try OTG Legal Box in your browser: contract review, redlining, bundle creator, chronology drafting, case search, the prompt library, and the PII shield — all with sample documents, no install." />
+  <meta name="robots" content="noindex, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/demo/styles.css" />
+</head>
+<body>
+
+  <header class="demo-topbar">
+    <div class="logo">OTG <span>Legal Box</span><span class="pill">Live Demo</span></div>
+    <div class="right">
+      <span id="quota-indicator" title="Shared per-browser daily cap on AI calls in this hosted demo"></span>
+      <a class="back-link" href="/">&larr; Back to the main site</a>
+    </div>
+  </header>
+
+  <div class="disclaimer-banner">
+    <span class="icon">⚠️</span>
+    <span>
+      <strong>This is a hosted preview, not the installed product.</strong>
+      It runs on <strong>Google Gemini in the cloud</strong> so anyone can try it from a browser.
+      The real, installed OTG Legal Box runs entirely on the firm's own computer and is
+      <a href="/technical" target="_blank" rel="noopener">physically incapable of sending data out</a>.
+      Please don't paste real client or confidential information here — use the sample
+      documents provided, or your own made-up text.
+    </span>
+  </div>
+
+  <nav class="tabs" id="tabs">
+    <button class="tab-btn active" data-tab="chat">Chat</button>
+    <button class="tab-btn" data-tab="contract">Contract Review</button>
+    <button class="tab-btn" data-tab="redline">Redlining</button>
+    <button class="tab-btn" data-tab="bundle">Bundle Creator</button>
+    <button class="tab-btn" data-tab="chronology">Chronology</button>
+    <button class="tab-btn" data-tab="search">Case Search</button>
+    <button class="tab-btn" data-tab="prompts">Prompt Library</button>
+    <button class="tab-btn" data-tab="pii">PII Shield</button>
+  </nav>
+
+  <main>
+
+    <!-- ══════════════════════ CHAT ══════════════════════ -->
+    <section class="tab-panel active" id="tab-chat">
+      <div class="tool-intro">
+        <h1>Chat</h1>
+        <p>A PII-protected legal assistant. Every message is redacted in your browser before it's sent —
+           the model only ever sees anonymized text, and the real names are restored locally when the reply comes back.</p>
+      </div>
+      <div class="card">
+        <div id="chat-log"></div>
+        <div class="chat-input-row">
+          <textarea id="chat-input" placeholder="Ask about Singapore law, or paste a clause to discuss. Try mentioning a made-up name, NRIC, or email to see the PII shield in action."></textarea>
+          <button class="btn btn-primary" id="chat-send">Send</button>
+        </div>
+        <div class="status-line" id="chat-status"></div>
+        <div class="output-actions">
+          <button class="btn btn-sm" id="chat-clear">Clear conversation</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ CONTRACT REVIEW ══════════════════════ -->
+    <section class="tab-panel" id="tab-contract">
+      <div class="tool-intro">
+        <h1>Contract Review</h1>
+        <p>Upload or paste a contract and get a structured risk report: obligations, one-sided clauses, missing protections, and recommendations.</p>
+      </div>
+      <div class="card">
+        <h3>1. Provide a contract</h3>
+        <div id="contract-doc-input"></div>
+      </div>
+      <div class="card">
+        <h3>2. Optional context</h3>
+        <div class="field">
+          <label for="contract-notes">Notes for the reviewer (e.g. "this is a supplier contract, we're the buyer")</label>
+          <input type="text" id="contract-notes" placeholder="Optional" />
+        </div>
+        <button class="btn btn-primary" id="contract-submit">Review contract</button>
+        <div class="status-line" id="contract-status"></div>
+      </div>
+      <div class="card">
+        <h3>Risk report</h3>
+        <div class="output-box empty" id="contract-output">Nothing yet — provide a contract above and click "Review contract".</div>
+        <div class="output-actions" id="contract-output-actions" style="display:none;">
+          <button class="btn btn-sm" id="contract-download">Download report (.txt)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ REDLINING ══════════════════════ -->
+    <section class="tab-panel" id="tab-redline">
+      <div class="tool-intro">
+        <h1>Redlining</h1>
+        <p>Two modes: have the AI suggest clause-level edits protecting one side, or compare two document versions with no AI involved at all (pure text diff, entirely in your browser).</p>
+      </div>
+
+      <div class="card">
+        <h3>AI markup — protect one side</h3>
+        <div id="redline-doc-input"></div>
+        <div class="field-row">
+          <div class="field">
+            <label for="redline-role">Representing the</label>
+            <select id="redline-role">
+              <option value="buyer">Buyer</option>
+              <option value="seller">Seller</option>
+              <option value="landlord">Landlord</option>
+              <option value="tenant">Tenant</option>
+              <option value="employer">Employer</option>
+              <option value="employee">Employee</option>
+              <option value="borrower">Borrower</option>
+              <option value="lender">Lender</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="redline-context">Extra context (optional)</label>
+            <input type="text" id="redline-context" placeholder="e.g. this is a first draft from the other side" />
+          </div>
+        </div>
+        <button class="btn btn-primary" id="redline-submit">Generate redlines</button>
+        <div class="status-line" id="redline-status"></div>
+        <div class="output-box empty" id="redline-output" style="margin-top:0.9rem;">Nothing yet.</div>
+        <div class="output-actions" id="redline-output-actions" style="display:none;">
+          <button class="btn btn-sm" id="redline-download">Download redlines (.txt)</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Compare two versions (no AI, runs entirely in your browser)</h3>
+        <div class="field-row">
+          <div class="field">
+            <label>Original / their version</label>
+            <div id="redline-compare-a-input"></div>
+          </div>
+          <div class="field">
+            <label>Revised / our version</label>
+            <div id="redline-compare-b-input"></div>
+          </div>
+        </div>
+        <button class="btn" id="redline-compare-submit">Compare</button>
+        <div class="output-box empty" id="redline-compare-output" style="margin-top:0.9rem;">Nothing yet.</div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ BUNDLE CREATOR ══════════════════════ -->
+    <section class="tab-panel" id="tab-bundle">
+      <div class="tool-intro">
+        <h1>Bundle Creator</h1>
+        <p>Build a Singapore court bundle of authorities: statutes, cases, and secondary materials, sorted correctly with an AI-drafted relevance statement for each.</p>
+      </div>
+      <div class="card">
+        <div class="field-row">
+          <div class="field">
+            <label for="bundle-matter">Matter title</label>
+            <input type="text" id="bundle-matter" placeholder="e.g. Ismail v. Meridian Construction Pte Ltd" />
+          </div>
+          <div class="field">
+            <label for="bundle-hearing-type">Hearing type</label>
+            <input type="text" id="bundle-hearing-type" placeholder="e.g. Summary Judgment" />
+          </div>
+          <div class="field">
+            <label for="bundle-hearing-date">Hearing date</label>
+            <input type="text" id="bundle-hearing-date" placeholder="e.g. 15 January 2027" />
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <h3>Authorities</h3>
+        <p style="font-size:0.8rem;color:var(--text-muted);margin-bottom:0.75rem;">
+          Add items by hand, or click a sample below to add it pre-filled.
+        </p>
+        <div class="sample-chips" id="bundle-sample-chips"></div>
+        <div id="bundle-items" style="margin-top:1rem;"></div>
+        <button class="btn btn-sm" id="bundle-add-item">+ Add item</button>
+      </div>
+      <div class="card">
+        <button class="btn btn-primary" id="bundle-submit">Generate bundle</button>
+        <div class="status-line" id="bundle-status"></div>
+        <div class="output-box empty" id="bundle-output" style="margin-top:0.9rem;">Nothing yet.</div>
+        <div class="output-actions" id="bundle-output-actions" style="display:none;">
+          <button class="btn btn-sm" id="bundle-download">Download bundle outline (.txt)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ CHRONOLOGY ══════════════════════ -->
+    <section class="tab-panel" id="tab-chronology">
+      <div class="tool-intro">
+        <h1>Chronology Drafting</h1>
+        <p>Upload one or more documents and get a merged, sorted timeline of every significant event, ready to drop into a pleading.</p>
+      </div>
+      <div class="card">
+        <div class="field">
+          <label for="chronology-matter">Matter title (optional)</label>
+          <input type="text" id="chronology-matter" placeholder="e.g. Havelock Logistics v. Tan Wei Ming" />
+        </div>
+        <h3 style="margin-top:0.5rem;">Documents</h3>
+        <div id="chronology-docs"></div>
+        <button class="btn btn-sm" id="chronology-add-doc">+ Add another document</button>
+      </div>
+      <div class="card">
+        <button class="btn btn-primary" id="chronology-submit">Extract chronology</button>
+        <div class="status-line" id="chronology-status"></div>
+        <div id="chronology-output" style="margin-top:0.9rem;"></div>
+        <div class="output-actions" id="chronology-output-actions" style="display:none;">
+          <button class="btn btn-sm" id="chronology-download">Download timeline (.csv)</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ CASE SEARCH ══════════════════════ -->
+    <section class="tab-panel" id="tab-search">
+      <div class="tool-intro">
+        <h1>Case Search</h1>
+        <p>Keyword search over a small bundled corpus of sample cases — runs entirely in your browser, no AI, no cost.
+           Upload your own sample documents to add them to the search (they stay in this browser only). Then optionally
+           ask the AI to synthesize an answer from the top results, with citations.</p>
+      </div>
+      <div class="card">
+        <div class="field">
+          <label for="search-query">Search the case corpus</label>
+          <input type="search" id="search-query" placeholder="e.g. bank account, non-compete, NRIC, site inspection" />
+        </div>
+        <button class="btn" id="search-run">Search</button>
+        <label style="font-size:0.78rem;color:var(--text-muted);display:block;margin-top:0.75rem;">
+          Add a document to the searchable corpus (stored only in this browser tab):
+        </label>
+        <div id="search-upload-input"></div>
+      </div>
+      <div id="search-results"></div>
+      <div class="card" id="search-ask-card" style="display:none;">
+        <h3>Ask the AI about these results</h3>
+        <div class="field">
+          <input type="text" id="search-question" placeholder="e.g. what payment deadline applies?" />
+        </div>
+        <button class="btn btn-primary" id="search-ask">Get AI answer</button>
+        <div class="status-line" id="search-ask-status"></div>
+        <div class="output-box empty" id="search-answer" style="margin-top:0.75rem;">Nothing yet.</div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════ PROMPT LIBRARY ══════════════════════ -->
+    <section class="tab-panel" id="tab-prompts">
+      <div class="tool-intro">
+        <h1>Prompt Library</h1>
+        <p>A curated sample of the real Legal Box prompt library (128 of the full product's 1,286 prompts, spanning all 10 volumes).
+           Search, copy, or send a prompt straight to the Chat tab.</p>
+      </div>
+      <div class="card">
+        <div class="field-row">
+          <div class="field">
+            <label for="prompts-search">Search</label>
+            <input type="search" id="prompts-search" placeholder="e.g. redline, chronology, employment" />
+          </div>
+          <div class="field">
+            <label for="prompts-volume">Volume</label>
+            <select id="prompts-volume"><option value="">All volumes</option></select>
+          </div>
+        </div>
+      </div>
+      <div id="prompts-list"></div>
+    </section>
+
+    <!-- ══════════════════════ PII SHIELD ══════════════════════ -->
+    <section class="tab-panel" id="tab-pii">
+      <div class="tool-intro">
+        <h1>PII Shield</h1>
+        <p>See exactly what the AI would see. This runs 100% in your browser — open devtools and check the network
+           tab: nothing is sent anywhere for this page. Detects Singapore NRIC/FIN, passports, UENs, phone numbers,
+           emails, dates of birth, Luhn-checked card numbers, addresses, postal codes, context-gated bank accounts,
+           and court case numbers.</p>
+      </div>
+      <div class="card">
+        <div id="pii-doc-input"></div>
+        <button class="btn btn-primary" id="pii-run">Run PII Shield</button>
+        <div class="status-line" id="pii-engine-note">
+          Engine: regex-only (this demo runs without the spaCy/Presidio NER model the installed app uses,
+          so person and organisation names are <em>not</em> masked here — only the structured identifiers above are).
+        </div>
+      </div>
+      <div class="card">
+        <h3>What the AI would see</h3>
+        <div class="output-box empty" id="pii-output">Nothing yet.</div>
+        <div class="pii-summary-line" id="pii-summary" style="display:none;"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <script src="/demo/piiShield.js"></script>
+  <script src="/demo/app.js"></script>
+</body>
+</html>

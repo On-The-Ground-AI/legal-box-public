@@ -1,0 +1,17 @@
+{
+  "description": "Chronology memo — bare dates and reference numbers must survive; PII must not",
+  "regex_pii": {
+    "UEN": ["201598765K"],
+    "NRIC": ["S8123456F"],
+    "PHONE": ["96543210"],
+    "EMAIL": ["weiming.tan@logistics.example.com"],
+    "ADDRESS": ["Block 5 Toh Guan Road East"],
+    "POSTAL_CODE": ["608831"],
+    "CASE_NO": ["DC/S 789/2025"]
+  },
+  "ner_pii": {
+    "PERSON": ["Tan Wei Ming", "Nurul Ain Binte Hassan", "David Chen"],
+    "ORG": ["Havelock Logistics Pte Ltd", "Singapore Mediation Centre"]
+  },
+  "must_survive": ["2024-11-03", "2025-01-15", "2025-02-20", "2025-04-01", "2025-06-30", "2026-01-10", "SC-2024-1103", "INV-2025-0042", "S$120,500", "6 years", "20240115"]
+}

@@ -1,0 +1,111 @@
+{
+  "name": "otg-legal-box",
+  "version": "1.0.0",
+  "description": "OTG Legal Box — Local AI assistant for Singapore law firms",
+  "main": "main.js",
+  "author": "On-The-Ground AI",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "NODE_ENV=development electron .",
+    "build:mac": "electron-builder --mac",
+    "build:win": "electron-builder --win",
+    "build:linux": "electron-builder --linux",
+    "build:all": "electron-builder --mac --win --linux"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "ai.ontheground.legalbox",
+    "productName": "OTG Legal Box",
+    "copyright": "Copyright © 2025 On-The-Ground AI",
+    "directories": {
+      "buildResources": "build",
+      "output": "../dist-electron"
+    },
+    "artifactName": "OTG-Legal-Box-${version}-${os}-${arch}.${ext}",
+    "files": [
+      "main.js",
+      "preload.js"
+    ],
+    "extraResources": [
+      {
+        "from": "../frontend/dist",
+        "to": "frontend/dist",
+        "filter": [
+          "**/*",
+          "!**/__pycache__/**",
+          "!**/.DS_Store",
+          "!**/*.pyc"
+        ]
+      },
+      {
+        "from": "../backend-dist",
+        "to": "backend",
+        "filter": [
+          "**/*",
+          "!**/__pycache__/**",
+          "!**/.DS_Store",
+          "!**/*.pyc"
+        ]
+      },
+      {
+        "from": "vendor/ollama",
+        "to": "ollama",
+        "filter": ["**/*"]
+      }
+    ],
+    "mac": {
+      "target": [
+        { "target": "dmg", "arch": ["arm64", "x64"] },
+        { "target": "zip", "arch": ["arm64", "x64"] }
+      ],
+      "icon": "build/icon.png",
+      "category": "public.app-category.productivity",
+      "hardenedRuntime": true,
+      "gatekeeperAssess": false,
+      "entitlements": "build/entitlements.mac.plist",
+      "entitlementsInherit": "build/entitlements.mac.plist",
+      "darkModeSupport": true,
+      "notarize": false
+    },
+    "dmg": {
+      "title": "OTG Legal Box",
+      "icon": "build/icon.png",
+      "window": { "width": 540, "height": 380 },
+      "contents": [
+        { "x": 140, "y": 200, "type": "file" },
+        { "x": 400, "y": 200, "type": "link", "path": "/Applications" }
+      ]
+    },
+    "win": {
+      "target": [
+        { "target": "nsis", "arch": ["x64"] }
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "OTG Legal Box",
+      "license": "../LICENSE",
+      "allowElevation": true
+    },
+    "linux": {
+      "target": [
+        { "target": "AppImage", "arch": ["x64"] },
+        { "target": "deb",      "arch": ["x64"] }
+      ],
+      "icon": "build/icon.png",
+      "category": "Office",
+      "synopsis": "Local AI assistant for Singapore law firms",
+      "maintainer": "On-The-Ground AI"
+    }
+  }
+}
