@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- White circle background -->
+  <circle cx="100" cy="100" r="100" fill="#ffffff"/>
+  <!-- LBox text in black, using a Verdana-like font -->
+  <text x="100" y="115" 
+        font-family="'Verdana', 'Geneva', 'DejaVu Sans', sans-serif" 
+        font-size="60" 
+        font-weight="bold" 
+        fill="#000000" 
+        text-anchor="middle" 
+        dominant-baseline="middle">LBox</text>
+</svg>
