@@ -1,6 +1,6 @@
 {
   "name": "otg-legal-box",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "OTG Legal Box — Local AI assistant for Singapore law firms",
   "main": "main.js",
   "author": "On-The-Ground AI",
