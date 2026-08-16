@@ -27,6 +27,14 @@
       "output": "../dist-electron"
     },
     "artifactName": "OTG-Legal-Box-${version}-${os}-${arch}.${ext}",
+    "afterPack": "build/afterPack.js",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "On-The-Ground-AI",
+        "repo": "legal-box-public"
+      }
+    ],
     "files": [
       "main.js",
       "preload.js"
@@ -60,8 +68,8 @@
     ],
     "mac": {
       "target": [
-        { "target": "dmg", "arch": ["arm64", "x64"] },
-        { "target": "zip", "arch": ["arm64", "x64"] }
+        { "target": "dmg", "arch": ["arm64"] },
+        { "target": "zip", "arch": ["arm64"] }
       ],
       "icon": "build/icon.png",
       "category": "public.app-category.productivity",

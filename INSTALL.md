@@ -1,6 +1,6 @@
 # Installing OTG Legal Box
 
-Three steps. One installer. The AI runtime is built in.
+Four steps. One installer. The AI runtime is built in.
 
 > **Already installed?** See [UNINSTALL.md](UNINSTALL.md) — removal is two clicks.
 > **Developer / installing from source?** See the "Developer install" section in [README.md](README.md).
@@ -18,27 +18,62 @@ Three steps. One installer. The AI runtime is built in.
 
 ---
 
-## Step 1 — Install the app
+## Step 1 — Download
 
-**Mac:** double-click the `OTG-Legal-Box-<version>-mac-arm64.dmg` (Apple
-Silicon) or `…-mac-x64.dmg` (Intel), then drag **OTG Legal Box** onto the
+Get the installer from
+[the latest release](https://github.com/On-The-Ground-AI/legal-box-public/releases/latest)
+(or the Download buttons on the website):
+
+| Platform | File |
+|----------|------|
+| Mac (Apple Silicon — M1/M2/M3/M4) | `OTG-Legal-Box-<version>-mac-arm64.dmg` |
+| Windows 10/11 (64-bit) | `OTG-Legal-Box-<version>-win-x64.exe` |
+
+> **Intel Macs are not covered by the prebuilt DMG.** The build runs on an
+> Apple Silicon runner, so the bundled backend binary is arm64-only. On an
+> Intel Mac, build from source — see [BUILD-GUIDE.md](BUILD-GUIDE.md).
+
+Each release also ships `SHA256SUMS-macOS.txt` and `SHA256SUMS-windows.txt`
+if your IT team wants to verify the download:
+
+```bash
+# Mac
+shasum -a 256 ~/Downloads/OTG-Legal-Box-*-mac-arm64.dmg
+```
+```powershell
+# Windows
+Get-FileHash $HOME\Downloads\OTG-Legal-Box-*-win-x64.exe -Algorithm SHA256
+```
+
+## Step 2 — Install the app
+
+**Mac:** double-click the `.dmg`, then drag **OTG Legal Box** onto the
 **Applications** folder shortcut. Eject the DMG.
 
-**Windows:** double-click `OTG-Legal-Box-Setup-<version>.exe` and click
-through the installer. You'll get a Start Menu entry and a desktop shortcut.
+**Windows:** double-click the `.exe` and click through the installer. You'll
+get a Start Menu entry and a desktop shortcut.
 
-> **Unsigned-build note:** until code signing is in place, macOS will warn
-> that the app is from an unidentified developer — right-click the app →
-> **Open** → **Open** (one time only). On Windows, click **More info → Run
-> anyway** on the SmartScreen prompt. Signed builds remove this step.
+> **Unsigned-build note:** until code signing is in place (see
+> [docs/CODE_SIGNING_ENROLLMENT.md](docs/CODE_SIGNING_ENROLLMENT.md)), both
+> platforms block the first launch once.
+>
+> **Mac:** open the app from Applications, dismiss the "Apple could not
+> verify…" warning, then go to **System Settings → Privacy & Security**,
+> scroll to the bottom and click **Open Anyway**, then confirm. On macOS 12
+> and 13 the older right-click → **Open** → **Open** shortcut also works;
+> from macOS 14 onwards, use Privacy & Security.
+>
+> **Windows:** click **More info → Run anyway** on the SmartScreen prompt.
+>
+> This is one time per machine, not per launch.
 
-## Step 2 — Open it
+## Step 3 — Open it
 
 Launch **OTG Legal Box**. The app starts its own AI runtime automatically —
 there is nothing else to install. (If you already use
 [Ollama](https://ollama.com), the app detects and uses your existing one.)
 
-## Step 3 — First-launch wizard
+## Step 4 — First-launch wizard
 
 A short setup wizard runs once:
 
@@ -69,8 +104,14 @@ lost or stolen.
 ## Troubleshooting
 
 **"OTG Legal Box is damaged and can't be opened" (Mac, unsigned builds)**
-Run `xattr -cr "/Applications/OTG Legal Box.app"` in Terminal, then
-right-click → Open.
+macOS says "damaged" when it means "quarantined and not notarized". Clear the
+quarantine flag the browser attached to the download:
+
+```bash
+xattr -cr "/Applications/OTG Legal Box.app"
+```
+
+Then launch it again and use **Open Anyway** as described in Step 2.
 
 **Model download stalls at 0%**
 Check your internet connection. Corporate firewalls sometimes block

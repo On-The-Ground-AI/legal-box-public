@@ -7,12 +7,45 @@ All notable changes to OTG Legal Box are recorded here. The format follows
 ## [Unreleased]
 
 ### Fixed
+- **Releases were never published, so the website's download buttons led to
+  an empty page.** The `v1.0.0` tag built both installers successfully and
+  then failed on the release step with `403 Resource not accessible by
+  integration` — the default `GITHUB_TOKEN` is read-only in this org. Both
+  build workflows now declare `permissions: contents: write`. Their push
+  trigger also pointed at `main` rather than the default branch,
+  `public-main`.
+- `latest.yml` / `latest-mac.yml` were listed as release assets but never
+  generated, warning on every run. electron-builder now runs with
+  `--publish never` against a configured `publish` provider, which emits the
+  auto-update feeds without uploading (the release step owns publishing).
+- macOS builds are now ad-hoc codesigned in `electron/build/afterPack.js`.
+  Apple Silicon will not execute an arm64 bundle carrying no signature at
+  all and reports it as "damaged", which reads to a user as a corrupt
+  download rather than a signing gap.
+- Intel Mac downloads were advertised but never built — the macOS runner is
+  Apple Silicon and PyInstaller produces an arm64-only backend, so an x64
+  DMG would have shipped a backend that cannot run. `mac.target` is now
+  arm64-only in `electron/package.json` (previously patched in CI), and the
+  site, README and INSTALL no longer offer the download.
+- Install instructions gave the pre-macOS 14 Gatekeeper workaround
+  (right-click → Open), which no longer clears an unsigned app. Replaced
+  with **System Settings → Privacy & Security → Open Anyway**.
 - Packaged desktop app could not reach its own backend: the frontend used a
   relative `/api` base, which resolves to `file:///api/…` when Electron loads
   the UI from disk. It now targets `http://127.0.0.1:8000` under a `file://`
   origin and keeps the relative base (and Vite proxy) in the dev server.
 
 ### Added
+- **`RELEASING.md`** — the tag-to-download runbook: how a `v*` tag becomes
+  the assets the website links to, the repository permission that has to be
+  enabled first, how to recover a failed release, and what still blocks a
+  first launch on each platform.
+- Per-platform `SHA256SUMS-macOS.txt` / `SHA256SUMS-windows.txt` on every
+  release, so a firm's IT can verify a download matches what CI produced.
+- The website's download buttons now resolve to the actual `.dmg` / `.exe`
+  asset URLs via the GitHub releases API, showing version and file size and
+  emphasising the visitor's platform. They fall back to the existing
+  `/releases/latest` link when the API is unavailable or no release exists.
 - **Windows installer CI**: `.github/workflows/build-windows.yml`, mirroring
   the existing macOS DMG workflow — builds an unsigned `.exe` (NSIS) on a
   Windows GitHub Actions runner, using the Windows Ollama runtime and the

@@ -4,11 +4,14 @@ name: Backend tests
 # promise: no client PII ever reaches the LLM, and every response restores
 # the original values.
 
+# public-main is this repo's default branch; these were pointed at `main`,
+# which no longer exists as the trunk, so the release gate never actually
+# ran on a pull request.
 on:
   push:
-    branches: [main]
+    branches: [public-main]
   pull_request:
-    branches: [main]
+    branches: [public-main]
 
 jobs:
   test:
