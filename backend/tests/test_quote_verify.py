@@ -155,21 +155,28 @@ def test_router_ordering_verify_in_token_space_then_restore():
     pii = anonymize(original)
     assert pii.token_map, "fixture must contain detectable PII"
 
-    # The model quotes what it saw — anonymized text — with casing drift.
-    token = next(iter(pii.token_map))
-    model_markup = f"~~the supplier shall notify {token} within 7 days.~~"
+    # Derive the model's quote from the REAL anonymized line, lowercased to
+    # simulate casing drift. Hand-assembling it around a token from
+    # token_map would depend on which recognizers are active, and that
+    # differs between the regex-only fallback and full spaCy NER.
+    anon_line = pii.anonymized_text.splitlines()[0]
+    assert "[" in anon_line, "first line should carry at least one PII token"
+    model_markup = f"~~{anon_line.lower()}~~"
 
     verified_markup, summary = verify_redline_markup(model_markup, pii.anonymized_text)
     data = summary.to_dict()
     assert data["drifted"] == 1, "should locate the clause despite casing drift"
     assert data["not_found"] == 0
 
+    # Correction restored the source's exact text — including the token's
+    # own casing, which the lowercased quote had destroyed.
+    assert verified_markup == f"~~{anon_line}~~"
+
     # Restoration happens after verification, exactly as the router does it.
+    # The round trip must reproduce the original line character-for-character.
     final = deanonymize(verified_markup, pii.token_map)
+    assert final == f"~~{original.splitlines()[0]}~~"
     assert "john.tan@acme.com.sg" in final
-    assert token not in final
-    # Correction applied the document's real casing.
-    assert "~~The Supplier shall notify" in final
 
 
 # ── Redline markup ────────────────────────────────────────────────────────────
