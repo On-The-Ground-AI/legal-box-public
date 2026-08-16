@@ -53,6 +53,7 @@ everything else in this file, it makes an outbound network call:
 | [Stirling-PDF](https://github.com/Stirling-Tools/Stirling-PDF) | Open-core PDF toolbox whose feature set (merge, bookmarks, TOC, page numbering) defines the bar for Legal Box's bundle-PDF assembly, implemented natively with pypdf. Firms running Server mode may optionally deploy Stirling-PDF alongside. |
 | [OpenContracts](https://github.com/Open-Source-Legal/OpenContracts) (MIT) | Document-intelligence platform whose parsing stack (Docling) Legal Box adopted, and whose annotation/citation-graph workspace informs the post-pilot roadmap. |
 | [PII-Shield](https://github.com/gregmos/PII-Shield) | The original reference for the PII layer concept (see LegalBox_App_Research_and_Plan.md §10), since superseded by the Presidio-based implementation. |
+| [Mike](https://github.com/Open-Legal-Products/mike) (Open Legal Products) | **AGPL-3.0.** Its published citation-verification behaviour — a progressively looser match ladder, correcting a drifted quote by substituting the source text rather than re-prompting, and reporting an unreadable source as unverifiable rather than absent — informed the design of `backend/quote_verify.py`. **Independently implemented from the observable behaviour and its documentation; no code was copied, and no AGPL code enters the application bundle.** |
 
 ---
 
