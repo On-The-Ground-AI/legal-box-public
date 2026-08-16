@@ -37,6 +37,7 @@ import config
 from pii_shield import anonymize, deanonymize
 from ollama_client import OllamaClient
 from document_parser import parse_document
+from quote_verify import verify_redline_markup
 
 router = APIRouter(prefix="/api/redline", tags=["redline"])
 ollama = OllamaClient()
@@ -130,8 +131,30 @@ async def ai_markup(
         except ValueError as e:
             raise HTTPException(status_code=400, detail=str(e))
 
+        # Check every ~~deletion~~ against the contract before showing it to
+        # anyone. This runs BEFORE deanonymize() and against `excerpt`, not
+        # the full document, so both sides are in the same text space:
+        #   - the model only ever saw anonymized text, so it can only quote
+        #     anonymized text; comparing restored quotes against the original
+        #     would mismatch wherever a token's length differs from the real
+        #     value it replaced
+        #   - the model only ever saw the first 14 000 characters, so a quote
+        #     that matches only beyond the cut is a genuine finding, not a
+        #     false negative
+        verified_markup, verification = verify_redline_markup(raw_markup, excerpt)
+
         # Restore PII in the response
-        final_markup = deanonymize(raw_markup, pii_result.token_map)
+        final_markup = deanonymize(verified_markup, pii_result.token_map)
+
+        # Corrected excerpts came out of the anonymized text, so they carry
+        # tokens too and must be restored the same way before display.
+        verification_payload = verification.to_dict()
+        for quote in verification_payload["quotes"]:
+            quote["quote"] = deanonymize(quote["quote"], pii_result.token_map)
+            if quote["source_excerpt"]:
+                quote["source_excerpt"] = deanonymize(
+                    quote["source_excerpt"], pii_result.token_map
+                )
 
         return {
             "filename": filename,
@@ -141,6 +164,7 @@ async def ai_markup(
             "pii_detected": pii_result.pii_summary,
             "truncated": truncated,
             "original_length": len(text),
+            "verification": verification_payload,
             "disclaimer": config.LEGAL_DISCLAIMER,
         }
 

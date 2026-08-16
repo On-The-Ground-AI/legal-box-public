@@ -6,6 +6,34 @@ All notable changes to OTG Legal Box are recorded here. The format follows
 
 ## [Unreleased]
 
+### Added
+- **Quote verification for AI redlines** (`backend/quote_verify.py`). The
+  redline prompt asks the model to "quote the exact text to delete" and the
+  result is rendered as a strikethrough, but nothing checked that the quoted
+  wording was actually in the contract — a paraphrased clause was displayed
+  as though it were the document's own words. Every `~~deletion~~` from
+  `POST /api/redline/markup` is now located in the source through a
+  progressively looser match ladder (exact → whitespace/case → punctuation,
+  with typographic quotes and dashes folded to ASCII).
+
+  A located-but-drifted quote is corrected by **substituting the document's
+  real wording**, not by re-prompting, so there is no second inference pass.
+  A quote that cannot be located is left exactly as written and flagged —
+  rewriting text we could not find would invent a correction. An empty or
+  unreadable source reports `unverifiable`, never `not_found`, so "we could
+  not check" is never presented as "we checked and it is absent".
+
+  Verification runs **before** de-anonymization and against the same 14 000-
+  character excerpt the model received: the model only ever sees PII tokens,
+  so comparing restored quotes against the original text would mismatch
+  wherever a token's length differs from the value it replaced, and a quote
+  matching only past the truncation point is a real finding rather than a
+  false negative.
+
+  The response gains an additive `verification` block (counts plus a
+  per-quote record); `markup` keeps its existing shape, so current consumers
+  are unaffected.
+
 ### Fixed
 - **Releases were never published, so the website's download buttons led to
   an empty page.** The `v1.0.0` tag built both installers successfully and
