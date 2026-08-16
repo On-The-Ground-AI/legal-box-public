@@ -64,5 +64,5 @@ First pilot-ready release. All engineering phases of the pilot plan complete.
   accurate; optional Tesseract OCR). Every incorporated project credited in
   `NOTICE.md`.
 
-[Unreleased]: https://github.com/On-The-Ground-AI/legal-box/compare/v1.0.0...HEAD
-[1.0.0]: https://github.com/On-The-Ground-AI/legal-box/releases/tag/v1.0.0
+[Unreleased]: https://github.com/On-The-Ground-AI/legal-box-public/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/On-The-Ground-AI/legal-box-public/releases/tag/v1.0.0

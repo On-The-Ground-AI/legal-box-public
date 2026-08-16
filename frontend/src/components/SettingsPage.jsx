@@ -510,7 +510,7 @@ export default function SettingsPage({ health, onOpenModels }) {
   }, [])
 
   const openUninstallGuide = () => {
-    const url = 'https://github.com/On-The-Ground-AI/legal-box/blob/main/UNINSTALL.md'
+    const url = 'https://github.com/On-The-Ground-AI/legal-box-public/blob/main/UNINSTALL.md'
     if (window.legalbox?.openExternal) {
       window.legalbox.openExternal(url)
     } else {
@@ -725,7 +725,7 @@ export default function SettingsPage({ health, onOpenModels }) {
                 <p className="text-xs text-gray-500">Version {settings?.version || '1.0.0'}</p>
               </div>
               <a
-                href="https://github.com/On-The-Ground-AI/legal-box"
+                href="https://github.com/On-The-Ground-AI/legal-box-public"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 text-xs text-[#E05A1E] hover:underline"

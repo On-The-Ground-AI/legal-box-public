@@ -12,9 +12,9 @@ Built on [Ollama](https://ollama.com/) + 50+ open-source LLMs. All client data i
 
 | Platform | Installer |
 |----------|-----------|
-| **Mac** (Apple Silicon) | [DMG](https://github.com/On-The-Ground-AI/legal-box/releases/latest) |
-| **Mac** (Intel) | [DMG](https://github.com/On-The-Ground-AI/legal-box/releases/latest) |
-| **Windows** | [EXE](https://github.com/On-The-Ground-AI/legal-box/releases/latest) |
+| **Mac** (Apple Silicon) | [DMG](https://github.com/On-The-Ground-AI/legal-box-public/releases/latest) |
+| **Mac** (Intel) | [DMG](https://github.com/On-The-Ground-AI/legal-box-public/releases/latest) |
+| **Windows** | [EXE](https://github.com/On-The-Ground-AI/legal-box-public/releases/latest) |
 
 System requirements: 8 GB RAM minimum, 16 GB recommended · 20 GB free disk · macOS 12+ or Windows 10/11
 
@@ -86,7 +86,7 @@ Three ways to verify this yourself:
 ### Clone and run
 
 ```bash
-git clone https://github.com/On-The-Ground-AI/legal-box
+git clone https://github.com/On-The-Ground-AI/legal-box-public
 cd legal-box
 ```
 
