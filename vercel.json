@@ -2,7 +2,7 @@
   "framework": null,
   "buildCommand": "echo 'Static landing page — no build required'",
   "installCommand": "echo 'No dependencies'",
-  "outputDirectory": "landing",
+  "outputDirectory": ".",
   "rewrites": [
     { "source": "/technical", "destination": "/technical.html" },
     { "source": "/admin", "destination": "/admin.html" },
