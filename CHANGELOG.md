@@ -6,6 +6,13 @@ All notable changes to OTG Legal Box are recorded here. The format follows
 
 ## [Unreleased]
 
+## [1.0.1] — 2026-08-16
+
+First release with downloadable installers. `v1.0.0` was tagged but never
+published: both installers built correctly and the release step failed with
+`403 Resource not accessible by integration`, so the website's download
+buttons pointed at an empty releases page.
+
 ### Added
 - **Quote verification for AI redlines** (`backend/quote_verify.py`). The
   redline prompt asks the model to "quote the exact text to delete" and the
