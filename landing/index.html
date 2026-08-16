@@ -702,16 +702,18 @@
     <p>A complete legal AI workbench powered by on-device models. No cloud. No third-party processors. The app is physically incapable of sending your data out &mdash; and it can prove it to you live.</p>
 
     <div class="btn-row">
-      <a class="btn-primary" href="https://github.com/On-The-Ground-AI/legal-box-public/releases/latest">
+      <a class="btn-primary" id="dl-mac" data-platform="mac"
+         href="https://github.com/On-The-Ground-AI/legal-box-public/releases/latest">
         ↓ Download for Mac
       </a>
-      <a class="btn-secondary" href="https://github.com/On-The-Ground-AI/legal-box-public/releases/latest">
+      <a class="btn-secondary" id="dl-win" data-platform="win"
+         href="https://github.com/On-The-Ground-AI/legal-box-public/releases/latest">
         ↓ Download for Windows
       </a>
     </div>
-    
-    <p style="color: var(--text-muted); font-size: 0.8rem; margin-top: 1rem;">
-      Mac: macOS 12+ (Apple Silicon or Intel) · Windows: 10/11 (64-bit) · 8 GB RAM minimum, 16 GB recommended
+
+    <p id="dl-meta" style="color: var(--text-muted); font-size: 0.8rem; margin-top: 1rem;">
+      Mac: macOS 12+ (Apple Silicon) · Windows: 10/11 (64-bit) · 8 GB RAM minimum, 16 GB recommended
     </p>
 
     <!-- MAC MINI CTA -->
@@ -750,7 +752,7 @@
       </div>
       <div class="step">
         <h3>2. Open it</h3>
-        <p><strong>Mac:</strong> Double-click the <code style="background: var(--surface-2); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85em;">.dmg</code> file, then drag <strong>OTG Legal Box</strong> into your Applications folder. First launch may require right-click &rarr; Open (one-time Gatekeeper workaround for unsigned builds).</p>
+        <p><strong>Mac:</strong> Double-click the <code style="background: var(--surface-2); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85em;">.dmg</code> file, then drag <strong>OTG Legal Box</strong> into your Applications folder. Because these builds aren't yet signed by Apple, the first launch is blocked once: open the app, click <strong>Done</strong> or <strong>Cancel</strong> on the warning, then go to <strong>System Settings &rarr; Privacy &amp; Security</strong>, scroll down and click <strong>Open Anyway</strong>. One time only &mdash; every launch after that is a normal double-click.</p>
         <p><strong>Windows:</strong> Double-click the <code style="background: var(--surface-2); padding: 0.15rem 0.4rem; border-radius: 4px; font-size: 0.85em;">.exe</code> installer and click through. You may see a SmartScreen prompt — click <strong>More info</strong> &rarr; <strong>Run anyway</strong>.</p>
       </div>
       <div class="step">
@@ -1019,6 +1021,88 @@ local-only by design.</span></div>
     </p>
     <p>&copy; 2026 <a href="mailto:haojun@ontheground.agency">On The Ground AI</a>. MIT-licensed core. Built on open source &mdash; Presidio, Ollama, and more.</p>
   </footer>
+
+  <script>
+  // Point the download buttons at the actual installer files.
+  //
+  // The buttons ship pointing at /releases/latest, which is a page, not a
+  // file — a visitor lands there and has to guess which of the assets is
+  // theirs. We upgrade them in place to direct asset links, and highlight
+  // whichever one matches the visitor's OS.
+  //
+  // Everything here is an enhancement on top of working HTML: if the API is
+  // rate-limited, blocked, or there is no published release yet, the buttons
+  // keep their original /releases/latest href and still work.
+  (function () {
+    var REPO = 'On-The-Ground-AI/legal-box-public';
+    var mac = document.getElementById('dl-mac');
+    var win = document.getElementById('dl-win');
+    var meta = document.getElementById('dl-meta');
+    if (!mac || !win) return;
+
+    // Highlight the button for the visitor's platform. userAgentData is the
+    // supported way to read this now; userAgent is the fallback for Safari
+    // and Firefox, which don't implement it.
+    var ua = navigator.userAgent || '';
+    var plat =
+      (navigator.userAgentData && navigator.userAgentData.platform) || '';
+    var isMac = /mac/i.test(plat) || /Mac OS X|Macintosh/i.test(ua);
+    var isWin = /win/i.test(plat) || /Windows/i.test(ua);
+
+    if (isWin) {
+      // Swap the visual emphasis so the matching platform reads as primary.
+      mac.className = 'btn-secondary';
+      win.className = 'btn-primary';
+    }
+
+    function mb(bytes) {
+      return (bytes / (1024 * 1024)).toFixed(0) + ' MB';
+    }
+
+    fetch('https://api.github.com/repos/' + REPO + '/releases/latest', {
+      headers: { Accept: 'application/vnd.github+json' },
+    })
+      .then(function (r) {
+        if (!r.ok) throw new Error('no published release (' + r.status + ')');
+        return r.json();
+      })
+      .then(function (rel) {
+        var assets = rel.assets || [];
+        var found = {};
+
+        assets.forEach(function (a) {
+          // .zip is deliberately excluded: it is the electron-updater feed
+          // payload, not something a human should download by hand.
+          if (/\.dmg$/i.test(a.name)) found.mac = a;
+          if (/\.exe$/i.test(a.name)) found.win = a;
+        });
+
+        if (found.mac) {
+          mac.href = found.mac.browser_download_url;
+          mac.textContent = '↓ Download for Mac (' + mb(found.mac.size) + ')';
+        }
+        if (found.win) {
+          win.href = found.win.browser_download_url;
+          win.textContent = '↓ Download for Windows (' + mb(found.win.size) + ')';
+        }
+
+        if (meta && (found.mac || found.win)) {
+          meta.innerHTML =
+            '<strong>' +
+            (rel.tag_name || '') +
+            '</strong> · Mac: macOS 12+ (Apple Silicon) · Windows: 10/11 (64-bit) · ' +
+            '8 GB RAM minimum, 16 GB recommended · ' +
+            '<a href="https://github.com/' +
+            REPO +
+            '/releases/latest" style="color: var(--accent);">' +
+            'All files &amp; checksums</a>';
+        }
+      })
+      .catch(function () {
+        /* Buttons keep their /releases/latest href. Nothing to do. */
+      });
+  })();
+  </script>
 
 </body>
 </html>

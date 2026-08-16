@@ -176,8 +176,15 @@ When adding new Electron resources:
 
 ---
 
-## Current Build Status (as of April 2026)
+## Current Build Status (as of August 2026)
 
-- **macOS DMG**: GitHub Actions workflow exists and is functional (`build-mac.yml`)
-- **Windows EXE**: Build pipeline works through Steps 1-2 (frontend + PyInstaller). Step 3 (electron-builder) requires Developer Mode to be enabled on the build machine. Once Developer Mode is on, run `scripts\build-app.bat` to complete the full build.
-- **Both builds are unsigned** -- no code signing certificates are configured
+- **macOS DMG**: `build-mac.yml` builds a working arm64 DMG in CI. Apple Silicon only -- the runner's PyInstaller output is arm64, so `mac.target` is arm64-only by design.
+- **Windows EXE**: `build-windows.yml` builds a working x64 NSIS installer in CI. Local Windows builds additionally require Developer Mode (see the symlink note above); CI runners already have it.
+- **Both builds are unsigned** -- no code signing certificates are configured. macOS builds are *ad-hoc* signed by `electron/build/afterPack.js`, which is what lets an unsigned arm64 app launch at all; Gatekeeper and SmartScreen still prompt once. See [docs/CODE_SIGNING_ENROLLMENT.md](docs/CODE_SIGNING_ENROLLMENT.md).
+
+## Publishing a Release
+
+Building is not releasing. The website's download buttons read the repo's
+latest GitHub Release, and only a **`v*` tag** publishes one. The full
+runbook -- including the repository permission that has to be enabled first --
+is in [RELEASING.md](RELEASING.md).

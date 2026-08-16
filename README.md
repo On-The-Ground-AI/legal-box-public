@@ -12,13 +12,16 @@ Built on [Ollama](https://ollama.com/) + 50+ open-source LLMs. All client data i
 
 | Platform | Installer |
 |----------|-----------|
-| **Mac** (Apple Silicon) | [DMG](https://github.com/On-The-Ground-AI/legal-box-public/releases/latest) |
-| **Mac** (Intel) | [DMG](https://github.com/On-The-Ground-AI/legal-box-public/releases/latest) |
-| **Windows** | [EXE](https://github.com/On-The-Ground-AI/legal-box-public/releases/latest) |
+| **Mac** (Apple Silicon) | [`…-mac-arm64.dmg`](https://github.com/On-The-Ground-AI/legal-box-public/releases/latest) |
+| **Windows** (64-bit) | [`…-win-x64.exe`](https://github.com/On-The-Ground-AI/legal-box-public/releases/latest) |
 
 System requirements: 8 GB RAM minimum, 16 GB recommended · 20 GB free disk · macOS 12+ or Windows 10/11
 
-> **Unsigned-build note:** until code signing is in place, macOS will warn that the app is from an unidentified developer — right-click the app → **Open** → **Open** (one time only). On Windows, click **More info → Run anyway** on the SmartScreen prompt. See [INSTALL.md](INSTALL.md) for the full walkthrough.
+> **Intel Macs:** no prebuilt DMG — the release is built on an Apple Silicon runner and bundles an arm64 backend. Build from source per [BUILD-GUIDE.md](BUILD-GUIDE.md).
+
+> **Unsigned-build note:** until code signing is in place, the first launch is blocked once per machine. On macOS, open the app, dismiss the warning, then **System Settings → Privacy & Security → Open Anyway**. On Windows, click **More info → Run anyway** on the SmartScreen prompt. See [INSTALL.md](INSTALL.md) for the full walkthrough.
+
+Maintainers: cutting a release is documented in [RELEASING.md](RELEASING.md).
 
 ---
 
